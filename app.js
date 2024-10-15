@@ -1,8 +1,13 @@
-function addToCart(productName, productPrice) {
+function addToCart(productName, productPrice, imagesrc, quantity) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push({ name: productName, price: productPrice });
+  cart.push({
+    name: productName,
+    price: productPrice,
+    image: imagesrc,
+    quantity: quantity,
+  });
   localStorage.setItem("cart", JSON.stringify(cart));
-  alert(productName + " has been added to your cart!");
+  alert(`${quantity} ${productName}(s) have been added to your cart!`);
 }
 
 // JavaScript for filtering products

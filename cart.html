@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="cart.js"></script> 
+
+    <style>
+        body{background-color: black;
+        color: aliceblue;}
+    </style>
+    
 </head>
 <body>
     <header>
-        <h1>Your Shopping Cart</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="about-us.html">About Us</a>
-        </nav>
+        <h1>Checkout</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about-us.html">About Us</a>
+            </nav>
     </header>
 
     <main>
@@ -22,18 +29,28 @@
         </div>
         <div class="cart-total">
             <h3>Total: $<span id="totalAmount">0</span></h3>
-            <button class="add-to-cart-btn" onclick="checkout()">Checkout</button>
+        </div>
+
+        <!--payment section-->
+        <div class="payment-options">
+            <h3>Select Payment Method:</h3>
+            <form id="paymentForm" onsubmit="handlePayment(event)">
+                <label>
+                    <input type="radio" name="paymentMethod" value="creditCard" required> Momo
+                </label><br>
+                <label>
+                    <input type="radio" name="paymentMethod" value="paypal"> PayPal
+                </label><br>
+                <label>
+                    <input type="radio" name="paymentMethod" value="bankTransfer"> Bank Transfer
+                </label><br>
+                <button type="submit" onclick="handlePayment(event) ">Pay Now</button>
+            </form>
         </div>
     </main>
-    
 
     <footer>
         <p>&copy; 2024 Brand. All rights reserved.</p>
     </footer>
-
-    
-  
-    <script src="cart.js"></script>
-    
 </body>
 </html>
