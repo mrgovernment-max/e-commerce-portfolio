@@ -1,4 +1,4 @@
-// This is payment.js
+// This is payment.js to display the price in other pages
 function paymentPriceDisplay() {
   const total = JSON.parse(localStorage.getItem("total"));
   const domDisplay = document.getElementById("totalAmount");
