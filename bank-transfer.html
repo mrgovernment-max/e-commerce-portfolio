@@ -14,9 +14,9 @@
     <main>
         <h2>Please transfer the total amount to the following bank details:</h2>
         <div class="bank-details">
-            <p><strong>Bank Name:</strong> Your Bank Name</p>
-            <p><strong>Sort Code:</strong> Your Sort Code</p>
-            <p><strong>Account Number:</strong> Your Account Number</p>
+            <p><strong>Bank Name:</strong> <span id="bank-name">Your Bank Name</span> <button id="bank-name-btn" onclick="copyAccountname()">Copy</button></p>
+            <p><strong>Sort Code:</strong> <span id="sort-code">Your Sort Code</span> <button id="sort-code-btn" onclick="copySortCode()">Copy</button> </p>
+            <p><strong>Account Number:</strong> <span id="account-number">Your Account Number</span>  <button id="account-num-btn" onclick="copyAccountNum()">Copy</button> </p>
         </div>
         <p>If you have any questions, feel free to contact us.</p>
         <p id="totalAmount"></p>
