@@ -36,13 +36,6 @@ function removeFromCart(index) {
   loadCart(); // Reload the cart to reflect the changes
 }
 
-// Function to checkout
-function checkout() {
-  alert("Thank you for your purchase!");
-  localStorage.removeItem("cart");
-  window.location.href = "index.html";
-}
-
 // Load cart items on page load
 window.onload = loadCart;
 
