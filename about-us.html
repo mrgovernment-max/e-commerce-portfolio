@@ -27,7 +27,7 @@
         .about-container {
             max-width: 800px; 
             margin: 0 auto; 
-            background: white; 
+            background-color: black; 
             padding: 20px; 
             border-radius: 8px; 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
@@ -53,29 +53,33 @@
 
         /* Pulsing Animation */
         .badge {
-            display: inline-block; 
-            background-color: #007BFF; 
-            color: white; 
+            position: relative;
+            background-color: transparent; 
+            color: #007BFF; 
+            border-image: linear-gradient(to right, red,blue,yellow)1 1 1 1;
             padding: 10px 20px; 
-            border-radius: 20px; 
             font-size: 1.5em; 
             margin-top: 30px; 
             text-align: center; 
-            animation: pulse 1.5s infinite; /* Pulse Animation */
-            transition: background-color 0.3s; 
+            
+           
+        }
+        .badgee{
+            animation-name: rotate;
+            transform: translateY(-40px);
+            border-image: linear-gradient(to right, red,blue,yellow)0 0 0 0;
+            transition: 1s ease-in-out;
+            animation-duration: 3s ; 
+            
         }
 
-        .badge:hover {
-            background-color: #0056b3; 
-        }
+        
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1); /* Original size */
-            }
-            50% {
-                transform: scale(1.1); /* Scale up */
-            }
+        @keyframes rotate {
+          
+           100%{box-shadow: 0px 0px 66px rgb(228, 228, 119);}
+          
+            
         }
 
         footer {
@@ -100,6 +104,8 @@
     </header>
 
     <div class="about-container">
+        <!-- Unique Pulsing Badge for Your Name -->
+        <button class="badge">Who created this masterpiece? Click to find out!</button>
         <h2>Our Story</h2>
         <p>
             Founded in 2024, Our Brand started with a simple vision: to create high-quality, stylish footwear that empowers individuals to express themselves. 
@@ -126,12 +132,21 @@
             Our Brand has something for everyone. Follow us on social media to stay updated on our latest releases, special promotions, and more.
         </p>
 
-        <!-- Unique Pulsing Badge for Your Name -->
-        <div class="badge">A Personal Touch By FENTENG EMMANUEL</div>
+        
     </div>
 
     <footer>
         <p>&copy; 2024 Our Brand. All rights reserved.</p>
     </footer>
+    <script>
+       const button = document.querySelector('.badge')
+       button.addEventListener('click',() =>{
+        const name = document.querySelector('.badge')
+        name.innerHTML = 'FENTENG EMMANUEL'
+        const glow = document.querySelector('.badge')
+            glow.classList.toggle('badgee')
+       },{once:true})
+    </script>
+
 </body>
 </html>
