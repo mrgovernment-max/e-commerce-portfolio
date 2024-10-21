@@ -10,7 +10,7 @@ function loadCart() {
                       <img src="${item.image}" alt="${
       item.name
     }" style="width: 100px; height: 100px;">
-                      <p>${item.name} - $${item.price}  (${
+                      <p> [${item.size}] ${item.name} - $${item.price}  (${
       item.quantity
     }) = $${itemTotal.toFixed(2)}</p>
                       <img 

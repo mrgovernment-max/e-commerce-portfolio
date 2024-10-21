@@ -199,6 +199,18 @@ footer {
     border-color: #007bff; 
 }
 
+.product-item select{
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+    border-image-source: linear-gradient(rgb(247, 164, 178),rgb(228, 140, 154),rgb(184, 114, 125));
+    border-image-slice: 1 ;
+    border-width: 5px;
+    border-style: solid;
+}
+
+
+
+
 
 .product-item button {
     background-color:#8e8d8dda;
@@ -231,20 +243,8 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-.add-to-cart-btn:hover {
-    background-color: #218838; 
-    transform: translateY(-2px); 
-}
 
-.add-to-cart-btn:active {
-    background-color: #1e7e34; 
-    transform: translateY(0); 
-}
 
-.add-to-cart-btn:focus {
-    outline: none; 
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
-}
 
 /*cart items rendered dynamically in JS*/
 
