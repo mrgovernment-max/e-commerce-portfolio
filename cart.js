@@ -51,14 +51,14 @@ function handlePayment(event) {
     case "paypal":
       const totall = JSON.parse(localStorage.getItem("total"));
       parseInt(totall) === 0.0
-        ? alert("Add Items To Cart")
+        ? alert("Cart is Empty")
         : (window.location.href = "paypal-transfer.html");
       break;
 
     case "bankTransfer":
       const total = JSON.parse(localStorage.getItem("total"));
       parseInt(total) === 0.0
-        ? alert("empty")
+        ? alert("Cart is Empty")
         : (window.location.href = "bank-transfer.html");
       break;
   }

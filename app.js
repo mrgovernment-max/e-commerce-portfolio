@@ -13,19 +13,18 @@ function addToCart(productName, productPrice, imagesrc, quantity, size) {
   );
 }
 
-// JavaScript for filtering products
 function filterProducts() {
-  const input = document.getElementById("searchInput").value.toLowerCase(); // Get input value
-  const productContainer = document.getElementById("productContainer"); // Get product container
-  const products = productContainer.getElementsByClassName("product-item"); // Get all product items
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const productContainer = document.getElementById("productContainer");
+  const products = productContainer.getElementsByClassName("product-item");
 
   // Loop through all products and hide those that do not match the search query
   for (let i = 0; i < products.length; i++) {
-    const productName = products[i].getAttribute("data-name").toLowerCase(); // Get product name
+    const productName = products[i].getAttribute("data-name").toLowerCase();
     if (productName.includes(input)) {
-      products[i].style.display = ""; // Show the product item if it matches
+      products[i].style.display = "";
     } else {
-      products[i].style.display = "none"; // Hide the product item if it doesn't match
+      products[i].style.display = "none";
     }
   }
 }
