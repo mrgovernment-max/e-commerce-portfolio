@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed List</title>
+    <link rel="stylesheet" href="completed task.css"> 
+</head>
+<body>
+
+    <button onclick="toggleStylesheet()">Change Theme</button> 
+
+    <div class="done-main">
+        <header>
+            <a href="To-Do Task.html">To-Do Tasks Tasks 🔗</a>
+        </header>
+        <div class="done"> 
+            <button class="clear-button" onclick="clearCompleted()">Clear Completed Tasks</button> 
+
+            <div>
+                <ul class="tasks">
+                    <!--completed tasks will render here dynamically-->
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+
+function toggleStylesheet() {
+            // Toggle dark theme
+            document.body.classList.toggle('dark-theme');
+        }
+
+
+        // Function to display completed tasks on the page
+        function displayTask() {
+            let see = ''; // Variable to hold the HTML content for the tasks
+
+            const show = document.querySelector('.tasks'); 
+            const tasks = JSON.parse(localStorage.getItem('complete')); // Retrieve the 'complete' tasks array from localStorage
+            
+            // Loop through each task and create an HTML list item
+            tasks.forEach((element, index) => 
+                see += `<li>${element.task}
+                    <img 
+                        class="remove-icon"
+                        onclick="removeTask(${index.index})" 
+                        src="./images/dustbin.jpg"
+                        alt="remove"
+                        onmouseover="this.src='./images/open-dustbin.jpg'"
+                        onmouseout="this.src='./imagesdustbin.jpg'"> 
+                    </li>`
+            );
+
+            show.innerHTML = see; // Display the generated HTML content in the tasks list
+        }
+
+        // Run the displayTask function when the window loads
+        window.onload = displayTask;
+
+        // Function to remove a task from the completed tasks list
+        function removeTask(index) {
+            const tasks = JSON.parse(localStorage.getItem('complete')); // Retrieve the 'complete' tasks array from localStorage
+            tasks.splice(index, 1); // Remove the task at the specified index
+
+            localStorage.setItem('complete', JSON.stringify(tasks)); // Update localStorage with the modified tasks array
+            displayTask(); // Refresh the displayed tasks
+        }
+
+        // Function to clear all completed tasks
+        function clearCompleted() {
+            const tasks = JSON.parse(localStorage.getItem('complete')); 
+            tasks.splice(0, tasks.length); // Clear all tasks by removing all elements in the array
+
+            localStorage.setItem('complete', JSON.stringify(tasks)); // Update localStorage with the cleared tasks array
+            displayTask(); // Refresh the displayed tasks
+        }
+    </script>
+</body>
+</html>

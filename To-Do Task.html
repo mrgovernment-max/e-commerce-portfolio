@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link id="stylesheet" rel="stylesheet" href="To-Do Task.css"> 
+</head>
+<body>
+    <button onclick="toggleStylesheet()">Change Theme</button> 
+    <div class="todo-app-main">
+        <header>
+            <a href="completed task.html">Completed Tasks 🔗</a>
+        </header>
+        <div class="to-do">
+            <h1>My To-Do List</h1>
+            <input type="text" id="new-task" placeholder="Add a new task...">
+            <button onclick="addTask()">Add Task</button>
+            <ul id="task-list"></ul>
+            <div>
+                <ul class="tasks"></ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Initialize "tasks" array to store all tasks
+        let tasks = [];
+
+        function toggleStylesheet() {
+            // Toggle dark theme
+            document.body.classList.toggle('dark-theme');
+        }
+
+        function addTask() {
+            const input = document.querySelector('#new-task').value;
+            const inputField = document.querySelector('#new-task');
+
+            if (!localStorage.getItem("task")) {
+                localStorage.setItem('task', JSON.stringify(tasks));
+            }
+
+            tasks = JSON.parse(localStorage.getItem('task'));
+
+            if (input !== '') {
+                tasks.push(input);
+            } else {
+                alert("Enter a task");
+                return;
+            }
+
+            localStorage.setItem('task', JSON.stringify(tasks));
+            displayTask();
+            inputField.value = '';
+        }
+
+        function displayTask() {
+            let showContent = '';
+
+            const show = document.querySelector('.tasks');
+            tasks = JSON.parse(localStorage.getItem('task')) || [];
+
+            tasks.forEach((element, index) => {
+                showContent += `<li>
+                    <span>${element}</span>
+                    <button class='add-to-complete-button' onclick="addTocomplete('${element}', ${index})">✅</button>
+                    <img 
+                        class="remove-icon"
+                        onclick="removeTask(${index})"
+                        src="./images/dustbin.jpg"
+                        alt="remove"
+                        onmouseover="this.src='./images/open-dustbin.jpg'"
+                        onmouseout="this.src='./images/dustbin.jpg'">
+                </li>`;
+            });
+
+            show.innerHTML = showContent;
+        }
+
+        window.onload = displayTask;
+
+        function removeTask(index) {
+            tasks = JSON.parse(localStorage.getItem('task'));
+            tasks.splice(index, 1);
+
+            localStorage.setItem('task', JSON.stringify(tasks));
+            displayTask();
+        }
+
+        function addTocomplete(taskk, indexx) {
+            let complete = localStorage.getItem('complete') ? JSON.parse(localStorage.getItem('complete')) : [];
+            complete.push({ task: taskk, index: indexx });
+            localStorage.setItem('complete', JSON.stringify(complete));
+            removeTask(indexx);
+        }
+    </script>
+</body>
+</html>
