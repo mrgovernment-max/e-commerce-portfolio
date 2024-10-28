@@ -92,6 +92,8 @@ header a:hover{
     background-color: #e8f4fa; 
     padding: 10px;
     margin: 10px 0;
+    overflow:hidden ;
+    word-break: break-all;
     border-radius: 5px;
     display: flex;
     justify-content: space-between; 

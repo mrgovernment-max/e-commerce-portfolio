@@ -80,6 +80,7 @@ button:hover {
     background-color: #ecf0f1;
     margin: 10px 0;
     padding: 10px;
+    overflow-x: scroll;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -88,6 +89,7 @@ button:hover {
 
 .tasks li span {
     flex-grow: 1; 
+    word-break: break-all;
     text-align: justify; 
 }
 
