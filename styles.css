@@ -149,25 +149,24 @@ footer {
 }
 
 .product-item {
-    background-color:  #f4f6f8; 
+    background-color: #e9d1cf; 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px; 
     margin: 20px;
     text-align: center; 
     transition: box-shadow 0.3s ease, transform 0.3s ease; 
-    max-width: 270px; 
+    max-width: 250px; 
     width: 100%; 
 }
 
-@media (max-width:760px) {
+@media (max-width:800px) {
     .product-list{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 2em;
+        grid-template-columns: 1fr;
+        padding: 0;
         text-align: center;
-        
+        row-gap: 50px;
     }
 
     .product-item{
@@ -177,7 +176,10 @@ footer {
     
 }
 
-
+.product-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-5px); 
+}
 
 .product-item img {
     max-width: 100%;
@@ -193,14 +195,14 @@ footer {
 
 .product-item p {
     font-size: 1em; 
-    color: #030601; 
+    color: #fff; 
 }
 
 .product-item input[type="number"] {
     width: 60px; 
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid #17010171;
+    border: 1px solid #ccc;
     font-size: 14px;
     text-align: center;
     margin-top: 10px;
@@ -210,13 +212,16 @@ footer {
 }
 
 .product-item input[type="number"]:focus {
-    border-color: #0d131acb; 
+    border-color: #007bff; 
 }
 
 .product-item select{
     padding: 5px 10px;
     margin-bottom: 1rem;
-    border: 2px solid #f4f6f8;
+    border-image-source: linear-gradient(rgb(247, 164, 178),rgb(228, 140, 154),rgb(184, 114, 125));
+    border-image-slice: 1 ;
+    border-width: 5px;
+    border-style: solid;
 }
 
 
@@ -234,9 +239,7 @@ footer {
 }
 
 .product-item button:hover {
-    background-color: #4ca443; 
-    transform: translateY(-8px);
-    transition: 0.6s ease-in;
+    background-color: #e42918; 
 }
 
 
@@ -248,7 +251,7 @@ footer {
     border: none;
     border-radius: 5px;
     padding: 10px 20px; 
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
     font-size: 16px; 
     cursor: pointer; 
@@ -339,7 +342,8 @@ footer {
 
 /* Button Style */
 .payment-options button {
-    color: rgb(2, 1, 1);
+    background-color: #4CAF50;
+    color: white;
     border: none;
     padding: 10px 15px;
     font-size: 16px;
@@ -351,5 +355,4 @@ footer {
 
 .payment-options button:hover {
     background-color: #45a049;
-    color: #fff;
 }
