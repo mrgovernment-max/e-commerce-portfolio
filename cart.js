@@ -6,7 +6,7 @@ function loadCart() {
 
   cartItems.forEach((item, index) => {
     const itemTotal = item.price * item.quantity;
-    cartHTML += `<div class="cart-item" data-aos="zoom-out" data-aos-delay="150">
+    cartHTML += `<div class="cart-item" data-aos="zoom-out" data-aos-delay="150" data-aos-easing="ease-in-out">
                       <img src="${item.image}" alt="${
       item.name
     }" style="width: 100px; height: 100px;">

@@ -12,8 +12,10 @@ function addToCart(productName, productPrice, imagesrc, quantity, size) {
     `${quantity} [${size}] ${productName}(s) have been added to your cart!`
   );
 }
-
 function filterProducts() {
+  // Temporarily disable AOS
+  AOS.refresh({ disable: true });
+
   const input = document.getElementById("searchInput").value.toLowerCase();
   const productContainer = document.getElementById("productContainer");
   const products = productContainer.getElementsByClassName("product-item");
@@ -27,4 +29,7 @@ function filterProducts() {
       products[i].style.display = "none";
     }
   }
+
+  // Re-enable AOS after filtering the products
+  AOS.refresh({ disable: false });
 }

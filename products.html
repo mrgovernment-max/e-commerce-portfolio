@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Shoes</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -20,11 +20,11 @@
 
     <main>
         <!-- Search bar -->
-        <div class="search-container">
+        <div class="search-container"  data-aos="flip-down">
             <input 
                 type="text" 
                 id="searchInput" 
-                placeholder="Search for products..." 
+                placeholder="Search for products and scroll up" 
                 onkeyup="filterProducts()"
             />
         </div>
@@ -32,8 +32,8 @@
         <div class="product-list" id="productContainer">
            
 <div class="product-list" id="productContainer">
-    <div class="product-item" data-name="Custom Air Force" data-aos="fade-up">
-        <img src="./images/shoe.webp" alt="Shoe 1">
+    <div class="product-item" data-name="Custom Air Force" data-aos="fade-up" >
+        <img src="./images/shoe.webp" alt="Shoe 1" loading="lazy">
         <h3>Custom Air Force</h3>
         <select class="size-select">
             <option value="S">Small</option>
@@ -47,8 +47,8 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Sneaker 55" data-aos="fade-up">
-        <img src="./images/shoe2.avif" alt="Shoe 2">
+    <div class="product-item" data-name="Sneaker 55" data-aos="fade-up" >
+        <img src="./images/shoe2.avif" alt="Shoe 2" loading="lazy">
         <h3>Sneaker 55</h3>
         <select class="size-select">
             <option value="S">Small</option>
@@ -62,8 +62,8 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Jewellery" data-aos="fade-up">
-        <img src="./images/image5.webp" alt="Jewellery">
+    <div class="product-item" data-name="Jewellery" data-aos="fade-up" >
+        <img src="./images/image5.webp" alt="Jewellery" loading="lazy">
         <h3>Jewellery</h3>
         <select class="size-select">
             <option value="S">Small</option>
@@ -77,8 +77,8 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Custon Af1" data-aos="fade-up">
-        <img src="./images/image-5.webp" alt="Custon Af1">
+    <div class="product-item" data-name="Custon Af1" data-aos="fade-up" >
+        <img src="./images/image-5.webp" alt="Custon Af1" loading="lazy">
         <h3>Custon Af1</h3>
         <select class="size-select">
             <option value="S">Small</option>
@@ -92,8 +92,8 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Bouncing Sneaker" data-aos="fade-up">
-        <img src="./images/image-6.webp" alt="Bouncing Sneaker">
+    <div class="product-item" data-name="Bouncing Sneaker" data-aos="fade-up" >
+        <img src="./images/image-6.webp" alt="Bouncing Sneaker" loading="lazy">
         <h3>Bouncing Sneaker</h3>
         <select class="size-select">
             <option value="S">Small</option>
@@ -107,8 +107,8 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Mens Designer..Short Sleeve" data-aos="fade-up">
-        <img src="./images/image-7.jpg" alt="Mens Designer..Short Sleeve">
+    <div class="product-item" data-name="Mens Designer..Short Sleeve" data-aos="fade-up" >
+        <img src="./images/image-7.jpg" alt="Mens Designer..Short Sleeve" loading="lazy">
         <h3>Mens Designer..Short Sleeve</h3>
         <select class="size-select">
             <option value="S">Small</option>
@@ -122,8 +122,8 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Graphic Designer T-Shirt" data-aos="fade-up">
-        <img src="./images/image-8.jpeg" alt="Graphic Designer T-Shirt">
+    <div class="product-item" data-name="Graphic Designer T-Shirt" data-aos="fade-up" >
+        <img src="./images/image-8.jpeg" alt="Graphic Designer T-Shirt" loading="lazy">
         <h3>Graphic Designer T-Shirt</h3>
         <select class="size-select">
             <option value="S">Small</option>
@@ -137,8 +137,8 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Designer Shorts Men" data-aos="fade-up">
-        <img src="./images/image-9.webp" alt="Designer Shorts Men">
+    <div class="product-item" data-name="Designer Shorts Men" data-aos="fade-up" >
+        <img src="./images/image-9.webp" alt="Designer Shorts Men" loading="lazy">
         <h3>Designer Shorts Men</h3>
         <select class="size-select">
             <option value="S">Small</option>
@@ -152,8 +152,8 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Boss Shorts" data-aos="fade-up">
-        <img src="./images/image-10.jpg" alt="Boss Shorts">
+    <div class="product-item" data-name="Boss Shorts" data-aos="fade-up" >
+        <img src="./images/image-10.jpg" alt="Boss Shorts" loading="lazy">
         <h3>Boss Shorts</h3>
         <select class="size-select">
             <option value="S">Small</option>
@@ -167,8 +167,8 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Luxury Swiss watch" data-aos="fade-up">
-        <img src="./images/image-11.jpg" alt="Luxury Swiss watch">
+    <div class="product-item" data-name="Luxury Swiss watch" data-aos="fade-up" >
+        <img src="./images/image-11.jpg" alt="Luxury Swiss watch" loading="lazy">
         <h3>Luxury Swiss watch</h3>
         <select class="size-select">
             <option value="S">Small</option>
@@ -182,8 +182,8 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Luxury Cold Black watch" data-aos="fade-up">
-        <img src="./images/image-12.webp" alt="Luxury Cold Black watch">
+    <div class="product-item" data-name="Luxury Cold Black watch" data-aos="fade-up" >
+        <img src="./images/image-12.webp" alt="Luxury Cold Black watch" loading="lazy">
         <h3>Luxury Cold Black watch</h3>
         <select class="size-select">
             <option value="S">Small</option>
@@ -213,12 +213,11 @@
             AOS.init(
                 {
                     once:false,
-                    easing:'ease-in-out',
-                    duration:800,
-                    mirror:true
+                    mirror:true,
+                   
                 }
             )
-            AOS.refresh()
+          
         })
 
     </script>

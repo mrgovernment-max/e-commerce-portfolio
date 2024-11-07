@@ -67,7 +67,17 @@ h1, h2, h3, p {
 .hero-text {
     position: relative;
     z-index: 2;
+    animation-name: slide;
+    animation-duration: 1.5s;
 }
+
+@keyframes slide {
+    from {
+        transform: translateY(200%);
+    }
+    
+}
+
 
 
 .hero-text h2 {
@@ -124,7 +134,12 @@ footer {
       /* Additional CSS for search functionality */
       .search-container {
         text-align: center; 
-        margin: 20px 0; 
+        margin: 45px 0 35px 0; 
+    }
+
+
+    .search-container ::placeholder{
+        text-align: center;
     }
 
     #searchInput {

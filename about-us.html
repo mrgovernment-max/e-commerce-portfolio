@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Our Brand</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif; 
@@ -107,7 +107,9 @@
         </nav>
     </header>
 
-    <div class="about-container" data-aos="zoom-in">
+    <div class="about-container" data-aos="flip-left"
+    data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000">
         <!-- Unique Pulsing Badge for Your Name -->
         <button class="badge" data-aos="fade-right" data-aos-delay="850">Who created this masterpiece? Click to find out!</button>
         <h2>Our Story</h2>
