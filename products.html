@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Shoes</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 <body>
     <header>
@@ -30,7 +32,7 @@
         <div class="product-list" id="productContainer">
            
 <div class="product-list" id="productContainer">
-    <div class="product-item" data-name="Custom Air Force">
+    <div class="product-item" data-name="Custom Air Force" data-aos="fade-up">
         <img src="./images/shoe.webp" alt="Shoe 1">
         <h3>Custom Air Force</h3>
         <select class="size-select">
@@ -45,7 +47,7 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Sneaker 55">
+    <div class="product-item" data-name="Sneaker 55" data-aos="fade-up">
         <img src="./images/shoe2.avif" alt="Shoe 2">
         <h3>Sneaker 55</h3>
         <select class="size-select">
@@ -60,22 +62,7 @@
         </button>
     </div>
 
-    <div class="product-item" data-name="Jogging shoe">
-        <img src="./images/shoe3.jpg" alt="Shoe 3">
-        <h3>Jogging shoe</h3>
-        <select class="size-select">
-            <option value="S">Small</option>
-            <option value="M">Medium</option>
-            <option value="L">Large</option>
-        </select>
-        <p>$80.00</p>
-        <input type="number" id="Jogging-shoe-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('Jogging shoe', 80, './images/shoe3.jpg', document.getElementById('Jogging-shoe-qty').value, document.querySelectorAll('.size-select')[2].value)">
-            Add to Cart
-        </button>
-    </div>
-
-    <div class="product-item" data-name="Jewellery">
+    <div class="product-item" data-name="Jewellery" data-aos="fade-up">
         <img src="./images/image5.webp" alt="Jewellery">
         <h3>Jewellery</h3>
         <select class="size-select">
@@ -85,12 +72,12 @@
         </select>
         <p>$78.00</p>
         <input type="number" id="Jewellery-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('Jewellery', 78, './images/image5.webp', document.getElementById('Jewellery-qty').value, document.querySelectorAll('.size-select')[3].value)">
+        <button class="add-to-cart-btn" onclick="addToCart('Jewellery', 78, './images/image5.webp', document.getElementById('Jewellery-qty').value, document.querySelectorAll('.size-select')[2].value)">
             Add to Cart
         </button>
     </div>
 
-    <div class="product-item" data-name="Custon Af1">
+    <div class="product-item" data-name="Custon Af1" data-aos="fade-up">
         <img src="./images/image-5.webp" alt="Custon Af1">
         <h3>Custon Af1</h3>
         <select class="size-select">
@@ -100,12 +87,12 @@
         </select>
         <p>$25.00</p>
         <input type="number" id="Custon-Af1-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('Custon Af1', 25, './images/image-5.webp', document.getElementById('Custon-Af1-qty').value, document.querySelectorAll('.size-select')[4].value)">
+        <button class="add-to-cart-btn" onclick="addToCart('Custon Af1', 25, './images/image-5.webp', document.getElementById('Custon-Af1-qty').value, document.querySelectorAll('.size-select')[3].value)">
             Add to Cart
         </button>
     </div>
 
-    <div class="product-item" data-name="Bouncing Sneaker">
+    <div class="product-item" data-name="Bouncing Sneaker" data-aos="fade-up">
         <img src="./images/image-6.webp" alt="Bouncing Sneaker">
         <h3>Bouncing Sneaker</h3>
         <select class="size-select">
@@ -115,12 +102,12 @@
         </select>
         <p>$69.00</p>
         <input type="number" id="Bouncing-Sneaker-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('Bouncing Sneaker', 69, './images/image-6.webp', document.getElementById('Bouncing-Sneaker-qty').value, document.querySelectorAll('.size-select')[5].value)">
+        <button class="add-to-cart-btn" onclick="addToCart('Bouncing Sneaker', 69, './images/image-6.webp', document.getElementById('Bouncing-Sneaker-qty').value, document.querySelectorAll('.size-select')[4].value)">
             Add to Cart
         </button>
     </div>
 
-    <div class="product-item" data-name="Mens Designer..Short Sleeve">
+    <div class="product-item" data-name="Mens Designer..Short Sleeve" data-aos="fade-up">
         <img src="./images/image-7.jpg" alt="Mens Designer..Short Sleeve">
         <h3>Mens Designer..Short Sleeve</h3>
         <select class="size-select">
@@ -130,12 +117,12 @@
         </select>
         <p>$90.00</p>
         <input type="number" id="Mens-Designer-Short-Sleeve-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('Mens Designer..Short Sleeve', 90, './images/image-7.jpg', document.getElementById('Mens-Designer-Short-Sleeve-qty').value, document.querySelectorAll('.size-select')[6].value)">
+        <button class="add-to-cart-btn" onclick="addToCart('Mens Designer..Short Sleeve', 90, './images/image-7.jpg', document.getElementById('Mens-Designer-Short-Sleeve-qty').value, document.querySelectorAll('.size-select')[5].value)">
             Add to Cart
         </button>
     </div>
 
-    <div class="product-item" data-name="Graphic Designer T-Shirt">
+    <div class="product-item" data-name="Graphic Designer T-Shirt" data-aos="fade-up">
         <img src="./images/image-8.jpeg" alt="Graphic Designer T-Shirt">
         <h3>Graphic Designer T-Shirt</h3>
         <select class="size-select">
@@ -145,12 +132,12 @@
         </select>
         <p>$105.00</p>
         <input type="number" id="Graphic-Designer-T-Shirt-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('Graphic Designer T-Shirt', 105, './images/image-8.jpeg', document.getElementById('Graphic-Designer-T-Shirt-qty').value, document.querySelectorAll('.size-select')[7].value)">
+        <button class="add-to-cart-btn" onclick="addToCart('Graphic Designer T-Shirt', 105, './images/image-8.jpeg', document.getElementById('Graphic-Designer-T-Shirt-qty').value, document.querySelectorAll('.size-select')[6].value)">
             Add to Cart
         </button>
     </div>
 
-    <div class="product-item" data-name="Designer Shorts Men">
+    <div class="product-item" data-name="Designer Shorts Men" data-aos="fade-up">
         <img src="./images/image-9.webp" alt="Designer Shorts Men">
         <h3>Designer Shorts Men</h3>
         <select class="size-select">
@@ -160,12 +147,12 @@
         </select>
         <p>$85.00</p>
         <input type="number" id="Designer-Shorts-Men-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('Designer Shorts Men', 85, './images/image-9.webp', document.getElementById('Designer-Shorts-Men-qty').value, document.querySelectorAll('.size-select')[8].value)">
+        <button class="add-to-cart-btn" onclick="addToCart('Designer Shorts Men', 85, './images/image-9.webp', document.getElementById('Designer-Shorts-Men-qty').value, document.querySelectorAll('.size-select')[7].value)">
             Add to Cart
         </button>
     </div>
 
-    <div class="product-item" data-name="Boss Shorts">
+    <div class="product-item" data-name="Boss Shorts" data-aos="fade-up">
         <img src="./images/image-10.jpg" alt="Boss Shorts">
         <h3>Boss Shorts</h3>
         <select class="size-select">
@@ -175,12 +162,12 @@
         </select>
         <p>$55.00</p>
         <input type="number" id="Boss-Shorts-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('Boss Shorts', 55, './images/image-10.jpg', document.getElementById('Boss-Shorts-qty').value, document.querySelectorAll('.size-select')[9].value)">
+        <button class="add-to-cart-btn" onclick="addToCart('Boss Shorts', 55, './images/image-10.jpg', document.getElementById('Boss-Shorts-qty').value, document.querySelectorAll('.size-select')[8].value)">
             Add to Cart
         </button>
     </div>
 
-    <div class="product-item" data-name="Luxury Swiss watch">
+    <div class="product-item" data-name="Luxury Swiss watch" data-aos="fade-up">
         <img src="./images/image-11.jpg" alt="Luxury Swiss watch">
         <h3>Luxury Swiss watch</h3>
         <select class="size-select">
@@ -190,12 +177,12 @@
         </select>
         <p>$330.00</p>
         <input type="number" id="Luxury-Swiss-watch-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('Luxury Swiss watch', 330, './images/image-11.jpg', document.getElementById('Luxury-Swiss-watch-qty').value, document.querySelectorAll('.size-select')[10].value)">
+        <button class="add-to-cart-btn" onclick="addToCart('Luxury Swiss watch', 330, './images/image-11.jpg', document.getElementById('Luxury-Swiss-watch-qty').value, document.querySelectorAll('.size-select')[9].value)">
             Add to Cart
         </button>
     </div>
 
-    <div class="product-item" data-name="Luxury Cold Black watch">
+    <div class="product-item" data-name="Luxury Cold Black watch" data-aos="fade-up">
         <img src="./images/image-12.webp" alt="Luxury Cold Black watch">
         <h3>Luxury Cold Black watch</h3>
         <select class="size-select">
@@ -205,18 +192,36 @@
         </select>
         <p>$205.00</p>
         <input type="number" id="Luxury-Cold-Black-watch-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('Luxury Cold Black watch', 205, './images/image-12.webp', document.getElementById('Luxury-Cold-Black-watch-qty').value, document.querySelectorAll('.size-select')[11].value)">
+        <button class="add-to-cart-btn" onclick="addToCart('Luxury Cold Black watch', 205, './images/image-12.webp', document.getElementById('Luxury-Cold-Black-watch-qty').value, document.querySelectorAll('.size-select')[10].value)">
             Add to Cart
         </button>
     </div>
-</div>
+
+
+
+    
             <!-- More products here -->
-        </div>
+</div>
+        
     </main>
 
     <footer>
         <p>&copy; 2024 Brand. All rights reserved.</p>
     </footer>
+    <script>
+              document.addEventListener("DOMContentLoaded",function(){
+            AOS.init(
+                {
+                    once:false,
+                    easing:'ease-in-out',
+                    duration:800,
+                    mirror:true
+                }
+            )
+            AOS.refresh()
+        })
+
+    </script>
 
     <script src="app.js"></script>
    

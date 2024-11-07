@@ -6,14 +6,14 @@ function loadCart() {
 
   cartItems.forEach((item, index) => {
     const itemTotal = item.price * item.quantity;
-    cartHTML += `<div class="cart-item">
+    cartHTML += `<div class="cart-item" data-aos="zoom-out" data-aos-delay="150">
                       <img src="${item.image}" alt="${
       item.name
     }" style="width: 100px; height: 100px;">
                       <p> [${item.size}] ${item.name} - $${item.price}  (${
       item.quantity
     }) = $${itemTotal.toFixed(2)}</p>
-                      <img 
+                      <img data-aos="fade-right" data-aos-delay="850"
                           class="remove-icon"
                           onclick="removeFromCart(${index})"
                           src="./images/dustbin.jpg"

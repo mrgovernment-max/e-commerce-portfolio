@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Our Brand</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif; 
@@ -105,9 +107,9 @@
         </nav>
     </header>
 
-    <div class="about-container">
+    <div class="about-container" data-aos="zoom-in">
         <!-- Unique Pulsing Badge for Your Name -->
-        <button class="badge">Who created this masterpiece? Click to find out!</button>
+        <button class="badge" data-aos="fade-right" data-aos-delay="850">Who created this masterpiece? Click to find out!</button>
         <h2>Our Story</h2>
         <p>
             Founded in 2024, Our Brand started with a simple vision: to create high-quality, stylish footwear that empowers individuals to express themselves. 
@@ -141,6 +143,20 @@
         <p>&copy; 2024 Our Brand. All rights reserved.</p>
     </footer>
     <script>
+
+document.addEventListener("DOMContentLoaded",function(){
+            AOS.init(
+                {
+                    once:false,
+                    easing:'ease-in-out',
+                    duration:800,
+                    mirror:true
+                }
+            )
+            AOS.refresh()
+        })
+
+
        const button = document.querySelector('.badge')
        button.addEventListener('click',() =>{
         const name = document.querySelector('.badge')
