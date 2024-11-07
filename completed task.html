@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Completed List</title>
     <link rel="stylesheet" href="completed task.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 <body>
 
     <button onclick="toggleStylesheet()">Change Theme</button> 
 
-    <div class="done-main">
+    <div class="done-main" data-aos="zoom-in" data-aos-duration="900">
         <header>
             <a href="To-Do Task.html">To-Do Tasks Tasks 🔗</a>
         </header>
@@ -26,6 +28,14 @@
         </div>
     </div>
     <script>
+
+        document.addEventListener("DOMContentLoaded",function(){
+            AOS.init(
+                {
+                    once:true
+                }
+            )
+        })
 
 function toggleStylesheet() {
             // Toggle dark theme
