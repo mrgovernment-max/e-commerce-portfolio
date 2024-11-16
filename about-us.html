@@ -67,24 +67,33 @@
            
         }
         .badgee{
-            animation-name: moveUp;
-            transition: 0.5s ease-in-out;
-            animation-duration: 3s ; 
-            color: white;            
+            animation-name: revealName;
+            font-weight: bold;
+            opacity: 0;
+            transform: scale(0.5) rotateX(90deg) ;
+            animation: revealName 2.5s ease-out forwards;
+           
         }
 
         
 
-        @keyframes moveUp {
-          
-           65%{ transform: rotateX(180deg)
-            rotateZ(-195deg)
-            translateY(-75px);
-           box-shadow: 0px 0px 66px rgb(48, 255, 1);
-         
-        }  
+        
+@keyframes revealName {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotateX(90deg) translateX(150%);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1) rotateX(45deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotateX(0);
+    }
+}
 
-        }
+        
 
         footer {
             text-align: center; 
@@ -143,8 +152,8 @@
             <form class="contact-form">
                 <input type="text" id="contact" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
-                <input type="tel" name="phone" placeholder="Your Phone Number">
-                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                <input type="tel" name="phone" placeholder="Your Phone Number" pattern="[0-9]{10}" required>
+                <textarea id="textarea" name="message" rows="6" placeholder="Your Message" required></textarea>
                 <input type="submit" value="Send Message">
             </form>
     
