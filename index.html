@@ -11,6 +11,7 @@
     <header>
         <h1>Welcome to Our Brand</h1>
         <nav>
+            <a href="index.html">Home</a>
             <a href="products.html">Products</a>
             <a href="cart.html">Cart</a><sup id="total-cart-items"> </sup>
             <a href="about-us.html">About Us</a>
@@ -28,6 +29,14 @@
     <footer>
         <p>&copy; 2024 Brand. All rights reserved.</p>
     </footer>
-
+<script>
+    // Function to display the total number of items in the cart
+(    function displayTotalitemsincart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartTotal = cart.length; // Get the number of items in the cart
+    const domDisplaycartTotal = document.getElementById("total-cart-items");
+    domDisplaycartTotal.innerHTML = cartTotal;
+    })()
+</script>
 </body>
 </html>

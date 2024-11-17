@@ -37,7 +37,7 @@ function filterProducts() {
 
 function displayTotalitemsincart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const cartTotal = Object.entries(cart).length;
+  const cartTotal = cart.length;
   const domDisplaycartTota = document.getElementById("total-cart-items");
   domDisplaycartTota.innerHTML = cartTotal;
 }

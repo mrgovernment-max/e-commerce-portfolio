@@ -4,6 +4,7 @@ function loadCart() {
   let cartHTML = "";
   let total = 0;
 
+  // Loop through the cart items and generate the HTML
   cartItems.forEach((item, index) => {
     const itemTotal = item.price * item.quantity;
     cartHTML += `<div class="cart-item" data-aos="zoom-out" data-aos-delay="150" data-aos-easing="ease-in-out">
@@ -24,22 +25,26 @@ function loadCart() {
     total += itemTotal;
   });
 
+  // Save the total in localStorage
   localStorage.setItem("total", JSON.stringify(total));
   document.querySelector(".cart-items").innerHTML = cartHTML;
   document.getElementById("totalAmount").innerText = total.toFixed(2);
-  displayTotalitemsincart();
+  displayTotalitemsincart(); // Update the cart item count
 }
+
 // Function to remove an item from the cart
 function removeFromCart(index) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart = cart.filter((_, i) => i !== index);
   localStorage.setItem("cart", JSON.stringify(cart));
   loadCart(); // Reload the cart to reflect the changes
-  displayTotalitemsincart();
+  displayTotalitemsincart(); // Update the cart item count
 }
 
 // Load cart items on page load
-window.onload = loadCart;
+window.addEventListener("load", function () {
+  loadCart();
+});
 
 // Function to handle payment
 function handlePayment(event) {
@@ -49,27 +54,27 @@ function handlePayment(event) {
     'input[name="paymentMethod"]:checked'
   ).value;
 
+  const total = JSON.parse(localStorage.getItem("total"));
+
+  if (total === 0.0) {
+    alert("Cart is Empty");
+    return;
+  }
+
   switch (selectedPaymentMethod) {
     case "paypal":
-      const totall = JSON.parse(localStorage.getItem("total"));
-      parseInt(totall) === 0.0
-        ? alert("Cart is Empty")
-        : (window.location.href = "paypal-transfer.html");
+      window.location.href = "paypal-transfer.html";
       break;
 
     case "bankTransfer":
-      const total = JSON.parse(localStorage.getItem("total"));
-      parseInt(total) === 0.0
-        ? alert("Cart is Empty")
-        : (window.location.href = "bank-transfer.html");
+      window.location.href = "bank-transfer.html";
       break;
   }
 }
 
 function displayTotalitemsincart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const cartTotal = Object.entries(cart).length;
-  const domDisplaycartTota = document.getElementById("total-cart-items");
-  domDisplaycartTota.innerHTML = cartTotal;
+  const cartTotal = cart.length; // Get the number of items in the cart
+  const domDisplaycartTotal = document.getElementById("total-cart-items");
+  domDisplaycartTotal.innerHTML = cartTotal;
 }
-window.onload = displayTotalitemsincart;
