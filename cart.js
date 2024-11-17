@@ -72,3 +72,4 @@ function displayTotalitemsincart() {
   const domDisplaycartTota = document.getElementById("total-cart-items");
   domDisplaycartTota.innerHTML = cartTotal;
 }
+window.onload = displayTotalitemsincart;
