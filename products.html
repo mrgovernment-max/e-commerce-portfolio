@@ -6,6 +6,7 @@
     <title>Our Shoes</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
@@ -13,7 +14,7 @@
         <h1>Our Brand Collection</h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="cart.html">Cart</a>
+            <a href="cart.html">Cart</a><sup id="total-cart-items"> </sup>
             <a href="about-us.html">About Us</a>
         </nav>
     </header>
@@ -209,7 +210,8 @@
         <p>&copy; 2024 Brand. All rights reserved.</p>
     </footer>
     <script>
-              document.addEventListener("DOMContentLoaded",function(){
+    
+    document.addEventListener("DOMContentLoaded",function(){
             AOS.init(
                 {
                     once:false,
@@ -222,7 +224,7 @@
 
     </script>
 
-    <script src="app.js"></script>
+   
    
 </body>
 </html>

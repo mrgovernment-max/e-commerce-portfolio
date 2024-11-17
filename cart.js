@@ -27,6 +27,7 @@ function loadCart() {
   localStorage.setItem("total", JSON.stringify(total));
   document.querySelector(".cart-items").innerHTML = cartHTML;
   document.getElementById("totalAmount").innerText = total.toFixed(2);
+  displayTotalitemsincart();
 }
 // Function to remove an item from the cart
 function removeFromCart(index) {
@@ -34,6 +35,7 @@ function removeFromCart(index) {
   cart = cart.filter((_, i) => i !== index);
   localStorage.setItem("cart", JSON.stringify(cart));
   loadCart(); // Reload the cart to reflect the changes
+  displayTotalitemsincart();
 }
 
 // Load cart items on page load
@@ -62,4 +64,11 @@ function handlePayment(event) {
         : (window.location.href = "bank-transfer.html");
       break;
   }
+}
+
+function displayTotalitemsincart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartTotal = Object.entries(cart).length;
+  const domDisplaycartTota = document.getElementById("total-cart-items");
+  domDisplaycartTota.innerHTML = cartTotal;
 }

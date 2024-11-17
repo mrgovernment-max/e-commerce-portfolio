@@ -11,6 +11,7 @@ function addToCart(productName, productPrice, imagesrc, quantity, size) {
   alert(
     `${quantity} [${size}] ${productName}(s) have been added to your cart!`
   );
+  displayTotalitemsincart();
 }
 function filterProducts() {
   // Temporarily disable AOS
@@ -33,3 +34,11 @@ function filterProducts() {
   // Re-enable AOS after filtering the products
   AOS.refresh({ disable: false });
 }
+
+function displayTotalitemsincart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartTotal = Object.entries(cart).length;
+  const domDisplaycartTota = document.getElementById("total-cart-items");
+  domDisplaycartTota.innerHTML = cartTotal;
+}
+window.onload = displayTotalitemsincart;
