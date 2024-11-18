@@ -4,81 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Our Brand</title>
-    <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="cart.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif; 
-            line-height: 1.6; 
-            margin: 0; 
-            padding: 20px; 
-            background-color: #000000da; 
-        }
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #b4b8bca1;
+    color: #333;
+}
 
-        header {
-            text-align: center; 
-            margin-bottom: 40px; 
-        }
+header, footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        h1 {
-            font-size: 2.5em; 
-            color: #ffffff; 
-        }
+header{
+    margin-bottom: 45px;
+}
 
-        .about-container {
-            max-width: 800px; 
-            margin: 0 auto; 
-            background-color: black; 
-            padding: 20px; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-        }
 
-        h2 {
-            font-size: 1.8em; 
-            color: #007BFF; 
-            margin-top: 20px; 
-        }
+nav {
+    margin-top: 1em;
+}
 
-        p {
-            margin: 15px 0; 
-            color: #555; 
-        }
+nav a {
+    color: #fff;
+    margin: 0 1em;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-        .mission {
-            background-color: #e7f3ff; 
-            border-left: 5px solid #007BFF; 
-            padding: 10px 15px; 
-            margin:0; 
-        }
+nav a:hover {
+    color: #ff6f61;
+}
 
-        /* Pulsing Animation */
-        .badge {
-            position: relative;
-            background-color: transparent; 
-            color: #007BFF; 
-            border-image: linear-gradient(to right, red,blue,yellow)1 1 1 1;
-            padding: 10px 20px; 
-            font-size: 1.5em; 
-            margin-top: 30px; 
-            text-align: center; 
-            
-           
-        }
-        .badgee{
-            animation-name: revealName;
-            font-weight: bold;
-            opacity: 0;
-            transform: scale(0.5) rotateX(90deg) ;
-            animation: revealName 2.5s ease-out forwards;
-           
-        }
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
 
-        
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-        
+h2 {
+    font-size: 1.8em;
+    color: #007BFF;
+    margin-top: 20px;
+}
+
+p {
+    margin: 15px 0;
+    color: #555;
+}
+
+.mission {
+    background-color: #e7f3ff;
+    border-left: 5px solid #007BFF;
+    padding: 10px 15px;
+    margin: 0;
+}
+
+/* Pulsing Animation */
+.badge {
+    position: relative;
+    background-color: transparent;
+    color: #007BFF;
+    border-image: linear-gradient(to right, red, blue, yellow) 1 1 1 1;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.badgee {
+    animation-name: revealName;
+    font-weight: bold;
+    opacity: 0;
+    transform: scale(0.5) rotateX(90deg);
+    animation: revealName 2.5s ease-out forwards;
+}
+
 @keyframes revealName {
     0% {
         opacity: 0;
@@ -94,25 +114,62 @@
     }
 }
 
-        
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #ffffff;
+}
 
-        footer {
-            text-align: center; 
-            margin-top: 40px; 
-            color: #ffffff; 
-        }
+footer p {
+    color: #ffffff;
+}
 
-        footer p{
-            color: #ffffff;
-        }
+.contact-section {
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+    margin-top: 5%;
+}
 
-        #total-cart-items{
-            transition: 1s ease;
-            font-weight: 200;
-            font-size: larger;
-            color: #007BFF;
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-        }
+.contact-form input, .contact-form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+input:valid {
+    border: 4px solid #0056b3;
+}
+
+#textarea:valid:not(:placeholder-shown) {
+    border: 4px solid #0056b3;
+}
+
+#total-cart-items {
+    transition: 1s ease;
+    font-weight: 200;
+    font-size: larger;
+    color: #007BFF;
+}
+
     </style>
 </head>
 <body>
