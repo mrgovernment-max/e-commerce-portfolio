@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand</title>
     <script src="cart.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css">
@@ -50,11 +52,11 @@
 
   <h2 class="selections">IT'S ALL HERE</h2>
   <div class="selection">
-    <a href="products.html">SNEAKERS</a>
-    <a href="products.html">SPORTS</a>
-    <a href="products.html">FASHION</a>
-    <a href="products.html">FANCY</a>
-    <a href="products.html">HARD &#128293;</a>
+    <a href="products.html" data-aos="fade-right">SNEAKERS</a>
+    <a href="products.html" data-aos="fade-right" >SPORTS</a>
+    <a href="products.html" data-aos="fade-up">FASHION</a>
+    <a href="products.html" data-aos="fade-left">FANCY</a>
+    <a href="products.html" data-aos="fade-left">HARD &#128293;</a>
 
   </div>
     
@@ -69,6 +71,18 @@
         import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
       </script>
 <script>
+
+document.addEventListener("DOMContentLoaded",function(){
+            AOS.init(
+                {
+                    once:false,
+                    easing:'ease-in-out',
+                    mirror:true,
+                    duration:700
+                }
+            )
+            AOS.refresh()
+        })
 
 const swiper = new Swiper('.swiper', {
   // Optional parameters
