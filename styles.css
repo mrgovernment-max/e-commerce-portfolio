@@ -17,6 +17,25 @@ header, footer {
     z-index: 1000;
 }
 
+footer i{
+    font-size: calc(2rem + 2vh);
+    margin: 1rem;
+}
+
+
+#logo{
+    width: 7%;
+    height: auto;
+    float: left;
+    margin-left: 2%;
+}
+#logo img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
 nav {
     margin-top: 1em;
 }
@@ -146,6 +165,40 @@ h1, h2, h3, p {
     padding: 20px;
     border-radius: 30px;
     margin-top: 2%;
+}
+
+.selections{
+    color: #ccc;
+    font-size: 34px;
+    text-align: center;
+    word-spacing: 20px;
+    margin-top: 2%;
+}
+
+.selection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2%;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+}
+.selection a{
+    background-color: #007BFF;
+    padding:20px 40px;
+    text-decoration: line-through;
+    border-radius: 20px;
+    border:2px solid skyblue ;
+    margin: 1rem;
+}
+
+.selection a:hover{
+    background-color: skyblue;
+    text-decoration: none;
+    transition: 0.5s ease;
+    color: black;
+  
 }
 
 
