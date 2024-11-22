@@ -27,6 +27,7 @@ footer i{
     width: 7%;
     height: auto;
     float: left;
+    position:relative;
     margin-left: 2%;
 }
 #logo img{
