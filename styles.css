@@ -22,21 +22,6 @@ footer i{
     margin: 1rem;
 }
 
-
-#logo{
-    width: 7%;
-    height: auto;
-    float: left;
-    position:relative;
-    margin-left: 2%;
-}
-#logo img{
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-}
-
 nav {
     margin-top: 1em;
 }
