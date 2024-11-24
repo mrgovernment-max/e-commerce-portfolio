@@ -75,6 +75,21 @@ function handlePayment(event) {
 function displayTotalitemsincart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const cartTotal = cart.length; // Get the number of items in the cart
+  if (cartTotal == 0) {
+    const clearcart = document.getElementById("clearCart-btn");
+    clearcart.style.display = "none";
+  } else {
+    clearcart.style.display = "block";
+  }
+
   const domDisplaycartTotal = document.getElementById("total-cart-items");
   domDisplaycartTotal.innerHTML = cartTotal;
+}
+
+function clearCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(0, cart.length);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart(); // Reload the cart to reflect the changes
+  displayTotalitemsincart(); // Update the cart item count
 }

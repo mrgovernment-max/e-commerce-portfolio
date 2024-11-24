@@ -40,10 +40,19 @@ nav {
     margin-top: 1em;
 }
 
+nav a i{
+    font-size: 35px;
+    
+}
+
+nav a i sup{
+    font-size: 2px;
+}
+
 nav a
  {
     color: #fff;
-    margin: 0 1em;
+    margin: 0 2em;
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
@@ -67,6 +76,7 @@ h1, h2, h3, p {
     background-size: cover;
     background-position: center;
     height: 80vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -421,6 +431,18 @@ footer {
     margin-top: 2em;
     font-size: 1.2em;
     font-weight: 900px;
+}
+
+.cart-total button{
+    padding: 15px 20px;
+    font-weight: 900;
+    margin-left: 1%;
+    border: 2px solid white;
+    color: red;
+    background-color: #000000;
+    margin-bottom: 20px;
+    border-radius: 20px;
+
 }
 
 

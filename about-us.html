@@ -80,40 +80,17 @@ p {
     padding: 10px 15px;
     margin: 0;
 }
-
-/* Pulsing Animation */
-.badge {
-    position: relative;
-    background-color: transparent;
-    color: #007BFF;
-    border-image: linear-gradient(to right, red, blue, yellow) 1 1 1 1;
-    padding: 10px 20px;
-    font-size: 1.5em;
-    margin-top: 30px;
-    text-align: center;
+#logo{
+    width: 7%;
+    height: auto;
+    float: left;
+    margin-left: 2%;
 }
-
-.badgee {
-    animation-name: revealName;
-    font-weight: bold;
-    opacity: 0;
-    transform: scale(0.5) rotateX(90deg);
-    animation: revealName 2.5s ease-out forwards;
-}
-
-@keyframes revealName {
-    0% {
-        opacity: 0;
-        transform: scale(0.5) rotateX(90deg) translateX(150%);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.1) rotateX(45deg);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) rotateX(0);
-    }
+#logo img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
 }
 
 footer {
@@ -182,20 +159,19 @@ input:valid {
 </head>
 <body>
     <header>
+        <div id="logo"><img src="images/logo.webp" alt="logo"></div>
         <h1>About Us</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="cart.html">Cart</a><sup id="total-cart-items"> </sup>
-            <a href="about-us.html">About Us</a>
+            <a href="index.html"><i class="fa-solid fa-house" style="color: #74C0FC;"></i></a>
+            <a href="products.html"><i class="fa-solid fa-bag-shopping" style="color: #74C0FC;"></i></a>
+            <a href="cart.html"> <i class="fa-solid fa-cart-shopping" style="color: #74C0FC;"></i> <sup id="total-cart-items"></sup></a>
+            <a href="about-us.html"><i class="fa-solid fa-user" style="color: #74C0FC;"></i></a>
         </nav>
     </header>
 
     <div class="about-container" data-aos="flip-left"
     data-aos-easing="ease-out-cubic"
     data-aos-duration="2000">
-        <!-- Unique Pulsing Badge for Your Name -->
-        <button class="badge" data-aos="fade-right" data-aos-delay="850">Who created this masterpiece? Click to find out!</button>
         <h2>Our Story</h2>
         <p>
             Founded in 2024, Our Brand started with a simple vision: to create high-quality, stylish footwear that empowers individuals to express themselves. 

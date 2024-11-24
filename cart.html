@@ -18,12 +18,13 @@
 </head>
 <body>
     <header>
+        <div id="logo"><img src="images/logo.webp" alt="logo"></div>
         <h1>Checkout</h1>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="cart.html">Cart</a><sup id="total-cart-items"> </sup>
-                <a href="about-us.html">About Us</a>
+                <a href="index.html"><i class="fa-solid fa-house" style="color: #74C0FC;"></i></a>
+            <a href="products.html"><i class="fa-solid fa-bag-shopping" style="color: #74C0FC;"></i></a>
+            <a href="cart.html"> <i class="fa-solid fa-cart-shopping" style="color: #74C0FC;"></i> <sup id="total-cart-items"></sup></a>
+            <a href="about-us.html"><i class="fa-solid fa-user" style="color: #74C0FC;"></i></a>
             </nav>
     </header>
 
@@ -32,7 +33,8 @@
             <!-- Cart items will be dynamically added here -->
         </div>
         <div class="cart-total">
-            <h3>Total: $<span id="totalAmount">0</span></h3>
+            <h3>Total: $<span id="totalAmount">0</span></h3><br>
+            <button id="clearCart-btn" onclick="clearCart()">Clear Cart</button>
         </div>
 
         <!--payment section-->

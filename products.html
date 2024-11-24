@@ -8,15 +8,17 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="app.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a47fc389f5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
+        <div id="logo"><img src="images/logo.webp" alt="logo"></div>
         <h1>Our Brand Collection</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="cart.html">Cart</a><sup id="total-cart-items"> </sup>
-            <a href="about-us.html">About Us</a>
+            <a href="index.html"><i class="fa-solid fa-house" style="color: #74C0FC;"></i></a>
+            <a href="products.html"><i class="fa-solid fa-bag-shopping" style="color: #74C0FC;"></i></a>
+            <a href="cart.html"> <i class="fa-solid fa-cart-shopping" style="color: #74C0FC;"></i> <sup id="total-cart-items"></sup></a>
+            <a href="about-us.html"><i class="fa-solid fa-user" style="color: #74C0FC;"></i></a>
         </nav>
     </header>
 
@@ -257,7 +259,7 @@
         </select>
         <p>$205.00</p>
         <input type="number" id="Nike Dunk Lows-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('  Nike Dunk Lows', 95, './images/Nike Dunk Lows.jpg', document.getElementById('  Nike Dunk Lows-qty').value, document.querySelectorAll('.size-select')[10].value)">
+        <button class="add-to-cart-btn" onclick="addToCart('Nike Dunk Lows', 95, './images/Nike Dunk Lows.jpg', document.getElementById('Nike Dunk Lows-qty').value, document.querySelectorAll('.size-select')[10].value)">
             Add to Cart
         </button>
     </div>
@@ -272,7 +274,7 @@
         </select>
         <p>$205.00</p>
         <input type="number" id="High-cut Nike Jordans-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart('  High-cut Nike Jordans', 195, './images/High-cut Nike Jordans.jpg', document.getElementById('  High-cut Nike Jordans-qty').value, document.querySelectorAll('.size-select')[10].value)">
+        <button class="add-to-cart-btn" onclick="addToCart('High-cut Nike Jordans', 195, './images/High-cut Nike Jordans.jpg', document.getElementById('High-cut Nike Jordans-qty').value, document.querySelectorAll('.size-select')[10].value)">
             Add to Cart
         </button>
     </div>
@@ -286,8 +288,8 @@
             <option value="L">Large</option>
         </select>
         <p>$205.00</p>
-        <input type="number" id=" Pair of customized Nike Shoes-qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart(' Pair of customized Nike Shoes', 215, './images/Pair of customized Nike Shoes.jpg', document.getElementById('  Pair of customized Nike Shoes-qty').value, document.querySelectorAll('.size-select')[10].value)">
+        <input type="number" id="Pair of customized Nike Shoes-qty" value="1" min="1"><br>
+        <button class="add-to-cart-btn" onclick="addToCart('Pair of customized Nike Shoes', 215, './images/Pair of customized Nike Shoes.jpg', document.getElementById('Pair of customized Nike Shoes-qty').value, document.querySelectorAll('.size-select')[10].value)">
             Add to Cart
         </button>
     </div>
