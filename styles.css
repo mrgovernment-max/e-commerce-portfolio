@@ -433,16 +433,21 @@ footer {
     font-weight: 900px;
 }
 
-.cart-total button{
+#clearCart-btn{
     padding: 15px 20px;
     font-weight: 900;
     margin-left: 1%;
     border: 2px solid white;
     color: red;
-    background-color: #000000;
+    background-color: #1d1c1c;
     margin-bottom: 20px;
     border-radius: 20px;
 
+}
+
+#clearCart-btn:hover{
+    background-color: #000000;
+    cursor: pointer;
 }
 
 
