@@ -169,3 +169,18 @@ button:active, .add-to-cart-btn:active {
     animation: fadeIn 1s ease-out;
 }
 
+
+footer i{
+    font-size: calc(2rem + 2vh);
+    margin: 1rem;
+}
+
+footer {
+    background-color: #9c989862;
+    color: #000000;
+    text-align: center;
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
