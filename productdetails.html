@@ -54,7 +54,7 @@
     </div>
     <div id="price">
         <h2>PRICE</h2>
-        <p id="productPrice"> $150 </p>
+        <p id="productPrice"> </p>
         <select class="size-select">
             <option value="S">Small</option>
             <option value="M">Medium</option>
@@ -127,8 +127,7 @@ document.getElementById("avail").innerHTML = availability
 document.getElementById("brandimg").setAttribute('src',brandimg)
 document.getElementById("brandinfo").innerHTML = brandinfo
 document.getElementById("productName").innerHTML = name
-document.getElementById("productPrice").innerHTML = price
-console.log(rating,info,availability,brandimg,brandinfo,name,price)
+document.getElementById("productPrice").innerHTML = `$${price}`
 });
 
 //add product to cart
