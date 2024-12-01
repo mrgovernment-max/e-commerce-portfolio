@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="productdetails.css">
+    <script src="app.js"></script>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+     <!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img id="img1" src="" alt="img"></div>
+      <div class="swiper-slide"><img id="img2" src="" alt="img"></div>
+      <div class="swiper-slide"><img id="img3" src="" alt="img"></div>
+      <div class="swiper-slide"><img id="img4" src="" alt="img"></div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+
+  </div>
+
+  <div id="details">
+    <div id="ratings">
+        <h2>RATINGS</h2><br>
+        🔥🔥🔥🔥 <p id="rate"></p>
+    </div>
+    <div id="infos">
+        <h2>INFO</h2><br>
+       <b id="productName"></b> <br>
+       <p id="info"> </p>
+    </div>
+    <div id="price">
+        <h2>PRICE</h2>
+        <p id="productPrice"> $150 </p>
+        <select class="size-select">
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+        </select>
+        <input type="number" id="qty" value="1" min="1"><br>
+        <button class="add-to-cart-btn" onclick="addToCart(document.getElementById('productName').innerHTML,document.getElementById('productPrice').innerHTML, document.getElementById('img1').getAttribute('src'), document.getElementById('qty').value, document.querySelectorAll('.size-select')[0].value)">
+            Add to Cart
+        </button>
+    </div>
+    <div id="availability">
+        <h2>AVAILABILITY</h2>
+        <p id="avail"></p>
+    </div>
+    <div id="brand">
+        <h2>BRAND</h2> <br>
+        <img id="brandimg" src="" alt="">
+        <p id="brandinfo"></p>
+    </div>
+</div>
+
+ 
+<footer>
+    <p>&copy; 2024 Brand. All rights reserved.</p>
+    <a href="index.html"><i class="fa-brands fa-snapchat fa-spin fa-spin-reverse" style="color: #74C0FC;"></i></a>
+    <a target="_blank" href="https://www.instagram.com/_idonmindit/"><i class="fa-brands fa-instagram fa-spin" style="color: #74C0FC;"></i></a>
+    <a target="_blank" href=""><i class="fa-brands fa-x-twitter fa-spin" style="color: #74C0FC;"></i></a>
+</footer>
+<script>
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  autoplay: {
+        delay: 1500, // Auto-slide every 3 seconds
+        disableOnInteraction: false,
+      },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable:true,
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  
+// On the product details page, retrieving the stored data
+const img1 = localStorage.getItem("img1");
+const img2 = localStorage.getItem("img2");
+const img3 = localStorage.getItem("img3");
+const img4 = localStorage.getItem("img4");
+const rating = localStorage.getItem("rating");
+const info = localStorage.getItem("info");
+const availability = localStorage.getItem("availability");
+const brandimg = localStorage.getItem("brandimg");
+const brandinfo = localStorage.getItem("brandinfo");
+const name = localStorage.getItem("name");
+const price = localStorage.getItem("price");
+
+
+document.getElementById("img1").setAttribute('src',img1)
+document.getElementById("img2").setAttribute('src',img2)
+document.getElementById("img3").setAttribute('src',img3)
+document.getElementById("img4").setAttribute('src',img4)
+document.getElementById("rate").innerHTML = rating
+document.getElementById("info").innerHTML = info
+document.getElementById("avail").innerHTML = availability
+document.getElementById("brandimg").setAttribute('src',brandimg)
+document.getElementById("brandinfo").innerHTML = brandinfo
+document.getElementById("productName").innerHTML = name
+document.getElementById("productPrice").innerHTML = price
+console.log(rating,info,availability,brandimg,brandinfo,name,price)
+});
+
+//add product to cart
+
+  function addToCart(productName, productPrice, imagesrc, quantity, size) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({
+    name: productName,
+    price: productPrice,
+    image: imagesrc,
+    quantity: quantity,
+    size: size,
+  });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(
+    `${quantity} [${size}] ${productName}(s) have been added to your cart!`
+  );
+  displayTotalitemsincart();
+}
+
+
+
+    </script>
+</body>
+</html>

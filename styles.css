@@ -308,6 +308,10 @@ footer {
     border-radius: 10px; 
 }
 
+.product-item img:hover{
+    cursor: pointer;
+}
+
 .product-item h3 {
     font-size: 1.25em; 
     margin: 10px 0;
@@ -504,4 +508,22 @@ footer{
     font-weight: 200;
     font-size: larger;
     color: #007BFF;
+}
+
+/*Product -details-section*/
+#details-main{
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+    
+}
+
+#img1{
+    margin: auto;
+    background-color: #007BFF;
+    width: 50%;
+    position: relative;
+    height: 50%;
+    margin-top: 5%;
+
 }
