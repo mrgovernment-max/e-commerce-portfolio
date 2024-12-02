@@ -158,6 +158,7 @@ h1, h2, h3, p {
 @media (max-width:750px) {
     .swiper {
         width: 90%;
+        border: transparent;
     }
 }
 
