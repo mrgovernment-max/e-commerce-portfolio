@@ -274,7 +274,6 @@ footer {
 .product-item {
     background-color: transparent; 
     border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px; 
     margin: 20px;
     text-align: center; 
@@ -304,6 +303,7 @@ footer {
 
 .product-item img {
     object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     height: auto; 
     border-radius: 10px; 
@@ -311,17 +311,19 @@ footer {
 
 .product-item img:hover{
     cursor: pointer;
+    width:110% ;
+    transition:  0.5s;
 }
 
 .product-item h3 {
     font-size: 1.25em; 
     margin: 10px 0;
-    color: #ffffff; 
+    color: #000000; 
 }
 
 .product-item p {
     font-size: 1em; 
-    color: #fff; 
+    color: #000000; 
 }
 
 .product-item input[type="number"] {
