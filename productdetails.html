@@ -25,55 +25,62 @@
 </header>
 
 
-     <!-- Slider main container -->
+<div id="hero">
+
+       <!-- Slider main container -->
 <div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><img id="img1" src="" alt="img"></div>
-      <div class="swiper-slide"><img id="img2" src="" alt="img"></div>
-      <div class="swiper-slide"><img id="img3" src="" alt="img"></div>
-      <div class="swiper-slide"><img id="img4" src="" alt="img"></div>
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img id="img1" src="" alt="img"></div>
+    <div class="swiper-slide"><img id="img2" src="" alt="img"></div>
+    <div class="swiper-slide"><img id="img3" src="" alt="img"></div>
+    <div class="swiper-slide"><img id="img4" src="" alt="img"></div>
   </div>
-  <div id="details">
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
 
-    <div id="infos">
-      <h2>INFO</h2><br>
-     <b id="productName"></b> <br>
-     <p id="info"> </p>
+
+</div>
+<div id="details">
+
+  <div id="infos">
+    <h2>INFO</h2><br>
+   <b id="productName"></b> <br>
+   <p id="info"> </p>
+</div>
+
+  <div id="price">
+      <h2>PRICE</h2>
+      <p id="productPrice"> </p>
+      <select class="size-select">
+          <option value="S">Small</option>
+          <option value="M">Medium</option>
+          <option value="L">Large</option>
+      </select>
+      <input type="number" id="qty" value="1" min="1"><br>
+      <button class="add-to-cart-btn" onclick="addToCart(document.getElementById('productName').innerHTML,document.getElementById('productPrice').innerHTML, document.getElementById('img1').getAttribute('src'), document.getElementById('qty').value, document.querySelectorAll('.size-select')[0].value)">
+          Add to Cart
+      </button>
   </div>
 
-    <div id="ratings">
-        <h2>RATINGS</h2><br>
-        🔥🔥🔥🔥 <p id="rate"></p>
-    </div>
-    <div id="price">
-        <h2>PRICE</h2>
-        <p id="productPrice"> </p>
-        <select class="size-select">
-            <option value="S">Small</option>
-            <option value="M">Medium</option>
-            <option value="L">Large</option>
-        </select>
-        <input type="number" id="qty" value="1" min="1"><br>
-        <button class="add-to-cart-btn" onclick="addToCart(document.getElementById('productName').innerHTML,document.getElementById('productPrice').innerHTML, document.getElementById('img1').getAttribute('src'), document.getElementById('qty').value, document.querySelectorAll('.size-select')[0].value)">
-            Add to Cart
-        </button>
-    </div>
-    <div id="availability">
-        <h2>AVAILABILITY</h2>
-        <p id="avail"></p>
-    </div>
-    <div id="brand">
-        <h2>BRAND</h2> <br>
-        <img id="brandimg" src="" alt="">
-        <p id="brandinfo"></p>
-    </div>
+  <div id="ratings">
+    <h2>RATINGS</h2><br>
+    🔥🔥🔥🔥 <p id="rate"></p>
+</div>
+
+  <div id="availability">
+      <h2>AVAILABILITY</h2>
+      <p id="avail"></p>
+  </div>
+  <div id="brand">
+      <h2>BRAND</h2> <br>
+      <img id="brandimg" src="" alt="">
+      <p id="brandinfo"></p>
+  </div>
+</div>
+
+
 </div>
 
  
@@ -127,7 +134,7 @@ document.getElementById("avail").innerHTML = availability
 document.getElementById("brandimg").setAttribute('src',brandimg)
 document.getElementById("brandinfo").innerHTML = brandinfo
 document.getElementById("productName").innerHTML = name
-document.getElementById("productPrice").innerHTML = `$${price}`
+document.getElementById("productPrice").innerHTML = price
 });
 
 //add product to cart
