@@ -167,6 +167,7 @@ input[type="number"], select {
     border: 1px solid #ddd;
     width: 50%;
     text-align: center;
+    margin-bottom: 1rem;
     font-size: 1rem;
 }
 
@@ -189,6 +190,7 @@ button, .add-to-cart-btn {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     margin-top: 10px;
+    margin-bottom: 1rem;
 }
 
 button:hover, .add-to-cart-btn:hover {
