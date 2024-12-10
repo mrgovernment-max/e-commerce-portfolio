@@ -9,15 +9,15 @@
     <script src="cart.js"></script>
     <script src="https://kit.fontawesome.com/a47fc389f5.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000000a1;
-            color: #333;
+ body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000a1;
+    color: #333;
         }
 
-        header, footer {
+ header, footer {
     background-color: #05194e; 
     color: #ffffff; 
     text-align: center;
@@ -70,136 +70,271 @@ h1, h2, h3, p {
     padding: 0;
 }
 
-        /* Hero Section */
-        #hero {
-            width: 100%;
-            height: 100vh;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 0;
-            margin-bottom: 3%;
-            align-items: center;
-        }
+/* Hero Section */
+#hero {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 3%;
+    align-items: center;
+}
 
-        #about-us-des {
-            width: 40%;
-            height: 350px;
-            border-radius: 50px;
-            margin: 1% 1% 1% 3%;
-            font-family: cursive;
-            position: relative;
-            background-image: url("https://media.istockphoto.com/id/1163589059/photo/about-us.jpg?s=612x612&w=0&k=20&c=xiAumkYaKpQc3xepslDpn-lFhYPae6ivX_rRkgSXJgs=");
-            text-align: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            overflow: hidden;
-            transition: 0.6s ease-in-out;
-        }
+#about-us-des {
+    width: 40%;
+    height: 350px;
+    border-radius: 50px;
+    margin: 1% 1% 1% 3%;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    background-image: url("https://media.istockphoto.com/id/1163589059/photo/about-us.jpg?s=612x612&w=0&k=20&c=xiAumkYaKpQc3xepslDpn-lFhYPae6ivX_rRkgSXJgs=");
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-name: fadeInn;
+    animation-duration: 1s;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+}
 
-        #about-us-des:hover {
-            background-image: url("https://media.istockphoto.com/id/1400739452/vector/about-us-web-header-design-icon-interconnected-symbol-of-company-profile-corporate.jpg?s=612x612&w=0&k=20&c=-zgp-xnEqh8zBEjNajlPZmDF5PXuqlXVUu7RjBf_UGU=");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+#about-us-des:hover {
+    background-image: url("https://media.istockphoto.com/id/1400739452/vector/about-us-web-header-design-icon-interconnected-symbol-of-company-profile-corporate.jpg?s=612x612&w=0&k=20&c=-zgp-xnEqh8zBEjNajlPZmDF5PXuqlXVUu7RjBf_UGU=");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-        #about-us-des:hover #about-ustext h2 {
-            color: rgb(69, 152, 165);
-            transition: 0.6s;
-        }
+#about-us-des:hover #about-ustext h2 {
+    color: rgb(69, 152, 165);
+    transition: 0.6s;
+}
 
-        #about-us-des:hover #about-ustext p {
-            color: white;
-            transition: 0.6s;
-        }
+#about-us-des:hover #about-ustext p {
+    color: white;
+    transition: 0.6s;
+}
 
-        #about-us-des::before {
-            content: '';
-            top: 0;
-            left: 0;
-            position: absolute;
-            width: 100%;
-            height: 350px;
-            background-color: rgb(0, 0, 0, 0.7);
-            z-index: 1;
-            border-radius: 50px;
-        }
+#about-us-des::before {
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 350px;
+    background-color: rgb(0, 0, 0, 0.7);
+    z-index: 1;
+    border-radius: 50px;
+}
 
-        #about-us-des h2 {
-            font-weight: 900;
-            font-size: 40px;
-            position: relative;
-            color: white;
-            z-index: 5;
-            margin: 20px;
-        }
+#about-us-des h2 {
+    font-weight: 900;
+    font-size: 40px;
+    position: relative;
+    color: white;
+    z-index: 5;
+    margin: 20px;
+}
 
-        #about-us-des p {
-            z-index: 5;
-            position: relative;
-            color: #babcc2d0;
-            margin: 5px;
-            padding: 0 10px;
-        }
+#about-us-des p {
+    z-index: 5;
+    position: relative;
+    color: #babcc2d0;
+    margin: 5px;
+    padding: 0 10px;
+}
 
-        #about-ustext {
-            top: 0;
-            position: absolute;
-            margin: 20px;
-        }
+#about-ustext {
+    top: 0;
+    position: absolute;
+    margin: 20px;
+}
 
-        #about-us-img {
-            width: 40%;
-            height: 350px;
-            border-radius: 50px;
-            margin: 1% 1% 1% 3%;
-            font-family: cursive;
-            position: relative;
-            background-image: url("https://img-musesai.163264.com/pic/202410/ImRNyJEcb7uf.jpg");
-            text-align: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+#about-us-img {
+    width: 40%;
+    height: 350px;
+    border-radius: 50px;
+    margin: 1% 1% 1% 3%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    background-image: url("https://img-musesai.163264.com/pic/202410/ImRNyJEcb7uf.jpg");
+    text-align: center;
+    background-repeat: no-repeat;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    background-size: cover;
+}
 
-        #floor-section{
-            width: 100%;
-            background-image: url("https://static.vecteezy.com/system/resources/thumbnails/013/768/261/small_2x/team-writes-code-programming-for-app-or-website-vector.jpg");
-            height: 300px;
-            display: flex;
-            padding: 20px;
-            position: relative;
-            margin-top: 2%;
-            flex-wrap: wrap;
-        }
+@keyframes fadeIn {
+    from{
+        transform: translateX(250px);
+    }
+}
 
-        #floor-section::before{
-            content: '';
-            top: 0;
-            left: 0;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(0, 0, 0, 0.6);
-            z-index: 1;
-        }
+@keyframes fadeInn {
+    from{
+        transform: translateX(-250px);
+    }
+}
 
-        #floor-center{
-            width: 30%;
-            z-index: 5;
-            position: relative;
-            margin: auto;
-            border-radius: 50%;
-            padding: 20px;
-            height: 260px;
-            transition: 0.5s ease-in-out;
-            background-image: url("https://static.vecteezy.com/system/resources/thumbnails/007/559/606/small_2x/a-children-learning-coding-or-computer-programming-flat-illustration-coding-for-kids-basic-computer-programing-can-be-used-for-web-landing-page-social-media-promotion-etc-vector.jpg");
-        }
 
-        #floor-center:hover{
-            padding: 30px;
 
-        }
+#floor-section{
+    width: 95%;
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/013/768/261/small_2x/team-writes-code-programming-for-app-or-website-vector.jpg");
+    height: 300px;
+    margin: 1%;
+    display: flex;
+    padding: 20px;
+    margin-bottom: 5%;
+    position: relative;
+    margin-top: 2%;
+    flex-wrap: wrap;
+}
+
+#floor-section::before{
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+#floor-center{
+    width: 30%;
+    z-index: 5;
+    position: relative;
+    margin: auto;
+    border-radius: 50%;
+    padding: 20px;
+    height: 260px;
+    transition: 0.5s ease-in-out;
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/007/559/606/small_2x/a-children-learning-coding-or-computer-programming-flat-illustration-coding-for-kids-basic-computer-programing-can-be-used-for-web-landing-page-social-media-promotion-etc-vector.jpg");
+}
+
+#floor-center:hover{
+    animation-name: spin;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+            
+
+}
+
+@keyframes spin {
+    50%{transform:rotateY(360deg) 
+     translateY(-40px);
+    box-shadow: 5px 2px 80px 10px greenyellow;}
+            
+}
+
+#brand-display{
+    width: 95%;
+    margin: 1%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#brand-display video{
+    height: 260px;
+    width: 40%;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+#brand-display img{
+    height: 260px;
+    width: 40%;
+    padding: 20px;
+    border-radius: 30px;
+
+}
+
+#contact-form-section {
+    background-color: #161e27;
+    padding: 2em;
+    text-align: center;
+    border-radius: 15px;
+    margin: 2em auto;
+    max-width: 700px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form-section h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: #fffdfd;
+}
+
+#contact-form-section p {
+    font-size: 1em;
+    color: #ffffff;
+    margin-bottom: 1.5em;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #c4c4c4;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border: 4px solid #007BFF;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+#submit-btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+#submit-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
 
         footer {
             text-align: center;
@@ -232,10 +367,35 @@ h1, h2, h3, p {
             #about-us-img{
                 width: 90%;
             }
+            #floor-section{
+                background-image: url("https://www.mightycall.com/wp-content/uploads/2024/08/Blog-Area-Codes-800-833-888-etc.webp");
+            }
+
             #floor-center{
                 width: 90%;
             }
+
+            #brand-display video, #brand-display img{
+                width: 95%;
+            }
         }
+
+        @media (max-width: 768px) {
+    #contact-form-section {
+        padding: 1.5em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9em;
+    }
+
+    #submit-btn {
+        font-size: 0.9em;
+        padding: 0.7em 1.2em;
+    }
+}
+
 
 
     </style>
@@ -252,8 +412,8 @@ h1, h2, h3, p {
         </nav>
     </header>
 
-    <div id="hero">
-        <div id="about-us-des">
+    <div id="hero" >
+        <div id="about-us-des" data-aos="fade-right">
             <div id="about-ustext">
                 <h2>ABOUT US</h2>
                 <p>We are a passionate team dedicated to providing quality products and services.
@@ -263,7 +423,7 @@ h1, h2, h3, p {
             </div>
         </div>
 
-        <div id="about-us-img">
+        <div id="about-us-img" data-aos="flip-left">
             <h2>Developer</h2>
         </div>
     </div>
@@ -271,13 +431,46 @@ h1, h2, h3, p {
     <div id="floor-section">
 
         <div id="floor-center">
-
         </div>
-
     </div>
+
+    <section id="brand-display">
+        <img src="images/logo.webp" alt="sneakxlogo" >
+
+        <video src="images/brand-display.mp4" autoplay loop></video>
+
+    </section>
+
+    <section id="contact-form-section" data-aos="fade-up">
+        <h2>Contact Us</h2>
+        <p>Have questions or need assistance? Fill out the form below, and we'll get back to you as soon as possible!</p>
+        <form id="contact-form" action="#" method="post">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" id="submit-btn">Send Message</button>
+        </form>
+    </section>
+    
 
     <footer>
         <p>&copy; 2024 Our Brand. All rights reserved.</p>
+        <a  href="productdetails.html"><i class="fa-brands fa-snapchat fa-spin fa-spin-reverse" style="color: #74C0FC;"></i></a>
+        <a target="_blank" href="https://www.instagram.com/_idonmindit/"><i class="fa-brands fa-instagram fa-spin" style="color: #74C0FC;"></i></a>
+        <a target="_blank" href=""><i class="fa-brands fa-x-twitter fa-spin" style="color: #74C0FC;"></i></a>
     </footer>
 
     <script>
@@ -293,7 +486,7 @@ h1, h2, h3, p {
             AOS.init({
                 once: false,
                 easing: 'ease-in-out',
-                duration: 800,
+                duration: 860,
                 mirror: true
             });
             AOS.refresh();
