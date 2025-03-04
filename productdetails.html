@@ -134,7 +134,7 @@ document.getElementById("avail").innerHTML = availability
 document.getElementById("brandimg").setAttribute('src',brandimg)
 document.getElementById("brandinfo").innerHTML = brandinfo
 document.getElementById("productName").innerHTML = name
-document.getElementById("productPrice").innerHTML = price
+document.getElementById("productPrice").innerHTML =` $${price}`
 
 });
 
@@ -142,6 +142,7 @@ document.getElementById("productPrice").innerHTML = price
 
   function addToCart(productName, productPrice, imagesrc, quantity, size) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const price = localStorage.getItem("price");
   cart.push({
     name: productName,
     price: productPrice,
@@ -151,7 +152,7 @@ document.getElementById("productPrice").innerHTML = price
   });
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(
-    `${quantity} [${size}] ${productName}(s) have been added to your cart!`
+    `${quantity} [${size}] ${productName}(s) have been added to your cart! - $${price}`
   );
   displayTotalitemsincart();
 }

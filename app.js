@@ -9,7 +9,7 @@ function addToCart(productName, productPrice, imagesrc, quantity, size) {
   });
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(
-    `${quantity} [${size}] ${productName}(s) have been added to your cart!`
+    `${quantity} [${size}] ${productName}(s) have been added to your cart! - $${productPrice} `
   );
   displayTotalitemsincart();
 }
