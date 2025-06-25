@@ -63,7 +63,7 @@ function toggleStylesheet() {
                     </li>`
             );
 
-            show.innerHTML = see; // Display the generated HTML content in the tasks list
+            show.innerHTML = see;
         }
 
         // Run the displayTask function when the window loads
@@ -71,19 +71,19 @@ function toggleStylesheet() {
 
         // Function to remove a task from the completed tasks list
         function removeTask(index) {
-            const tasks = JSON.parse(localStorage.getItem('complete')); // Retrieve the 'complete' tasks array from localStorage
-            tasks.splice(index, 1); // Remove the task at the specified index
+            const tasks = JSON.parse(localStorage.getItem('complete')); 
+            tasks.splice(index, 1); 
 
-            localStorage.setItem('complete', JSON.stringify(tasks)); // Update localStorage with the modified tasks array
-            displayTask(); // Refresh the displayed tasks
+            localStorage.setItem('complete', JSON.stringify(tasks));
+            displayTask(); 
         }
 
-        // Function to clear all completed tasks
+       
         function clearCompleted() {
             const tasks = JSON.parse(localStorage.getItem('complete')); 
-            tasks.splice(0, tasks.length); // Clear all tasks by removing all elements in the array
+            tasks.splice(0, tasks.length); 
 
-            localStorage.setItem('complete', JSON.stringify(tasks)); // Update localStorage with the cleared tasks array
+            localStorage.setItem('complete', JSON.stringify(tasks));
             displayTask(); // Refresh the displayed tasks
         }
     </script>
