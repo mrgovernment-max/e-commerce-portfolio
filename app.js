@@ -8,8 +8,9 @@ function addToCart(productName, productPrice, imagesrc, quantity, size) {
     size: size,
   });
   localStorage.setItem("cart", JSON.stringify(cart));
+  const totalPrice = productPrice * quantity;
   alert(
-    `${quantity} [${size}] ${productName}(s) have been added to your cart! \n TOTAL - $${productPrice} `
+    `${quantity} [${size}] ${productName}(s) have been added to your cart! \n TOTAL - $${totalPrice} `
   );
   displayTotalitemsincart();
 }
