@@ -152,7 +152,7 @@ document.getElementById("productPrice").innerHTML =` $${price}`
   });
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(
-    `${quantity} [${size}] ${productName}(s) have been added to your cart! - $${price}`
+    `${quantity} [${size}] ${productName}(s) have been added to your cart! \n TOTAL - $${price}`
   );
   displayTotalitemsincart();
 }
