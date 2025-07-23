@@ -22,7 +22,7 @@
     <button onclick="toggleStylesheet()">Change Theme</button> 
     <div class="todo-app-main" data-aos="fade-right" data-aos-duration="900">
         <header>
-            <a href="completed task.html">Completed Tasks 🔗</a>
+            <a href="completed task.html" title="See completed Tasks">Completed Tasks 🔗</a>
         </header>
         <div class="to-do"  data-aos="fade-left" data-aos-duration="900">
             <h1>My To-Do List</h1>
@@ -82,7 +82,7 @@
             tasks.forEach((element, index) => {
                 showContent += `<li>
                     <span>${element}</span>
-                    <button class='add-to-complete-button' onclick="addTocomplete('${element}', ${index})">✅</button>
+                    <button title="Add to Completed Tasks" class='add-to-complete-button' onclick="addTocomplete('${element}', ${index})">✅</button>
                     <img 
                         class="remove-icon"
                         onclick="removeTask(${index})"
