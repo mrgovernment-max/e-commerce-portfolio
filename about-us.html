@@ -1,576 +1,637 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Our Brand</title>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="cart.js"></script>
-    <script src="https://kit.fontawesome.com/a47fc389f5.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/a47fc389f5.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
- body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('images/product-sam.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #000000a1;
-    color: #333;
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("images/product-sam.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #000000a1;
+        color: #333;
+      }
+
+      header,
+      footer {
+        background-color: #05194e;
+        width: auto;
+        color: #ffffff;
+        text-align: center;
+        padding: 1em 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      footer i {
+        font-size: calc(2rem + 2vh);
+        margin: 1rem;
+      }
+
+      #logo {
+        width: 5%;
+        height: auto;
+        float: left;
+        margin-left: 2%;
+      }
+      #logo img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+      }
+
+      nav a i {
+        font-size: 35px;
+      }
+
+      nav a i sup {
+        font-size: 2px;
+      }
+
+      nav a {
+        color: #ffffff;
+        margin: 0 0.5em;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      nav a:hover {
+        color: #00aced;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Hero Section */
+      #hero {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        margin-bottom: 3%;
+        align-items: center;
+      }
+
+      #about-us-des {
+        word-spacing: 5px;
+        width: 40%;
+        height: 500px;
+        border-radius: 50px;
+        margin: 1% 1% 1% 3%;
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+        background-image: url("https://media.istockphoto.com/id/1163589059/photo/about-us.jpg?s=612x612&w=0&k=20&c=xiAumkYaKpQc3xepslDpn-lFhYPae6ivX_rRkgSXJgs=");
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        animation-name: fadeInn;
+        animation-duration: 1s;
+        overflow: hidden;
+        transition: 0.6s ease-in-out;
+      }
+
+      #about-us-des:hover {
+        background-image: url("https://media.istockphoto.com/id/1400739452/vector/about-us-web-header-design-icon-interconnected-symbol-of-company-profile-corporate.jpg?s=612x612&w=0&k=20&c=-zgp-xnEqh8zBEjNajlPZmDF5PXuqlXVUu7RjBf_UGU=");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      #about-us-des:hover #about-ustext h2 {
+        color: rgb(69, 152, 165);
+        transition: 0.6s;
+      }
+
+      #about-us-des:hover #about-ustext p {
+        color: white;
+        transition: 0.6s;
+      }
+
+      #about-us-des::before {
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 0.7);
+        z-index: 1;
+        border-radius: 50px;
+      }
+
+      #about-us-des h2 {
+        font-weight: 900;
+        font-size: 40px;
+        position: relative;
+        color: white;
+        z-index: 5;
+        margin: 20px;
+      }
+
+      #about-us-des p {
+        z-index: 5;
+        position: relative;
+        color: #babcc2d0;
+        margin: 5px;
+        padding: 0 10px;
+      }
+
+      #about-ustext {
+        top: 0;
+        position: absolute;
+        margin: 20px;
+      }
+
+      #about-us-img {
+        width: 40%;
+        height: 500px;
+        border-radius: 50px;
+        margin: 1% 1% 1% 3%;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        position: relative;
+        background-image: url("https://img.freepik.com/free-vector/programming-concept-illustration_114360-1351.jpg?semt=ais_hybrid&w=740");
+        text-align: center;
+        background-repeat: no-repeat;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        background-size: cover;
+      }
+
+      @keyframes fadeIn {
+        from {
+          transform: translateX(250px);
+        }
+      }
+
+      @keyframes fadeInn {
+        from {
+          transform: translateX(-250px);
+        }
+      }
+
+      #floor-section {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+        margin-left: 1px;
+        gap: 20px;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 20px;
+      }
+
+      #floor-center,
+      #floor-center1,
+      #floor-center2 {
+        width: 40%;
+        height: 90px;
+        position: relative;
+        border: solid 2px white;
+        background-image: url("images/html.webp");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 200px;
+      }
+      #floor-center1 {
+        width: 40%;
+        height: 90px;
+        position: relative;
+        border: solid 2px white;
+        background-image: url("images/css.webp");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 200px;
+      }
+
+      #floor-center2 {
+        width: 50%;
+        height: 90px;
+        position: relative;
+        border: solid 2px white;
+        background-image: url("images/js.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 200px;
+      }
+
+      #floor-center p,
+      #floor-center1 p,
+      #floor-center2 p {
+        width: 70%;
+        margin: auto;
+        z-index: 100;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        position: relative;
+        font-size: 20px;
+        color: white;
+        word-wrap: break-word;
+        margin-top: 7%;
+      }
+
+      #floor-center::before,
+      #floor-center1::before,
+      #floor-center2::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+      }
+
+      #floor-center,
+      #floor-center1,
+      #floor-center2 {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      #floor-center:hover,
+      #floor-center1:hover,
+      #floor-center2:hover {
+        animation: pulse 1s ease-in-out;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.9;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      #brand-display video {
+        height: 360px;
+        width: 40%;
+        padding: 10px;
+        border-radius: 30px;
+      }
+
+      #brand-display img {
+        height: 360px;
+        width: 40%;
+        padding: 20px;
+        border-radius: 30px;
+      }
+
+      #contact-form-section {
+        background-color: #161e27;
+        padding: 2em;
+        text-align: center;
+        border-radius: 15px;
+        margin: 2em auto;
+        max-width: 700px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      #contact-form-section h2 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+        color: #fffdfd;
+      }
+
+      #contact-form-section p {
+        font-size: 1em;
+        color: #ffffff;
+        margin-bottom: 1.5em;
+      }
+
+      #contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: 100%;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .form-group label {
+        font-weight: bold;
+        margin-bottom: 0.5em;
+        color: #c4c4c4;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.8em;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1em;
+        color: #333;
+        background-color: #fff;
+        transition: border-color 0.3s ease-in-out;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border: 4px solid #007bff;
+        outline: none;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+      }
+
+      #submit-btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 0.8em 1.5em;
+        font-size: 1em;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, transform 0.2s;
+      }
+
+      #submit-btn:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        color: #ffffff;
+      }
+
+      footer p {
+        color: #ffffff;
+      }
+
+      i {
+        font-size: calc(2rem + 2vh);
+        margin: 1rem;
+        color: #e7f3ff;
+      }
+
+      #total-cart-items {
+        transition: 1s ease;
+        font-weight: 200;
+        font-size: larger;
+        color: #007bff;
+      }
+      /*rsponsiveness*/
+
+      @media (max-width: 800px) {
+        #about-us-des {
+          width: 90%;
+          height: 390px;
+        }
+        #about-us-img {
+          width: 90%;
+          height: 369px;
         }
 
- header, footer {
-    background-color: #05194e; 
-    width: auto;
-    color: #ffffff; 
-    text-align: center;
-    padding: 1em 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-footer i {
-    font-size: calc(2rem + 2vh);
-    margin: 1rem;
-}
-
-#logo {
-    width: 5%;
-    height: auto;
-    float: left;
-    margin-left: 2%;
-}
-#logo img {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-}
-
-nav a i {
-    font-size: 35px;
-}
-
-nav a i sup {
-    font-size: 2px;
-}
-
-nav a {
-    color: #ffffff; 
-    margin: 0 0.5em;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-nav a:hover {
-    color: #00aced; 
-}
-
-h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Hero Section */
-#hero {
-    width: 100%;
-    height: auto;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0;
-    margin-bottom: 3%;
-    align-items: center;
-}
-
-#about-us-des {
-    word-spacing: 5px;
-    width: 40%;
-    height: 500px;
-    border-radius: 50px;
-    margin: 1% 1% 1% 3%;
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    background-image: url("https://media.istockphoto.com/id/1163589059/photo/about-us.jpg?s=612x612&w=0&k=20&c=xiAumkYaKpQc3xepslDpn-lFhYPae6ivX_rRkgSXJgs=");
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation-name: fadeInn;
-    animation-duration: 1s;
-    overflow: hidden;
-    transition: 0.6s ease-in-out;
-}
-
-#about-us-des:hover {
-    background-image: url("https://media.istockphoto.com/id/1400739452/vector/about-us-web-header-design-icon-interconnected-symbol-of-company-profile-corporate.jpg?s=612x612&w=0&k=20&c=-zgp-xnEqh8zBEjNajlPZmDF5PXuqlXVUu7RjBf_UGU=");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#about-us-des:hover #about-ustext h2 {
-    color: rgb(69, 152, 165);
-    transition: 0.6s;
-}
-
-#about-us-des:hover #about-ustext p {
-    color: white;
-    transition: 0.6s;
-}
-
-#about-us-des::before {
-    content: '';
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0, 0.7);
-    z-index: 1;
-    border-radius: 50px;
-}
-
-#about-us-des h2 {
-    font-weight: 900;
-    font-size: 40px;
-    position: relative;
-    color: white;
-    z-index: 5;
-    margin: 20px;
-}
-
-#about-us-des p {
-    z-index: 5;
-    position: relative;
-    color: #babcc2d0;
-    margin: 5px;
-    padding: 0 10px;
-}
-
-#about-ustext {
-    top: 0;
-    position: absolute;
-    margin: 20px;
-}
-
-#about-us-img {
-    width: 40%;
-    height: 500px;
-    border-radius: 50px;
-    margin: 1% 1% 1% 3%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    position: relative;
-    background-image: url("https://img.freepik.com/free-vector/programming-concept-illustration_114360-1351.jpg?semt=ais_hybrid&w=740");
-    text-align: center;
-    background-repeat: no-repeat;
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    background-size: cover;
-}
-
-@keyframes fadeIn {
-    from{
-        transform: translateX(250px);
-    }
-}
-
-@keyframes fadeInn {
-    from{
-        transform: translateX(-250px);
-    }
-}
-
-
-#floor-section{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100vw;
-    margin-left: 1px;
-    gap: 20px;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 20px;
-}
-
-#floor-center,#floor-center1,#floor-center2{
-    width: 40%;
-    height: 90px;
-    position: relative;
-    border: solid 2px white;
-    background-image: url('images/html.webp');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 200px;
-}
-#floor-center1{
-    width: 40%;
-    height: 90px;
-    position: relative;
-    border: solid 2px white;
-    background-image: url('images/css.webp');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 200px;
-}
-
-#floor-center2{
-    width: 50%;
-    height: 90px;
-    position: relative;
-    border: solid 2px white;
-    background-image: url('images/js.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 200px;
-}
-
-#floor-center p,#floor-center1 p,#floor-center2 p{
-    width: 70%;
-    margin: auto;
-    z-index: 100;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: relative;
-    font-size: 20px;
-    color: white;
-    word-wrap: break-word;
-    margin-top: 7%;
-}
-
-
-
-#floor-center::before,#floor-center1::before,#floor-center2::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-}
-
-#floor-center, #floor-center1, #floor-center2 {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-#floor-center:hover, #floor-center1:hover, #floor-center2:hover {
-    animation: pulse 1s ease-in-out; 
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1); 
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.1); 
-        opacity: 0.9; 
-    }
-    100% {
-        transform: scale(1); 
-        opacity: 1;
-    }
-}
-
-
-
-
-#brand-display video{
-    height: 360px;
-    width: 40%;
-    padding: 10px;
-    border-radius: 30px;
-}
-
-#brand-display img{
-    height: 360px;
-    width: 40%;
-    padding: 20px;
-    border-radius: 30px;
-
-}
-
-#contact-form-section {
-    background-color: #161e27;
-    padding: 2em;
-    text-align: center;
-    border-radius: 15px;
-    margin: 2em auto;
-    max-width: 700px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-#contact-form-section h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-    color: #fffdfd;
-}
-
-#contact-form-section p {
-    font-size: 1em;
-    color: #ffffff;
-    margin-bottom: 1.5em;
-}
-
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    width: 100%;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.form-group label {
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: #c4c4c4;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8em;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1em;
-    color: #333;
-    background-color: #fff;
-    transition: border-color 0.3s ease-in-out;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border: 4px solid #007BFF;
-    outline: none;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
-}
-
-#submit-btn {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 0.8em 1.5em;
-    font-size: 1em;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s;
-}
-
-#submit-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #ffffff;
+        #floor-section {
+          display: grid;
+          grid-template-columns: 1fr;
         }
 
-        footer p {
-            color: #ffffff;
+        #floor-center,
+        #floor-center1,
+        #floor-center2 {
+          width: 90%;
         }
 
-        i {
-            font-size: calc(2rem + 2vh);
-            margin: 1rem;
-            color: #e7f3ff;
+        #brand-display video,
+        #brand-display img {
+          width: 95%;
         }
 
-        #total-cart-items {
-            transition: 1s ease;
-            font-weight: 200;
-            font-size: larger;
-            color: #007BFF;
+        #brand-display img {
+          height: 260px;
+          width: 90%;
+          padding: 20px;
+          border-radius: 30px;
         }
-        /*rsponsiveness*/
+      }
 
-        @media (max-width:800px) {
-            #about-us-des{
-                width: 90%;
-                height: 390px;
-            }
-            #about-us-img{
-                width: 90%;
-                height: 369px;
-            }
-
-            #floor-section{
-                display: grid;
-                grid-template-columns: 1fr ;
-            }
-
-            #floor-center,#floor-center1,#floor-center2{
-                width: 90%;
-            }
-
-            
-
-            #brand-display video, #brand-display img{
-                width: 95%;
-            }
-
-            #brand-display img{
-               height: 260px;
-               width: 90%;
-               padding: 20px;
-               border-radius: 30px;
-
-}
+      @media (max-width: 768px) {
+        #contact-form-section {
+          padding: 1.5em;
         }
 
-        @media (max-width: 768px) {
-    #contact-form-section {
-        padding: 1.5em;
-    }
+        .form-group input,
+        .form-group textarea {
+          font-size: 0.9em;
+        }
 
-    .form-group input,
-    .form-group textarea {
-        font-size: 0.9em;
-    }
+        #submit-btn {
+          font-size: 0.9em;
+          padding: 0.7em 1.2em;
+        }
+      }
 
-    #submit-btn {
-        font-size: 0.9em;
-        padding: 0.7em 1.2em;
-    }
-}
-
-#to-do{
-    color: white;
-}
-
-
-
+      #to-do {
+        color: white;
+      }
     </style>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HHT3SEEJE3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-HHT3SEEJE3"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'G-HHT3SEEJE3');
-</script>
+    gtag("config", "G-HHT3SEEJE3");
+  </script>
 
-<body>
+  <body>
     <header>
-        <div id="logo"><img src="images/logo.webp" alt="logo"></div>
-        <h1>About ME</h1>
-        <nav>
-            <a href="index.html"><i class="fa-solid fa-house" style="color: #74C0FC;"></i></a>
-            <a href="products.html"><i class="fa-solid fa-bag-shopping" style="color: #74C0FC;"></i></a>
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping" style="color: #74C0FC;"></i><sup id="total-cart-items"></sup></a>
-            <a href="about-us.html"><i class="fa-solid fa-user" style="color: #74C0FC;"></i></a>
-        </nav>
+      <div id="logo"><img src="images/logo.webp" alt="logo" /></div>
+      <h1>About ME</h1>
+      <nav>
+        <a href="index.html"
+          ><i class="fa-solid fa-house" style="color: #74c0fc"></i
+        ></a>
+        <a href="products.html"
+          ><i class="fa-solid fa-bag-shopping" style="color: #74c0fc"></i
+        ></a>
+        <a href="cart.html"
+          ><i class="fa-solid fa-cart-shopping" style="color: #74c0fc"></i
+          ><sup id="total-cart-items"></sup
+        ></a>
+        <a href="about-us.html"
+          ><i class="fa-solid fa-user" style="color: #74c0fc"></i
+        ></a>
+      </nav>
     </header>
 
-    <div id="hero" >
-        <div id="about-us-des" data-aos="fade-right">
-            <div id="about-ustext">
-                <h2>ABOUT ME</h2>
-                <p>I created this site in my free time as a personal project to showcase my web development skills. 
-                    Every aspect, from the design to the functionality, 
-                    was crafted with care to reflect my passion for coding and creating user-friendly websites.
-                     This project serves as a demonstration of my expertise in HTML, CSS, JavaScript, and other web technologies.
-
-                    Feel free to explore, and thank you for visiting! <br>Check my <a href="https://mrgovernment-max.github.io/devhub/">Other Projects</a>  
-                
-            </div>
+    <div id="hero">
+      <div id="about-us-des" data-aos="fade-right">
+        <div id="about-ustext">
+          <h2>ABOUT ME</h2>
+          <p>
+            I created this site in my free time as a personal project to
+            showcase my web development skills. Every aspect, from the design to
+            the functionality, was crafted with care to reflect my passion for
+            coding and creating user-friendly websites. This project serves as a
+            demonstration of my expertise in HTML, CSS, JavaScript, and other
+            web technologies. Feel free to explore, and thank you for visiting!
+            <br />Check my
+            <a href="https://mrgovernment-max.github.io/devhub/"
+              >Other Projects</a
+            >
+          </p>
         </div>
+      </div>
 
-        <div id="about-us-img" data-aos="flip-left">
-            <h2>Developer</h2>
-        </div>
+      <div id="about-us-img" data-aos="flip-left">
+        <h2>Developer</h2>
+      </div>
     </div>
     <div id="floor-section">
+      <div id="floor-center">
+        <p>Used to create the structure and layout of web pages</p>
+      </div>
 
-        <div id="floor-center">
-            
-            <p> Used to create the structure and layout of  web pages</p>
-        </div>
-
-            <div id="floor-center1">
-                <p>Styled the pages, ensuring a clean and responsive design</p>
-        </div>
-        <div id="floor-center2">
-            <p>Added interactivity and dynamic content to the website</p>
-    </div>
-
+      <div id="floor-center1">
+        <p>Styled the pages, ensuring a clean and responsive design</p>
+      </div>
+      <div id="floor-center2">
+        <p>Added interactivity and dynamic content to the website</p>
+      </div>
     </div>
 
     <section id="brand-display">
-        <img src="images/logo.webp" alt="sneakxlogo" >
+      <img src="images/logo.webp" alt="sneakxlogo" />
 
-        <video src="images/brand-display.mp4" autoplay loop></video>
-
+      <video src="images/brand-display.mp4" autoplay loop></video>
     </section>
 
     <section id="contact-form-section">
-        <h2>Contact ME</h2>
-        <p>Have questions or need assistance? Fill out the form below, and we'll get back to you as soon as possible!</p>
-        <form id="contact-form" action="#" method="post">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" id="submit-btn">Send Message</button>
-        </form>
+      <h2>Contact ME</h2>
+      <p>
+        Have questions or need assistance? Fill out the form below, and we'll
+        get back to you as soon as possible!
+      </p>
+      <form
+        id="contact-form"
+        action="https://e-commerce-form-backend.onrender.com/send"
+        method="post"
+      >
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Subject"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" id="submit-btn">Send Message</button>
+      </form>
     </section>
-    
 
     <footer>
-        <p>&copy; 2024 Our Brand. All rights reserved.</p>
-        <a target ="blamk" href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsnapchat.com%2Ft%2FMpSeMetz&data=05%7C02%7C24015084%40activatelearning.ac.uk%7C2a2986c3110e44e9ea5d08dd5c9846b8%7Cd0da4c4cf48e4668886b52b056507a5e%7C0%7C0%7C638768531271459496%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JbQ2GNcei9Zfz8%2FMuZN89OIWOoeQIRpbpNwfmFnHUrM%3D&reserved=0"><i class="fa-brands fa-snapchat fa-spin fa-spin-reverse" style="color: #74C0FC;"></i></a>
-        <a target="_blank" href="https://www.instagram.com/_idonmindit/"><i class="fa-brands fa-instagram fa-spin" style="color: #74C0FC;"></i></a>
-        <a target="_blank" href=""><i class="fa-brands fa-x-twitter fa-spin" style="color: #74C0FC;"></i></a>
+      <p>&copy; 2024 Our Brand. All rights reserved.</p>
+      <a
+        target="blamk"
+        href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsnapchat.com%2Ft%2FMpSeMetz&data=05%7C02%7C24015084%40activatelearning.ac.uk%7C2a2986c3110e44e9ea5d08dd5c9846b8%7Cd0da4c4cf48e4668886b52b056507a5e%7C0%7C0%7C638768531271459496%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JbQ2GNcei9Zfz8%2FMuZN89OIWOoeQIRpbpNwfmFnHUrM%3D&reserved=0"
+        ><i
+          class="fa-brands fa-snapchat fa-spin fa-spin-reverse"
+          style="color: #74c0fc"
+        ></i
+      ></a>
+      <a target="_blank" href="https://www.instagram.com/_idonmindit/"
+        ><i class="fa-brands fa-instagram fa-spin" style="color: #74c0fc"></i
+      ></a>
+      <a target="_blank" href=""
+        ><i class="fa-brands fa-x-twitter fa-spin" style="color: #74c0fc"></i
+      ></a>
     </footer>
 
     <script>
-        // Function to display the total number of items in the cart
-        (function displayTotalitemsincart() {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const cartTotal = cart.length; // Get the number of items in the cart
-            const domDisplaycartTotal = document.getElementById("total-cart-items");
-            domDisplaycartTotal.innerHTML = cartTotal;
-        })();
-
-        document.addEventListener("DOMContentLoaded", function() {
-            AOS.init({
-                once: false,
-                easing: 'ease-in-out',
-                duration: 860,
-                mirror: true
-            });
-            AOS.refresh();
+      // Function to display the total number of items in the cart
+      function displayTotalitemsincart() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartTotal = cart.length; // Get the number of items in the cart
+        const domDisplaycartTotal = document.getElementById("total-cart-items");
+        domDisplaycartTotal.innerHTML = cartTotal;
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          once: false,
+          easing: "ease-in-out",
+          duration: 860,
+          mirror: true,
         });
+        AOS.refresh();
+      });
     </script>
-</body>
+  </body>
 </html>
