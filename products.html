@@ -69,7 +69,7 @@
     </footer>
     <script>
       // Fetch products from  API
-      fetch("https://products-api-65f5.onrender.com/products")
+      fetch("https://products-api-2nk1.onrender.com/products")
         .then((res) => res.json())
         .then((products) => {
           const container = document.getElementById("productContainer");
@@ -92,11 +92,11 @@
     '${product.img_url_2}',
     '${product.img_url_3}',
     ${product.rating || 0},
-    '${(product.description || "").replace(/'/g, "\\'")}',
-    '${(product.availability || "").replace(/'/g, "\\'")}',
+    '${product.description.replace(/'/g, "\\'")}',
+    '${product.availability.replace(/'/g, "\\'")}',
     '${product.brand_img_url}',
-    '${(product.brand_description || "").replace(/'/g, "\\'")}',
-    '${(product.name || "").replace(/'/g, "\\'")}',
+    '${product.brand_description.replace(/'/g, "\\'")}',
+    '${product.name.replace(/'/g, "\\'")}',
     ${product.price || 0}
   )" />
 
