@@ -69,74 +69,70 @@
     </footer>
     <script>
       (async function LoadProductsData() {
-        // Fetch products from  API
-        const res = await fetch(
-          "https://products-api-2nk1.onrender.com/products"
-        );
+        const container = document.getElementById("productContainer");
+
+        // Show loading message first
+        container.innerHTML = `<h1 style="color: gray; font-size: 1.5rem;">Loading Products...</h1>`;
+
         try {
+          const res = await fetch(
+            "https://products-api-2nk1.onrender.com/products"
+          );
           const products = await res.json();
 
-          const container = document.getElementById("productContainer");
+          // Clear loading message
+          container.innerHTML = "";
 
           products.forEach((product) => {
             const safeName = product.name;
             const sizes = ["S", "M", "L"];
 
-            // Create product card
             const div = document.createElement("div");
             div.className = "product-item";
             div.setAttribute("data-name", product.name);
             div.setAttribute("data-aos", "fade-up");
 
             div.innerHTML = `
-                <img src="${product.img_url}" alt="${
-              product.name
-            }" loading="lazy"
-      onclick="productDetails(
-        '${product.img_url}',
-        '${product.img_url_1}',
-        '${product.img_url_2}',
-        '${product.img_url_3}',
-        ${product.rating || 0},
-        '${product.description}',
-        '${product.availability}',
-        '${product.brand_img_url}',
-        '${product.brand_description}',
-        '${product.name}',
-        ${product.price || 0}
-      )" />
-
-
-                <h3>${product.name}</h3>
-                <select class="size-select" id="size-select-${safeName}">
-                  ${sizes
-                    .map((size) => `<option value="${size}">${size}</option>`)
-                    .join("")}
-                </select>
-                <p>$${product.price}</p>
-                <input type="number" id="${safeName}-qty" value="1" min="1" /><br/>
-                <button class="add-to-cart-btn"
-                  onclick="
-                    addToCart(
-                      '${product.name}',
-                      ${product.price},
-                      '${product.img_url}',
-                      document.getElementById('${safeName}-qty').value,
-                      document.getElementById('size-select-${safeName}').value
-                    )
-                  ">
-                  Add to Cart
-                </button>
-              `;
+        <img src="${product.img_url}" alt="${product.name}" loading="lazy"
+          onclick="productDetails(
+            '${product.img_url}',
+            '${product.img_url_1}',
+            '${product.img_url_2}',
+            '${product.img_url_3}',
+            ${product.rating || 0},
+            '${product.description}',
+            '${product.availability}',
+            '${product.brand_img_url}',
+            '${product.brand_description}',
+            '${product.name}',
+            ${product.price || 0}
+          )" />
+        <h3>${product.name}</h3>
+        <select class="size-select" id="size-select-${safeName}">
+          ${sizes
+            .map((size) => `<option value="${size}">${size}</option>`)
+            .join("")}
+        </select>
+        <p>$${product.price}</p>
+        <input type="number" id="${safeName}-qty" value="1" min="1" /><br/>
+        <button class="add-to-cart-btn"
+          onclick="addToCart(
+            '${product.name}',
+            ${product.price},
+            '${product.img_url}',
+            document.getElementById('${safeName}-qty').value,
+            document.getElementById('size-select-${safeName}').value
+          )">
+          Add to Cart
+        </button>
+      `;
 
             container.appendChild(div);
           });
-        } catch {
-          (err) => {
-            console.error("Failed to load products:", err);
-            document.getElementById("productContainer").innerText =
-              "Failed to load products.";
-          };
+        } catch (err) {
+          console.error("Failed to load products:", err);
+          container.innerHTML =
+            "<h1 style='color: red;'>Failed to load products.</h1>";
         }
       })();
 
