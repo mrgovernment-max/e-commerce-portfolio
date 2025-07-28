@@ -47,6 +47,7 @@ window.addEventListener("load", function () {
   loadCart();
 });
 
+//Display the number of items in cart
 function displayTotalitemsincart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const cartTotal = cart.length; // Get the number of items in the cart
