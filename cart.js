@@ -23,7 +23,6 @@ function loadCart() {
                           onmouseout="this.src='./images/dustbin.jpg'">
                   </div>`;
     total += itemTotal;
-    console.log(cartItems);
   });
 
   // Save the total in localStorage
