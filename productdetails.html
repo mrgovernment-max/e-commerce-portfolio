@@ -176,10 +176,10 @@
 
       function addToCart(productName, productPrice, imagesrc, quantity, size) {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const price = localStorage.getItem("price");
+        const cleanPrice = parseFloat(productPrice.replace("$", "").trim());
         cart.push({
           name: productName,
-          price: price,
+          price: cleanPrice,
           image: imagesrc,
           quantity: quantity,
           size: size,
