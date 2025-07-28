@@ -47,9 +47,28 @@ window.addEventListener("load", function () {
   loadCart();
 });
 
+const stripe = Stripe(
+  "pk_live_51Rpsq2LRwcoOq8wgsLstZO5LcuIqjk7M54Kisklu5AbUHZfeC1r1RDaEA6bz7iq6eDxFiR7yqLGrx80PsGYmdqGt007D5oIJL3"
+);
 // Function to handle payment
 async function handlePayment() {
   const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  const res = await fetch(
+    "https://stripe-payment-qgss.onrender.com/create-checkout-session",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ cartItems }),
+    }
+  );
+
+  const session = await res.json();
+
+  const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+  if (result.error) {
+    alert(result.error.message);
+  }
 }
 
 function displayTotalitemsincart() {

@@ -49,14 +49,11 @@
         <!--payment section-->
         <div class="payment-options" data-aos="zoom-in" data-aos-delay="900">
             <h3>Select Payment Method(Backend will Be Integrated Soon):</h3>
-            <form id="paymentForm" onsubmit="handlePayment(event)">
-                <label>
-                    <input type="radio" name="paymentMethod" value="paypal"> PayPal
-                </label><br>
-                <label>
+            <form id="paymentForm" onsubmit="handlePayment()">
+                
                     <input type="radio" name="paymentMethod" value="bankTransfer"> Bank Transfer
                 </label><br>
-                <button type="submit" onclick="handlePayment(event) ">Pay Now</button>
+                <button type="submit" onclick="handlePayment() ">Pay Now</button>
             </form>
         </div>
     </main>
