@@ -66,7 +66,6 @@
       </div>
 
       <!--payment section-->
-      <
       <div class="payment-options" data-aos="zoom-in" data-aos-delay="900">
         <h3>Select Payment Method (Backend will be integrated soon):</h3>
         <form id="paymentForm">
@@ -96,6 +95,16 @@
     </footer>
   </body>
   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init({
+        once: false,
+        easing: "ease-in-out",
+        duration: 800,
+        mirror: true,
+      });
+      AOS.refresh();
+    });
+
     const stripe = Stripe(
       "pk_live_51Rpsq2LRwcoOq8wgsLstZO5LcuIqjk7M54Kisklu5AbUHZfeC1r1RDaEA6bz7iq6eDxFiR7yqLGrx80PsGYmdqGt007D5oIJL3"
     ); // initialize Stripe
@@ -104,6 +113,8 @@
       .getElementById("paymentForm")
       .addEventListener("submit", async (event) => {
         event.preventDefault(); // Stop normal form submit and page reload
+
+        // Optionally, check selected payment method here
 
         await handlePayment();
       });
@@ -128,15 +139,5 @@
         alert(result.error.message);
       }
     }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      AOS.init({
-        once: false,
-        easing: "ease-in-out",
-        duration: 800,
-        mirror: true,
-      });
-      AOS.refresh();
-    });
   </script>
 </html>
