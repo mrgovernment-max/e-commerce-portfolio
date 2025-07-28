@@ -1,83 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="cart.js"></script> 
+    <link rel="stylesheet" href="styles.css" />
+    <script src="cart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a47fc389f5.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/a47fc389f5.js"
+      crossorigin="anonymous"
+    ></script>
 
     <style>
-        body{background-color: black;
-        color: aliceblue;}
+      body {
+        background-color: black;
+        color: aliceblue;
+      }
     </style>
-    
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HHT3SEEJE3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-HHT3SEEJE3"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'G-HHT3SEEJE3');
-</script>
-<body>
+    gtag("config", "G-HHT3SEEJE3");
+  </script>
+  <body>
     <header>
-        <div id="logo"><img src="images/logo.webp" alt="logo"></div>
-        <h1>Checkout</h1>
-            <nav>
-                <a href="index.html"><i class="fa-solid fa-house" style="color: #74C0FC;"></i></a>
-            <a href="products.html"><i class="fa-solid fa-bag-shopping" style="color: #74C0FC;"></i></a>
-            <a href="cart.html"> <i class="fa-solid fa-cart-shopping" style="color: #74C0FC;"></i> <sup id="total-cart-items"></sup></a>
-            <a href="about-us.html"><i class="fa-solid fa-user" style="color: #74C0FC;"></i></a>
-            </nav>
+      <div id="logo"><img src="images/logo.webp" alt="logo" /></div>
+      <h1>Checkout</h1>
+      <nav>
+        <a href="index.html"
+          ><i class="fa-solid fa-house" style="color: #74c0fc"></i
+        ></a>
+        <a href="products.html"
+          ><i class="fa-solid fa-bag-shopping" style="color: #74c0fc"></i
+        ></a>
+        <a href="cart.html">
+          <i class="fa-solid fa-cart-shopping" style="color: #74c0fc"></i>
+          <sup id="total-cart-items"></sup
+        ></a>
+        <a href="about-us.html"
+          ><i class="fa-solid fa-user" style="color: #74c0fc"></i
+        ></a>
+      </nav>
     </header>
 
     <main>
-        <div class="cart-items">
-            <!-- Cart items will be dynamically added here -->
-        </div>
-        <div class="cart-total">
-            <h3>Total: $<span id="totalAmount">0</span></h3><br>
-            <button id="clearCart-btn" onclick="clearCart()">Clear Cart</button>
-        </div>
+      <div class="cart-items">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+      <div class="cart-total">
+        <h3>Total: $<span id="totalAmount">0</span></h3>
+        <br />
+        <button id="clearCart-btn" onclick="clearCart()">Clear Cart</button>
+      </div>
 
-        <!--payment section-->
-        <div class="payment-options" data-aos="zoom-in" data-aos-delay="900">
-            <h3>Select Payment Method(Backend will Be Integrated Soon):</h3>
-            <form id="paymentForm" onsubmit="handlePayment()">
-                
-                    <input type="radio" name="paymentMethod" value="bankTransfer"> Bank Transfer
-                </label><br>
-                <button type="submit" onclick="handlePayment() ">Pay Now</button>
-            </form>
-        </div>
+      <!--payment section-->
+      <
+      <div class="payment-options" data-aos="zoom-in" data-aos-delay="900">
+        <h3>Select Payment Method (Backend will be integrated soon):</h3>
+        <form id="paymentForm">
+          <label>
+            <input type="radio" name="paymentMethod" value="bankTransfer" />
+            Bank Transfer </label
+          ><br />
+          <button type="submit">Pay Now</button>
+        </form>
+      </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Brand. All rights reserved.</p>
-        <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://www.instagram.com/_idonmindit/"><i class="fa-brands fa-instagram"></i></a>
-         <a target ="blamk" href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsnapchat.com%2Ft%2FMpSeMetz&data=05%7C02%7C24015084%40activatelearning.ac.uk%7C2a2986c3110e44e9ea5d08dd5c9846b8%7Cd0da4c4cf48e4668886b52b056507a5e%7C0%7C0%7C638768531271459496%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JbQ2GNcei9Zfz8%2FMuZN89OIWOoeQIRpbpNwfmFnHUrM%3D&reserved=0"><i class="fa-brands fa-snapchat fa-spin fa-spin-reverse" style="color: #74C0FC;"></i></a>
+      <p>&copy; 2024 Brand. All rights reserved.</p>
+      <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/_idonmindit/"
+        ><i class="fa-brands fa-instagram"></i
+      ></a>
+      <a
+        target="blamk"
+        href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsnapchat.com%2Ft%2FMpSeMetz&data=05%7C02%7C24015084%40activatelearning.ac.uk%7C2a2986c3110e44e9ea5d08dd5c9846b8%7Cd0da4c4cf48e4668886b52b056507a5e%7C0%7C0%7C638768531271459496%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JbQ2GNcei9Zfz8%2FMuZN89OIWOoeQIRpbpNwfmFnHUrM%3D&reserved=0"
+        ><i
+          class="fa-brands fa-snapchat fa-spin fa-spin-reverse"
+          style="color: #74c0fc"
+        ></i
+      ></a>
     </footer>
-</body>
-<script>
-    
-    document.addEventListener("DOMContentLoaded",function(){
-  AOS.init(
-      {
-          once:false,
-          easing:'ease-in-out',
-          duration:800,
-          mirror:true
-      }
-  )
-  AOS.refresh()
-})
+  </body>
+  <script>
+    const stripe = Stripe(
+      "pk_live_51Rpsq2LRwcoOq8wgsLstZO5LcuIqjk7M54Kisklu5AbUHZfeC1r1RDaEA6bz7iq6eDxFiR7yqLGrx80PsGYmdqGt007D5oIJL3"
+    ); // initialize Stripe
 
-</script>
+    document
+      .getElementById("paymentForm")
+      .addEventListener("submit", async (event) => {
+        event.preventDefault(); // Stop normal form submit and page reload
+
+        await handlePayment();
+      });
+
+    async function handlePayment() {
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const res = await fetch(
+        "https://stripe-payment-qgss.onrender.com/create-checkout-session",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cartItems }),
+        }
+      );
+
+      const session = await res.json();
+
+      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+      if (result.error) {
+        alert(result.error.message);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init({
+        once: false,
+        easing: "ease-in-out",
+        duration: 800,
+        mirror: true,
+      });
+      AOS.refresh();
+    });
+  </script>
 </html>
