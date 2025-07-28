@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Payment Cancelled</title>
+    <style>
+      body {
+        background: #fdecea;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #d32f2f;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+      }
+      .container {
+        background: white;
+        border-radius: 12px;
+        padding: 40px 60px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+      .crossmark {
+        font-size: 4rem;
+        color: #d32f2f;
+        margin-bottom: 20px;
+      }
+      a.button {
+        display: inline-block;
+        background: #d32f2f;
+        color: white;
+        text-decoration: none;
+        padding: 14px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: background 0.3s ease;
+      }
+      a.button:hover {
+        background: #9a0007;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="crossmark">✖️</div>
+      <h1>Payment Cancelled</h1>
+      <p>
+        Your payment was not completed. If this was a mistake, you can try
+        again.
+      </p>
+      <a href="/cart.html" class="button">Return to Cart</a>
+    </div>
+  </body>
+</html>

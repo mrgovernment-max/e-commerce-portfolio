@@ -23,6 +23,7 @@ function loadCart() {
                           onmouseout="this.src='./images/dustbin.jpg'">
                   </div>`;
     total += itemTotal;
+    console.log(cartItems);
   });
 
   // Save the total in localStorage
@@ -47,29 +48,8 @@ window.addEventListener("load", function () {
 });
 
 // Function to handle payment
-function handlePayment(event) {
-  event.preventDefault(); // Prevent default form submission
-
-  const selectedPaymentMethod = document.querySelector(
-    'input[name="paymentMethod"]:checked'
-  ).value;
-
-  const total = JSON.parse(localStorage.getItem("total"));
-
-  if (total === 0.0) {
-    alert("Cart is Empty");
-    return;
-  }
-
-  switch (selectedPaymentMethod) {
-    case "paypal":
-      window.location.href = "paypal-transfer.html";
-      break;
-
-    case "bankTransfer":
-      window.location.href = "bank-transfer.html";
-      break;
-  }
+async function handlePayment() {
+  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 }
 
 function displayTotalitemsincart() {
