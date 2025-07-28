@@ -1,174 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Details</title>
-    <link rel="stylesheet" href="productdetails.css">
+    <link rel="stylesheet" href="productdetails.css" />
     <script src="app.js"></script>
-    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <script src="https://kit.fontawesome.com/a47fc389f5.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a47fc389f5.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HHT3SEEJE3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-HHT3SEEJE3"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'G-HHT3SEEJE3');
-</script>
-<body>
+    gtag("config", "G-HHT3SEEJE3");
+  </script>
+  <body>
+    <header>
+      <div id="logo"><img src="images/logo.webp" alt="logo" /></div>
+      <h1 id="productName"></h1>
+      <nav>
+        <a href="index.html"
+          ><i class="fa-solid fa-house" style="color: #74c0fc"></i
+        ></a>
+        <a href="products.html"
+          ><i class="fa-solid fa-bag-shopping" style="color: #74c0fc"></i
+        ></a>
+        <a href="cart.html">
+          <i class="fa-solid fa-cart-shopping" style="color: #74c0fc"></i>
+          <sup id="total-cart-items"></sup
+        ></a>
+        <a href="about-us.html"
+          ><i class="fa-solid fa-user" style="color: #74c0fc"></i
+        ></a>
+      </nav>
+    </header>
 
-  <header>
-    <div id="logo"><img src="images/logo.webp" alt="logo"></div>
-    <h1 id="productName"></h1>
-    <nav>
-        <a href="index.html"><i class="fa-solid fa-house" style="color: #74C0FC;"></i></a>
-        <a href="products.html"><i class="fa-solid fa-bag-shopping" style="color: #74C0FC;"></i></a>
-        <a href="cart.html"> <i class="fa-solid fa-cart-shopping" style="color: #74C0FC;"></i> <sup id="total-cart-items"></sup></a>
-        <a href="about-us.html"><i class="fa-solid fa-user" style="color: #74C0FC;"></i></a>
-    </nav>
-</header>
+    <div id="hero">
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img id="img1" src="" alt="img" /></div>
+          <div class="swiper-slide"><img id="img2" src="" alt="img" /></div>
+          <div class="swiper-slide"><img id="img3" src="" alt="img" /></div>
+          <div class="swiper-slide"><img id="img4" src="" alt="img" /></div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+      <div id="details">
+        <div id="infos">
+          <h2>INFO</h2>
+          <br />
+          <b id="productName"></b> <br />
+          <p id="info"></p>
+        </div>
 
+        <div id="price">
+          <h2>PRICE</h2>
+          <p id="productPrice"></p>
+          <select class="size-select">
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+          </select>
+          <input type="number" id="qty" value="1" min="1" /><br />
+          <button
+            class="add-to-cart-btn"
+            onclick="addToCart(document.getElementById('productName').innerHTML,document.getElementById('productPrice').innerHTML, document.getElementById('img1').getAttribute('src'), document.getElementById('qty').value, document.querySelectorAll('.size-select')[0].value)"
+          >
+            Add to Cart
+          </button>
+        </div>
 
-<div id="hero">
+        <div id="ratings">
+          <h2>RATINGS</h2>
+          <br />
+          🔥🔥🔥🔥
+          <p id="rate"></p>
+        </div>
 
-       <!-- Slider main container -->
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide"><img id="img1" src="" alt="img"></div>
-    <div class="swiper-slide"><img id="img2" src="" alt="img"></div>
-    <div class="swiper-slide"><img id="img3" src="" alt="img"></div>
-    <div class="swiper-slide"><img id="img4" src="" alt="img"></div>
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
+        <div id="availability">
+          <h2>AVAILABILITY</h2>
+          <p id="avail"></p>
+        </div>
+        <div id="brand">
+          <h2>BRAND</h2>
+          <br />
+          <img id="brandimg" src="" alt="" />
+          <p id="brandinfo"></p>
+        </div>
+      </div>
+    </div>
 
+    <footer>
+      <p>&copy; 2024 Brand. All rights reserved.</p>
+      <a
+        target="blamk"
+        href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsnapchat.com%2Ft%2FMpSeMetz&data=05%7C02%7C24015084%40activatelearning.ac.uk%7C2a2986c3110e44e9ea5d08dd5c9846b8%7Cd0da4c4cf48e4668886b52b056507a5e%7C0%7C0%7C638768531271459496%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JbQ2GNcei9Zfz8%2FMuZN89OIWOoeQIRpbpNwfmFnHUrM%3D&reserved=0"
+        ><i
+          class="fa-brands fa-snapchat fa-spin fa-spin-reverse"
+          style="color: #74c0fc"
+        ></i
+      ></a>
+      <a target="_blank" href="https://www.instagram.com/_idonmindit/"
+        ><i class="fa-brands fa-instagram fa-spin" style="color: #000000"></i
+      ></a>
+      <a target="_blank" href=""
+        ><i class="fa-brands fa-x-twitter fa-spin" style="color: #000000"></i
+      ></a>
+    </footer>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
+        autoplay: {
+          delay: 1500, // Auto-slide every 3 seconds
+          disableOnInteraction: false,
+        },
 
-</div>
-<div id="details">
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
 
-  <div id="infos">
-    <h2>INFO</h2><br>
-   <b id="productName"></b> <br>
-   <p id="info"> </p>
-</div>
+      document.addEventListener("DOMContentLoaded", () => {
+        // On the product details page, retrieving the stored data
+        const img1 = localStorage.getItem("img1");
+        const img2 = localStorage.getItem("img2");
+        const img3 = localStorage.getItem("img3");
+        const img4 = localStorage.getItem("img4");
+        const rating = localStorage.getItem("rating");
+        const info = localStorage.getItem("info");
+        const availability = localStorage.getItem("availability");
+        const brandimg = localStorage.getItem("brandimg");
+        const brandinfo = localStorage.getItem("brandinfo");
+        const name = localStorage.getItem("name");
+        const price = localStorage.getItem("price");
 
-  <div id="price">
-      <h2>PRICE</h2>
-      <p id="productPrice"> </p>
-      <select class="size-select">
-          <option value="S">Small</option>
-          <option value="M">Medium</option>
-          <option value="L">Large</option>
-      </select>
-      <input type="number" id="qty" value="1" min="1"><br>
-      <button class="add-to-cart-btn" onclick="addToCart(document.getElementById('productName').innerHTML,document.getElementById('productPrice').innerHTML, document.getElementById('img1').getAttribute('src'), document.getElementById('qty').value, document.querySelectorAll('.size-select')[0].value)">
-          Add to Cart
-      </button>
-  </div>
+        document.getElementById("img1").setAttribute("src", img1);
+        document.getElementById("img2").setAttribute("src", img2);
+        document.getElementById("img3").setAttribute("src", img3);
+        document.getElementById("img4").setAttribute("src", img4);
+        document.getElementById("rate").innerHTML = rating;
+        document.getElementById("info").innerHTML = info;
+        document.getElementById("avail").innerHTML = availability;
+        document.getElementById("brandimg").setAttribute("src", brandimg);
+        document.getElementById("brandinfo").innerHTML = brandinfo;
+        document.getElementById("productName").innerHTML = name;
+        document.getElementById("productPrice").innerHTML = ` $${price}`;
+      });
 
-  <div id="ratings">
-    <h2>RATINGS</h2><br>
-    🔥🔥🔥🔥 <p id="rate"></p>
-</div>
+      //add product to cart
 
-  <div id="availability">
-      <h2>AVAILABILITY</h2>
-      <p id="avail"></p>
-  </div>
-  <div id="brand">
-      <h2>BRAND</h2> <br>
-      <img id="brandimg" src="" alt="">
-      <p id="brandinfo"></p>
-  </div>
-</div>
-
-
-</div>
-
- 
-<footer>
-    <p>&copy; 2024 Brand. All rights reserved.</p>
-    <a target ="blamk" href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsnapchat.com%2Ft%2FMpSeMetz&data=05%7C02%7C24015084%40activatelearning.ac.uk%7C2a2986c3110e44e9ea5d08dd5c9846b8%7Cd0da4c4cf48e4668886b52b056507a5e%7C0%7C0%7C638768531271459496%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JbQ2GNcei9Zfz8%2FMuZN89OIWOoeQIRpbpNwfmFnHUrM%3D&reserved=0"><i class="fa-brands fa-snapchat fa-spin fa-spin-reverse" style="color: #74C0FC;"></i></a>
-    <a target="_blank" href="https://www.instagram.com/_idonmindit/"><i class="fa-brands fa-instagram fa-spin" style="color: #000000;"></i></a>
-    <a target="_blank" href=""><i class="fa-brands fa-x-twitter fa-spin" style="color: #000000;"></i></a>
-</footer>
-<script>
-
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  autoplay: {
-        delay: 1500, // Auto-slide every 3 seconds
-        disableOnInteraction: false,
-      },
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable:true,
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  
-// On the product details page, retrieving the stored data
-const img1 = localStorage.getItem("img1");
-const img2 = localStorage.getItem("img2");
-const img3 = localStorage.getItem("img3");
-const img4 = localStorage.getItem("img4");
-const rating = localStorage.getItem("rating");
-const info = localStorage.getItem("info");
-const availability = localStorage.getItem("availability");
-const brandimg = localStorage.getItem("brandimg");
-const brandinfo = localStorage.getItem("brandinfo");
-const name = localStorage.getItem("name");
-const price = localStorage.getItem("price");
-
-
-document.getElementById("img1").setAttribute('src',img1)
-document.getElementById("img2").setAttribute('src',img2)
-document.getElementById("img3").setAttribute('src',img3)
-document.getElementById("img4").setAttribute('src',img4)
-document.getElementById("rate").innerHTML = rating
-document.getElementById("info").innerHTML = info
-document.getElementById("avail").innerHTML = availability
-document.getElementById("brandimg").setAttribute('src',brandimg)
-document.getElementById("brandinfo").innerHTML = brandinfo
-document.getElementById("productName").innerHTML = name
-document.getElementById("productPrice").innerHTML =` $${price}`
-
-});
-
-//add product to cart
-
-  function addToCart(productName, productPrice, imagesrc, quantity, size) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const price = localStorage.getItem("price");
-  cart.push({
-    name: productName,
-    price: price,
-    image: imagesrc,
-    quantity: quantity,
-    size: size,
-  });
-  localStorage.setItem("cart", JSON.stringify(cart));
-  const totalprice = price * quantity
-  alert(
-    `${quantity} [${size}] ${productName}(s) have been added to your cart! \n TOTAL - $${totalprice}`
-  );
-  displayTotalitemsincart();
-}
-
-
-
+      function addToCart(productName, productPrice, imagesrc, quantity, size) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const price = localStorage.getItem("price");
+        cart.push({
+          name: productName,
+          price: price,
+          image: imagesrc,
+          quantity: quantity,
+          size: size,
+        });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        const totalprice = price * quantity;
+        alert(
+          `${quantity} [${size}] ${productName}(s) have been added to your cart! \n TOTAL - $${totalprice}`
+        );
+        displayTotalitemsincart();
+      }
     </script>
-</body>
+  </body>
 </html>
