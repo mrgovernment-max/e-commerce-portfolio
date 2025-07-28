@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://js.stripe.com/v3/"></script>
     <script src="cart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -105,10 +106,6 @@
       AOS.refresh();
     });
 
-    const stripe = Stripe(
-      "pk_live_51Rpsq2LRwcoOq8wgsLstZO5LcuIqjk7M54Kisklu5AbUHZfeC1r1RDaEA6bz7iq6eDxFiR7yqLGrx80PsGYmdqGt007D5oIJL3"
-    ); // initialize Stripe
-
     document
       .getElementById("paymentForm")
       .addEventListener("submit", async (event) => {
@@ -121,6 +118,9 @@
 
     async function handlePayment() {
       const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      const stripe = Stripe(
+        "pk_live_51Rpsq2LRwcoOq8wgsLstZO5LcuIqjk7M54Kisklu5AbUHZfeC1r1RDaEA6bz7iq6eDxFiR7yqLGrx80PsGYmdqGt007D5oIJL3"
+      ); // initialize Stripe
 
       const res = await fetch(
         "https://stripe-payment-qgss.onrender.com/create-checkout-session",
