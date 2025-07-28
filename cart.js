@@ -51,6 +51,7 @@ window.addEventListener("load", function () {
 function displayTotalitemsincart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const cartTotal = cart.length; // Get the number of items in the cart
+  const clearcart = document.getElementById("clearCart-btn");
   if (cartTotal == 0) {
     const clearcart = document.getElementById("clearCart-btn");
     clearcart.style.display = "none";
