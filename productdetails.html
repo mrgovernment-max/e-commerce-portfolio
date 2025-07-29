@@ -53,6 +53,9 @@
     </header>
 
     <div id="hero">
+      <div id="add-to-cart-alert">
+        <!--alert message of add to cart pops-->
+      </div>
       <!-- Slider main container -->
       <div class="swiper">
         <!-- Additional required wrapper -->
@@ -185,10 +188,17 @@
           size: size,
         });
         localStorage.setItem("cart", JSON.stringify(cart));
-        const totalprice = price * quantity;
-        alert(
-          `${quantity} [${size}] ${productName}(s) have been added to your cart! \n TOTAL - $${totalprice}`
-        );
+        const totalprice = cleanPrice * quantity;
+        const AlertPop = document.getElementById("add-to-cart-alert");
+        AlertPop.style.display = "block";
+        AlertPop.innerHTML = `${quantity} [${size}] ${productName}(s) have been added to your cart!  TOTAL - $${totalprice.toFixed(
+          2
+        )} <br>
+  <button id="close-pop"> OK </button> `;
+        const ClosePop = document.getElementById("close-pop");
+        ClosePop.addEventListener("click", () => {
+          AlertPop.style.display = "none";
+        });
         displayTotalitemsincart();
       }
     </script>
