@@ -9,9 +9,15 @@ function addToCart(productName, productPrice, imagesrc, quantity, size) {
   });
   localStorage.setItem("cart", JSON.stringify(cart));
   const totalPrice = productPrice * quantity;
-  alert(
-    `${quantity} [${size}] ${productName}(s) have been added to your cart! \n TOTAL - $${totalPrice} `
-  );
+  const AlertPop = document.getElementById("add-to-cart-alert");
+  AlertPop.style.display = "block";
+  AlertPop.innerHTML = `${quantity} [${size}] ${productName}(s) have been added to your cart!  TOTAL - $${totalPrice}<br>
+  <button id="close-pop"> OK </button> `;
+  const ClosePop = document.getElementById("close-pop");
+  ClosePop.addEventListener("click", () => {
+    AlertPop.style.display = "none";
+  });
+
   displayTotalitemsincart();
 }
 

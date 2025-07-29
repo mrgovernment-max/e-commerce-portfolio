@@ -59,6 +59,10 @@
         />
       </div>
 
+      <div id="add-to-cart-alert">
+        <!--alert message of add to cart pops-->
+      </div>
+
       <div class="product-list" id="productContainer">
         <!-- Products will load dynamically from database -->
       </div>
@@ -85,7 +89,7 @@
 
           products.forEach((product) => {
             const safeName = product.name;
-            const sizes = ["S", "M", "L"];
+            const sizes = ["Small", "Medium", "Large"];
 
             const div = document.createElement("div");
             div.className = "product-item";
