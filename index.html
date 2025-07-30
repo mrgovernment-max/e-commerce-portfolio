@@ -1,123 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SNEAK X</title>
     <script src="cart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a47fc389f5.js" crossorigin="anonymous"></script>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HHT3SEEJE3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/a47fc389f5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-HHT3SEEJE3"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'G-HHT3SEEJE3');
-</script>
-<body>
+    gtag("config", "G-HHT3SEEJE3");
+  </script>
+  <body>
     <header>
-        <div id="logo"><img src="images/logo.webp" alt="logo"></div>
-        <h1>Welcome to My Site</h1>
-        <nav>
-            <a href="index.html"><i class="fa-solid fa-house" style="color: #74C0FC;"></i></a>
-            <a href="products.html"><i class="fa-solid fa-bag-shopping" style="color: #74C0FC;"></i></a>
-            <a href="cart.html"> <i class="fa-solid fa-cart-shopping" style="color: #74C0FC;"></i> <sup id="total-cart-items"></sup></a>
-            <a href="about-us.html"><i class="fa-solid fa-user" style="color: #74C0FC;"></i></a>
-        </nav>
+      <div id="logo">
+        <a href="index.html"> <img src="images/logo.webp" alt="logo" /></a>
+      </div>
+      <h1>Welcome to My Site</h1>
+      <nav>
+        <a href="index.html"
+          ><i class="fa-solid fa-house" style="color: #74c0fc"></i
+        ></a>
+        <a href="products.html"
+          ><i class="fa-solid fa-bag-shopping" style="color: #74c0fc"></i
+        ></a>
+        <a href="cart.html">
+          <i class="fa-solid fa-cart-shopping" style="color: #74c0fc"></i>
+          <sup id="total-cart-items"></sup
+        ></a>
+        <a href="about-us.html"
+          ><i class="fa-solid fa-user" style="color: #74c0fc"></i
+        ></a>
+      </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-text">
-            <h2>Step Up Your Style!</h2>
-            <p>Discover the latest collections in our store.</p>
-            <a href="products.html" class="btn">Shop Now</a>
-        </div>
+      <div class="hero-text">
+        <h2>Step Up Your Style!</h2>
+        <p>Discover the latest collections in our store.</p>
+        <a href="products.html" class="btn">Shop Now</a>
+      </div>
     </section>
-    
+
     <div id="highlight">HIGHLIGHTS</div>
 
     <!-- Slider main container -->
-<div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><img src="images/highlight-1.jpg" alt="img"></div>
-      <div class="swiper-slide"><img src="images/Nike Air Max.jpg" alt="img"></div>
-      <div class="swiper-slide"><img src="images/highlight-2.jpg" alt="img"></div>
-      <div class="swiper-slide"><img src="images/highlight-3.jpg" alt="img"></div>
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="images/highlight-1.jpg" alt="img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/Nike Air Max.jpg" alt="img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/highlight-2.jpg" alt="img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/highlight-3.jpg" alt="img" />
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
 
+    <h2 class="selections">IT'S ALL HERE</h2>
+    <div class="selection">
+      <a href="products.html" data-aos="fade-right">SNEAKERS</a>
+      <a href="products.html" data-aos="fade-right">SPORTS</a>
+      <a href="products.html" data-aos="fade-up">FASHION</a>
+      <a href="products.html" data-aos="fade-left">FANCY</a>
+      <a href="products.html" data-aos="fade-left">HARD &#128293;</a>
+    </div>
 
-  </div>
-
-  <h2 class="selections">IT'S ALL HERE</h2>
-  <div class="selection">
-    <a href="products.html" data-aos="fade-right">SNEAKERS</a>
-    <a href="products.html" data-aos="fade-right" >SPORTS</a>
-    <a href="products.html" data-aos="fade-up">FASHION</a>
-    <a href="products.html" data-aos="fade-left">FANCY</a>
-    <a href="products.html" data-aos="fade-left">HARD &#128293;</a>
-
-  </div>
-    
     <footer>
-        <p>&copy; 2024 Brand. All rights reserved.</p>
-         <a target ="blamk" href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsnapchat.com%2Ft%2FMpSeMetz&data=05%7C02%7C24015084%40activatelearning.ac.uk%7C2a2986c3110e44e9ea5d08dd5c9846b8%7Cd0da4c4cf48e4668886b52b056507a5e%7C0%7C0%7C638768531271459496%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JbQ2GNcei9Zfz8%2FMuZN89OIWOoeQIRpbpNwfmFnHUrM%3D&reserved=0"><i class="fa-brands fa-snapchat fa-spin fa-spin-reverse" style="color: #74C0FC;"></i></a>
-        <a target="_blank" href="https://www.instagram.com/_idonmindit/"><i class="fa-brands fa-instagram fa-spin" style="color: #74C0FC;"></i></a>
-        <a target="_blank" href=""><i class="fa-brands fa-x-twitter fa-spin" style="color: #74C0FC;"></i></a>
+      <p>&copy; 2024 Brand. All rights reserved.</p>
+      <a
+        target="blamk"
+        href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsnapchat.com%2Ft%2FMpSeMetz&data=05%7C02%7C24015084%40activatelearning.ac.uk%7C2a2986c3110e44e9ea5d08dd5c9846b8%7Cd0da4c4cf48e4668886b52b056507a5e%7C0%7C0%7C638768531271459496%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JbQ2GNcei9Zfz8%2FMuZN89OIWOoeQIRpbpNwfmFnHUrM%3D&reserved=0"
+        ><i
+          class="fa-brands fa-snapchat fa-spin fa-spin-reverse"
+          style="color: #74c0fc"
+        ></i
+      ></a>
+      <a target="_blank" href="https://www.instagram.com/_idonmindit/"
+        ><i class="fa-brands fa-instagram fa-spin" style="color: #74c0fc"></i
+      ></a>
+      <a target="_blank" href=""
+        ><i class="fa-brands fa-x-twitter fa-spin" style="color: #74c0fc"></i
+      ></a>
     </footer>
 
     <script type="module">
-        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
-      </script>
-<script>
+      import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          once: false,
+          easing: "ease-in-out",
+          mirror: true,
+          duration: 700,
+        });
+        AOS.refresh();
+      });
 
-document.addEventListener("DOMContentLoaded",function(){
-            AOS.init(
-                {
-                    once:false,
-                    easing:'ease-in-out',
-                    mirror:true,
-                    duration:700
-                }
-            )
-            AOS.refresh()
-        })
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
+        autoplay: {
+          delay: 1500, // Auto-slide every 3 seconds
+          disableOnInteraction: false,
+        },
 
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  autoplay: {
-        delay: 1500, // Auto-slide every 3 seconds
-        disableOnInteraction: false,
-      },
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable:true,
-  }
-});
-
-
-
-    // Function to display the total number of items in the cart
-(    function displayTotalitemsincart() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartTotal = cart.length; // Get the number of items in the cart
-    const domDisplaycartTotal = document.getElementById("total-cart-items");
-    domDisplaycartTotal.innerHTML = cartTotal;
-    })()
-</script>
-</body>
+      // Function to display the total number of items in the cart
+      (function displayTotalitemsincart() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartTotal = cart.length; // Get the number of items in the cart
+        const domDisplaycartTotal = document.getElementById("total-cart-items");
+        domDisplaycartTotal.innerHTML = cartTotal;
+      })();
+    </script>
+  </body>
 </html>
