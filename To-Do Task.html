@@ -1,86 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
-    <link id="stylesheet" rel="stylesheet" href="To-Do Task.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link id="stylesheet" rel="stylesheet" href="To-Do Task.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-HHT3SEEJE3"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HHT3SEEJE3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HHT3SEEJE3');
-</script>
-<body>
-    <button onclick="toggleStylesheet()">Change Theme</button> 
+    gtag("config", "G-HHT3SEEJE3");
+  </script>
+  <body>
+    <button onclick="toggleStylesheet()">Change Theme</button>
     <div class="todo-app-main" data-aos="fade-right" data-aos-duration="900">
-        <header>
-            <a href="completed task.html" title="See completed Tasks">Completed Tasks 🔗</a>
-        </header>
-        <div class="to-do"  data-aos="fade-left" data-aos-duration="900">
-            <h1>My To-Do List</h1>
-            <input type="text" id="new-task" placeholder="Add a new task...">
-            <button onclick="addTask()">Add Task</button>
-            <ul id="task-list"></ul>
-            <div data-aos="fade-left" data-aos-duration="900">
-                <ul class="tasks"></ul>
-            </div>
+      <header id="completed">
+        <a href="completed task.html" title="See completed Tasks"
+          >Completed Tasks 🔗</a
+        >
+      </header>
+      <div class="to-do" data-aos="fade-left" data-aos-duration="900">
+        <h1>My To-Do List</h1>
+        <input type="text" id="new-task" placeholder="Add a new task..." />
+        <button onclick="addTask()">Add Task</button>
+        <ul id="task-list"></ul>
+        <div data-aos="fade-left" data-aos-duration="900">
+          <ul class="tasks"></ul>
         </div>
+      </div>
     </div>
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          once: true,
+          mirror: true,
+        });
+      });
 
-        document.addEventListener("DOMContentLoaded",function(){
-            AOS.init({
-                once:true,
-                mirror:true
-            })
-        })
+      // Initialize "tasks" array to store all tasks
+      let tasks = [];
 
-        // Initialize "tasks" array to store all tasks
-        let tasks = [];
+      function toggleStylesheet() {
+        // Toggle dark theme
+        document.body.classList.toggle("dark-theme");
+      }
 
-        function toggleStylesheet() {
-            // Toggle dark theme
-            document.body.classList.toggle('dark-theme');
+      function addTask() {
+        const input = document.querySelector("#new-task").value;
+        const inputField = document.querySelector("#new-task");
+
+        if (!localStorage.getItem("task")) {
+          localStorage.setItem("task", JSON.stringify(tasks));
         }
 
-        function addTask() {
-            const input = document.querySelector('#new-task').value;
-            const inputField = document.querySelector('#new-task');
+        tasks = JSON.parse(localStorage.getItem("task"));
 
-            if (!localStorage.getItem("task")) {
-                localStorage.setItem('task', JSON.stringify(tasks));
-            }
-
-            tasks = JSON.parse(localStorage.getItem('task'));
-
-            if (input !== '') {
-                tasks.push(input);
-            } else {
-                alert("Enter a task");
-                return;
-            }
-
-            localStorage.setItem('task', JSON.stringify(tasks));
-            displayTask();
-            inputField.value = '';
+        if (input !== "") {
+          tasks.push(input);
+        } else {
+          alert("Enter a task");
+          return;
         }
 
-        function displayTask() {
-            let showContent = '';
+        localStorage.setItem("task", JSON.stringify(tasks));
+        displayTask();
+        inputField.value = "";
+      }
 
-            const show = document.querySelector('.tasks');
-            tasks = JSON.parse(localStorage.getItem('task')) || [];
+      function displayTask() {
+        let showContent = "";
 
-            tasks.forEach((element, index) => {
-                showContent += `<li>
+        const show = document.querySelector(".tasks");
+        tasks = JSON.parse(localStorage.getItem("task")) || [];
+
+        tasks.forEach((element, index) => {
+          showContent += `<li>
                     <span>${element}</span>
                     <button title="Add to Completed Tasks" class='add-to-complete-button' onclick="addTocomplete('${element}', ${index})">✅</button>
                     <img 
@@ -91,27 +99,33 @@
                         onmouseover="this.src='./images/open-dustbin.jpg'"
                         onmouseout="this.src='./images/dustbin.jpg'">
                 </li>`;
-            });
+        });
 
-            show.innerHTML = showContent;
-        }
+        show.innerHTML = showContent;
+      }
 
-        window.onload = displayTask;
+      window.onload = displayTask;
 
-        function removeTask(index) {
-            tasks = JSON.parse(localStorage.getItem('task'));
-            tasks.splice(index, 1);
+      function removeTask(index) {
+        tasks = JSON.parse(localStorage.getItem("task"));
+        tasks.splice(index, 1);
 
-            localStorage.setItem('task', JSON.stringify(tasks));
-            displayTask();
-        }
+        localStorage.setItem("task", JSON.stringify(tasks));
+        displayTask();
+      }
 
-        function addTocomplete(taskk, indexx) {
-            let complete = localStorage.getItem('complete') ? JSON.parse(localStorage.getItem('complete')) : [];
-            complete.push({ task: taskk, index: indexx });
-            localStorage.setItem('complete', JSON.stringify(complete));
-            removeTask(indexx);
-        }
+      function addTocomplete(taskk, indexx) {
+        const completed = document.getElementById("completed");
+        completed.style.animation = "";
+        let complete = localStorage.getItem("complete")
+          ? JSON.parse(localStorage.getItem("complete"))
+          : [];
+        complete.push({ task: taskk, index: indexx });
+        localStorage.setItem("complete", JSON.stringify(complete));
+        removeTask(indexx);
+
+        completed.style.animation = "moveup 1s ease-in-out 0s";
+      }
     </script>
-</body>
+  </body>
 </html>
