@@ -361,34 +361,6 @@ footer {
   transition: 0.5s ease-in;
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: rgb(19, 18, 18);
-    color: white;
-  }
-
-  .product-item {
-    background-color: rgba(255, 255, 255, 0.443);
-  }
-
-  .product-item button {
-    background-color: white;
-    color: black;
-  }
-
-  .product-item button:hover {
-    background-color: black;
-    color: white;
-    transition: 0.5s ease-in-out;
-  }
-
-  .selections,
-  #highlight {
-    color: whitesmoke;
-  }
-}
-
 #add-to-cart-alert {
   border: 3px blue solid;
   background-color: #3e7488;
