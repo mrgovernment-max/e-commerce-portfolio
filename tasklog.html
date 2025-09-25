@@ -29,6 +29,12 @@
     gtag("config", "G-HHT3SEEJE3");
   </script>
   <body>
+    <div class="msg" id="msg">
+      <p id="msg-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+        numquam delectus
+      </p>
+    </div>
     <header class="header-container">
       <div class="logo">
         <i class="fas fa-tasks"></i><a href="tasklog.html">TaskMaster</a>
@@ -316,9 +322,22 @@
         .addEventListener("click", function () {
           if (confirm("Are you sure you want to logout?")) {
             // In a real app, this would redirect to logout endpoint
-            alert("Logged out successfully!");
+            showMsg("Logging Out...");
+            setTimeout(() => {
+              window.location.href = "To-Do Task.html";
+            }, 2000);
           }
         });
+
+      //msg helper function
+      function showMsg(msg) {
+        const msgBox = document.getElementById("msg-text");
+        msgBox.innerHTML = msg;
+        msgBox.classList.add("show");
+        setTimeout(() => {
+          msgBox.classList.remove("show");
+        }, 2000);
+      }
     </script>
   </body>
 </html>
