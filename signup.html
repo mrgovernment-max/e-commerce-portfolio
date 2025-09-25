@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskMaster - Sign Up</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg-color: #f5f7fa;
+        --text-color: #1e293b;
+        --accent-color: #2563eb;
+        --accent-hover: #1d4ed8;
+        --card-bg: #ffffff;
+        --input-bg: #ffffff;
+        --input-border: #cbd5e1;
+        --button-bg: #2563eb;
+        --button-hover: #1d4ed8;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --radius: 10px;
+        --transition: all 0.3s ease;
+      }
+
+      .dark-theme {
+        --bg-color: #0f172a;
+        --text-color: #f1f5f9;
+        --accent-color: #60a5fa;
+        --accent-hover: #3b82f6;
+        --card-bg: #1e293b;
+        --input-bg: #1e293b;
+        --input-border: #475569;
+        --button-bg: #2563eb;
+        --button-hover: #1d4ed8;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        transition: var(--transition);
+      }
+
+      .auth-container {
+        width: 100%;
+        max-width: 450px;
+        background-color: var(--card-bg);
+        padding: 40px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .logo {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .logo a {
+        text-decoration: none;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .logo i {
+        font-size: 2rem;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        color: var(--accent-color);
+      }
+
+      .subtitle {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #64748b;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--text-color);
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+        background-color: var(--input-bg);
+        color: var(--text-color);
+        font-size: 1rem;
+        transition: var(--transition);
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+      }
+
+      .auth-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        justify-content: center;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 6px;
+        background-color: var(--button-bg);
+        color: #fff;
+        transition: var(--transition);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .auth-btn:hover {
+        background-color: var(--button-hover);
+        transform: translateY(-2px);
+      }
+
+      .auth-message {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 6px;
+        text-align: center;
+        display: none;
+      }
+
+      .auth-message.success {
+        background-color: rgba(16, 185, 129, 0.1);
+        color: #059669;
+        display: block;
+      }
+
+      .auth-message.error {
+        background-color: rgba(239, 68, 68, 0.1);
+        color: #b91c1c;
+        display: block;
+      }
+
+      .auth-footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #64748b;
+      }
+
+      .auth-footer a {
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .auth-footer a:hover {
+        text-decoration: underline;
+      }
+
+      .theme-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: transparent;
+        color: var(--text-color);
+        font-size: 1.2rem;
+        padding: 10px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .theme-btn:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 480px) {
+        .auth-container {
+          padding: 30px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-btn" onclick="toggleStylesheet()" title="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="auth-container">
+      <div class="logo">
+        <a href="index.html"><i class="fas fa-tasks"></i> TaskMaster</a>
+      </div>
+
+      <h1>Create Account</h1>
+      <p class="subtitle">Sign up to start managing your tasks</p>
+
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="signup-username">Username</label>
+          <input
+            type="text"
+            id="signup-username"
+            placeholder="Choose a username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="signup-email">Email</label>
+          <input
+            type="email"
+            id="signup-email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input
+            type="password"
+            id="signup-password"
+            placeholder="Create a password"
+            required
+          />
+        </div>
+        <button type="submit" class="auth-btn">
+          <i class="fas fa-user-plus"></i> Sign Up
+        </button>
+        <div id="signup-message" class="auth-message"></div>
+      </form>
+
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Sign in here</a>
+      </div>
+    </div>
+
+    <script>
+      // Theme toggle functionality
+      function toggleStylesheet() {
+        document.body.classList.toggle("dark-theme");
+        const themeBtn = document.querySelector(".theme-btn i");
+        if (document.body.classList.contains("dark-theme")) {
+          themeBtn.classList.remove("fa-moon");
+          themeBtn.classList.add("fa-sun");
+          localStorage.setItem("theme", "dark");
+        } else {
+          themeBtn.classList.remove("fa-sun");
+          themeBtn.classList.add("fa-moon");
+          localStorage.setItem("theme", "light");
+        }
+      }
+
+      // Load saved theme preference
+      window.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+          document.body.classList.add("dark-theme");
+          document.querySelector(".theme-btn i").classList.remove("fa-moon");
+          document.querySelector(".theme-btn i").classList.add("fa-sun");
+        }
+
+        // Check if user is already logged in
+        const currentUser = localStorage.getItem("currentUser");
+        if (currentUser) {
+          window.location.href = "dashboard.html";
+        }
+      });
+
+      // Signup form submission
+      document
+        .getElementById("signup-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const username = document
+            .getElementById("signup-username")
+            .value.trim();
+          const email = document.getElementById("signup-email").value.trim();
+          const password = document.getElementById("signup-password").value;
+          const messageEl = document.getElementById("signup-message");
+
+          // Clear previous message
+          messageEl.className = "auth-message";
+
+          // Validate inputs
+          if (!username || !email || !password) {
+            messageEl.textContent = "Please fill in all fields";
+            messageEl.classList.add("error");
+            return;
+          }
+
+          // Get users from localStorage
+          const users =
+            JSON.parse(localStorage.getItem("taskmasterUsers")) || [];
+
+          // Check if username already exists
+          if (users.find((u) => u.username === username)) {
+            messageEl.textContent = "Username already exists";
+            messageEl.classList.add("error");
+            return;
+          }
+
+          // Check if email already exists
+          if (users.find((u) => u.email === email)) {
+            messageEl.textContent = "Email already registered";
+            messageEl.classList.add("error");
+            return;
+          }
+
+          // Create new user
+          const newUser = {
+            id: Date.now(),
+            username,
+            email,
+            password,
+            tasks: [],
+            completedTasks: [],
+            createdAt: new Date().toISOString(),
+          };
+
+          users.push(newUser);
+          localStorage.setItem("taskmasterUsers", JSON.stringify(users));
+
+          // Auto-login the new user
+          localStorage.setItem("currentUser", JSON.stringify(newUser));
+
+          messageEl.textContent =
+            "Account created successfully! Redirecting...";
+          messageEl.classList.add("success");
+
+          // Redirect to dashboard after a short delay
+          setTimeout(() => {
+            window.location.href = "dashboard.html";
+          }, 1000);
+        });
+    </script>
+  </body>
+</html>

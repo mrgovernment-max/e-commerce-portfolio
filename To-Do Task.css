@@ -151,16 +151,23 @@ input[type="text"] {
 }
 
 .add-task {
-  padding: 10px 20px;
+  margin-top: 2rem;
+  padding: 15px 25px;
+  border: none;
   border-radius: 7px;
   background-color: var(--button-bg);
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+.add-task:hover {
+  transform: translateY(-7px);
 }
 
 .task-list li {
   background-color: var(--task-bg);
   margin: 10px 0;
   padding: 10px;
-  overflow-x: scroll;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
@@ -231,7 +238,7 @@ input[type="text"] {
   padding: 10px;
   font-size: 1.2rem;
   color: #fff;
-  background-color: var(--button-bg);
+  background-color: rgb(190, 45, 45);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -240,7 +247,7 @@ input[type="text"] {
 }
 
 .clear-button:hover {
-  background-color: var(--button-hover-bg);
+  background-color: red;
 }
 
 /* Task list styling */
