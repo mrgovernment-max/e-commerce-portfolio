@@ -216,7 +216,7 @@
 
     <div class="auth-container">
       <div class="logo">
-        <a href="index.html"><i class="fas fa-tasks"></i> TaskMaster</a>
+        <a href="tasklog.html"><i class="fas fa-tasks"></i> TaskMaster</a>
       </div>
 
       <h1>Create Account</h1>
@@ -289,7 +289,7 @@
         // Check if user is already logged in
         const currentUser = localStorage.getItem("currentUser");
         if (currentUser) {
-          window.location.href = "dashboard.html";
+          window.location.href = "tasklog.html";
         }
       });
 
@@ -357,7 +357,7 @@
 
           // Redirect to dashboard after a short delay
           setTimeout(() => {
-            window.location.href = "dashboard.html";
+            window.location.href = "tasklog.html";
           }, 1000);
         });
     </script>
