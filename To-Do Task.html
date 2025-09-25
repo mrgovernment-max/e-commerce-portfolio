@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
     <link id="stylesheet" rel="stylesheet" href="To-Do Task.css" />
@@ -27,10 +31,12 @@
   </script>
   <body>
     <header class="header-container">
-      <button class="theme" onclick="toggleStylesheet()">☀️</button>
+      <button class="theme" onclick="toggleStylesheet()" title="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
       <div class="auth">
-        <button>Login</button>
-        <button>Sign up</button>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign up</a>
       </div>
     </header>
     <div class="todo-app-main" data-aos="fade-right" data-aos-duration="900">
@@ -100,6 +106,16 @@
 
       function toggleStylesheet() {
         document.body.classList.toggle("dark-theme");
+        const themeBtn = document.querySelector(".theme i");
+        if (document.body.classList.contains("dark-theme")) {
+          themeBtn.classList.remove("fa-moon");
+          themeBtn.classList.add("fa-sun");
+          localStorage.setItem("theme", "dark");
+        } else {
+          themeBtn.classList.remove("fa-sun");
+          themeBtn.classList.add("fa-moon");
+          localStorage.setItem("theme", "light");
+        }
       }
 
       function addTask() {

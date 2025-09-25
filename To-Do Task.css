@@ -1,4 +1,5 @@
 :root {
+  --theme-bg: #0f172a;
   --bg-color: #f9fafb;
   --text-color: #1e293b;
   --link-color: #2563eb;
@@ -15,6 +16,7 @@
 }
 
 .dark-theme {
+  --theme-bg: #f1f5f977;
   --bg-color: #0f172a;
   --text-color: #f1f5f9;
   --link-color: #60a5fa;
@@ -68,7 +70,7 @@ body {
   flex-direction: row;
 }
 
-.auth button {
+.auth a {
   padding: 10px 20px;
   font-size: 1rem;
   color: #fff;
@@ -89,15 +91,19 @@ body {
 
 /* Header Styles */
 header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   text-align: center;
+  color: var(--link-color);
+  font-weight: bold;
+  font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
 header a {
   text-decoration: none;
-  color: var(--link-color);
-  font-weight: bold;
-  font-size: 1.2rem;
 }
 
 header a:hover {
@@ -132,7 +138,7 @@ input[type="text"] {
   padding: 10px 20px;
   font-size: 1rem;
   color: #fff;
-  background-color: var(--button-bg);
+  background-color: var(--theme-bg);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -140,7 +146,6 @@ input[type="text"] {
 }
 
 .theme:hover {
-  background-color: var(--button-hover-bg);
   transform: scale(1.05);
 }
 
@@ -281,4 +286,11 @@ input[type="text"] {
 
 .remove-icon:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 760px) {
+  header {
+    flex-direction: column;
+    gap: 3vh;
+  }
 }
