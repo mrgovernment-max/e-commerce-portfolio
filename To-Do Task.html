@@ -26,56 +26,90 @@
     gtag("config", "G-HHT3SEEJE3");
   </script>
   <body>
-    <button onclick="toggleStylesheet()">Change Theme</button>
+    <header class="header-container">
+      <button class="theme" onclick="toggleStylesheet()">☀️</button>
+      <div class="auth">
+        <button>Login</button>
+        <button>Sign up</button>
+      </div>
+    </header>
     <div class="todo-app-main" data-aos="fade-right" data-aos-duration="900">
-      <header id="completed">
-        <a href="completed task.html" title="See completed Tasks"
-          >Completed Tasks 🔗</a
-        >
-      </header>
       <div class="to-do" data-aos="fade-left" data-aos-duration="900">
         <h1>My To-Do List</h1>
         <input type="text" id="new-task" placeholder="Add a new task..." />
-        <button onclick="addTask()">Add Task</button>
-        <ul id="task-list"></ul>
-        <div data-aos="fade-left" data-aos-duration="900">
-          <ul class="tasks"></ul>
+        <button class="add-task" onclick="addTask()">Add Task</button>
+        <ul class="task-list" id="task-list"></ul>
+      </div>
+    </div>
+
+    <div class="done-main">
+      <header>Completed Tasks</header>
+      <div class="done">
+        <button class="clear-button" onclick="clearCompleted()">
+          Clear Completed Tasks
+        </button>
+
+        <div>
+          <ul class="completed-tasks">
+            <!--completed tasks will render here dynamically-->
+          </ul>
         </div>
       </div>
     </div>
     <script>
+      function displaycompletedTask() {
+        let see = "";
+        const show = document.querySelector(".completed-tasks");
+        const ctasks = JSON.parse(localStorage.getItem("complete")) || [];
+
+        ctasks.forEach(
+          (element, index) =>
+            (see += `<li>${element.task}
+                      <img
+                          class="remove-icon"
+                          onclick="removeCompletedTask(${index})"
+                          src="./images/dustbin.jpg"
+                          alt="remove"
+                          onmouseover="this.src='./images/open-dustbin.jpg'"
+                          onmouseout="this.src='./images/dustbin.jpg'">
+                    </li>`)
+        );
+
+        show.innerHTML = see;
+      }
+
+      function removeCompletedTask(index) {
+        const tasks = JSON.parse(localStorage.getItem("complete")) || [];
+        tasks.splice(index, 1);
+        localStorage.setItem("complete", JSON.stringify(tasks));
+        displaycompletedTask();
+      }
+
+      function clearCompleted() {
+        localStorage.setItem("complete", JSON.stringify([]));
+        displaycompletedTask();
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
-        AOS.init({
-          once: true,
-          mirror: true,
-        });
+        AOS.init({ once: true, mirror: true });
+        displayTask();
+        displaycompletedTask();
       });
 
-      // Initialize "tasks" array to store all tasks
       let tasks = [];
 
       function toggleStylesheet() {
-        // Toggle dark theme
         document.body.classList.toggle("dark-theme");
       }
 
       function addTask() {
-        const input = document.querySelector("#new-task").value;
         const inputField = document.querySelector("#new-task");
+        const input = inputField.value.trim();
 
-        if (!localStorage.getItem("task")) {
-          localStorage.setItem("task", JSON.stringify(tasks));
-        }
+        tasks = JSON.parse(localStorage.getItem("task")) || [];
+        if (!input) return alert("Enter a task");
 
-        tasks = JSON.parse(localStorage.getItem("task"));
-
-        if (input !== "") {
-          tasks.push(input);
-        } else {
-          alert("Enter a task");
-          return;
-        }
-
+        tasks.push(input);
         localStorage.setItem("task", JSON.stringify(tasks));
         displayTask();
         inputField.value = "";
@@ -83,48 +117,39 @@
 
       function displayTask() {
         let showContent = "";
-
-        const show = document.querySelector(".tasks");
+        const show = document.getElementById("task-list");
         tasks = JSON.parse(localStorage.getItem("task")) || [];
 
         tasks.forEach((element, index) => {
           showContent += `<li>
-                    <span>${element}</span>
-                    <button title="Add to Completed Tasks" class='add-to-complete-button' onclick="addTocomplete('${element}', ${index})">✅</button>
-                    <img 
-                        class="remove-icon"
-                        onclick="removeTask(${index})"
-                        src="./images/dustbin.jpg"
-                        alt="remove"
-                        onmouseover="this.src='./images/open-dustbin.jpg'"
-                        onmouseout="this.src='./images/dustbin.jpg'">
-                </li>`;
+              <span>${element}</span>
+              <button title="Add to Completed Tasks" class='add-to-complete-button' onclick="addTocomplete('${element}', ${index})">✅</button>
+              <img
+                  class="remove-icon"
+                  onclick="removeTask(${index})"
+                  src="./images/dustbin.jpg"
+                  alt="remove"
+                  onmouseover="this.src='./images/open-dustbin.jpg'"
+                  onmouseout="this.src='./images/dustbin.jpg'">
+            </li>`;
         });
 
         show.innerHTML = showContent;
       }
 
-      window.onload = displayTask;
-
       function removeTask(index) {
-        tasks = JSON.parse(localStorage.getItem("task"));
+        tasks = JSON.parse(localStorage.getItem("task")) || [];
         tasks.splice(index, 1);
-
         localStorage.setItem("task", JSON.stringify(tasks));
         displayTask();
       }
 
       function addTocomplete(taskk, indexx) {
-        const completed = document.getElementById("completed");
-        completed.style.animation = "";
-        let complete = localStorage.getItem("complete")
-          ? JSON.parse(localStorage.getItem("complete"))
-          : [];
-        complete.push({ task: taskk, index: indexx });
+        let complete = JSON.parse(localStorage.getItem("complete")) || [];
+        complete.push({ task: taskk });
         localStorage.setItem("complete", JSON.stringify(complete));
+        displaycompletedTask();
         removeTask(indexx);
-
-        completed.style.animation = "moveup 1s ease-in-out 0s";
       }
     </script>
   </body>
