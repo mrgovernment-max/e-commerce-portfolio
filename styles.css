@@ -22,13 +22,17 @@ footer {
   display: flex;
   margin: 2%;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 5vh;
 }
 
 .footer-col {
-  height: 200px;
+  height: auto;
   width: 250px;
+}
+
+#contact-col p {
+  margin-bottom: 10px;
 }
 
 .footer-col h2 {
@@ -69,6 +73,7 @@ footer {
 
 #quick-links a:hover {
   background-color: rgba(255, 255, 255, 0.05);
+  color: white;
 }
 
 #quick-links a:hover::after {
@@ -78,6 +83,29 @@ footer {
 footer i {
   font-size: calc(1rem + 2vh);
   margin: 1rem;
+}
+
+.sub-in {
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+}
+.sub-btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  background-color: #00509e;
+  border-radius: 6px;
+  color: white;
+  margin-top: 5%;
+  transition: 0.5s ease-in-out;
+}
+
+.sub-btn:hover {
+  background-color: white;
+  color: #00509e;
 }
 
 #logo {
