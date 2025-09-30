@@ -36,8 +36,19 @@ footer {
 }
 
 .footer-col h2 {
+  position: relative;
+  width: auto;
   margin-bottom: 15px;
   color: white;
+}
+
+.footer-col h2::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 30%;
+  height: 2.5px;
+  background-color: #0260be;
 }
 
 .footer-col p {
@@ -396,6 +407,13 @@ footer {
   .product-item {
     margin: auto;
     margin-bottom: 2%;
+  }
+
+  .footer-flex {
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: justify;
+    margin-left: 5%;
   }
 }
 
