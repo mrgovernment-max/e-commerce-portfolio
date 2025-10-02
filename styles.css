@@ -13,9 +13,42 @@ footer {
   color: #ffffff;
   text-align: center;
   padding: 1em 0;
-  position: sticky;
   top: 0;
-  z-index: 1000;
+}
+
+.o-header {
+  gap: 1em;
+  width: auto;
+  flex-direction: row;
+}
+
+.auth-btns {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-btns ul li {
+  display: inline-block;
+}
+
+.auth-btns ul li a {
+  margin: 2rem;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 400;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+.auth-btns ul li a:hover {
+  background-color: #007bff;
 }
 
 .footer-flex {
@@ -71,20 +104,9 @@ footer {
   border-radius: 10px;
 }
 
-#quick-links a::after {
-  content: "";
-  position: absolute;
-  transition: 0.4s ease-in-out;
-  width: 0;
-  height: 1px;
-  bottom: -2px;
-  left: 0;
-  background-color: white;
-}
-
-#quick-links a:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  color: white;
+.footer-col a:hover {
+  color: var(--accent-color);
+  transform: translateX(5px);
 }
 
 #quick-links a:hover::after {
@@ -256,6 +278,9 @@ p {
 
 /* Responsive Design */
 @media (max-width: 750px) {
+  header {
+    flex-direction: column;
+  }
   .swiper {
     width: 90%;
     border: transparent;
