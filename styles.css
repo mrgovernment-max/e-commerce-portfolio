@@ -104,13 +104,9 @@ footer {
   border-radius: 10px;
 }
 
-.footer-col a:hover {
-  color: var(--accent-color);
+#quick-links a:hover {
   transform: translateX(5px);
-}
-
-#quick-links a:hover::after {
-  width: 100%;
+  color: white;
 }
 
 footer i {
