@@ -103,6 +103,9 @@
         </div>
 
         <button type="submit" class="signup-btn">Create Account</button>
+        <section class="msg-display" id="msg-display">
+          kkkkkkkkkkkkkkkkkkkkkkkkk
+        </section>
 
         <div class="login-link">
           Already have an account? <a href="login.html">Sign In</a>
@@ -283,14 +286,26 @@
             const data = await response.json();
 
             if (response.ok) {
-              console.log("Signup successful:", data);
+              displayMsg(`${data.message}`, "success");
             } else {
-              alert(data.message || "Signup failed");
+              displayMsg(`${data.message}`, "error");
             }
           } catch (error) {
             console.error("Error:", error);
           }
         });
+
+        function displayMsg(msg, msgClass) {
+          msgContainer = document.getElementById("msg-display");
+          msgContainer.classList.add(msgClass);
+          msgContainer.style.opacity = 1;
+          msgContainer.textContent = msg;
+
+          setTimeout(() => {
+            msgContainer.style.opacity = 0;
+            msgContainer.classList.remove(msgClass);
+          }, 2500);
+        }
 
         // In a real implementation, you would redirect or handle the response
         // window.location.href = '/dashboard';

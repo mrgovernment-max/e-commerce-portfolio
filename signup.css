@@ -151,6 +151,27 @@ body {
   transform: translateY(0);
 }
 
+.msg-display {
+  width: 100%;
+  background-color: #28a745;
+  margin: 5% 0;
+  padding: 10px;
+  opacity: 0;
+  color: white;
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+.success {
+  background-color: #28a745;
+  color: white;
+}
+
+.error {
+  background-color: red;
+  color: black;
+}
+
 .login-link {
   text-align: center;
   margin-top: 20px;
