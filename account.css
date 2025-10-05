@@ -26,7 +26,7 @@ body {
 
 .container {
   display: flex;
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   gap: 20px;
@@ -45,7 +45,7 @@ header {
 }
 
 .header-content {
-  max-width: 1200px;
+  width: auto;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -61,6 +61,7 @@ header {
 
 .logo img {
   height: 40px;
+  border-radius: 50%;
 }
 
 .logo h1 {
@@ -88,6 +89,8 @@ header {
 
 /* Sidebar Styles */
 .sidebar {
+  z-index: 999;
+  display: none;
   flex: 0 0 250px;
   background: white;
   border-radius: 10px;
@@ -158,6 +161,10 @@ header {
   text-align: center;
 }
 
+.active {
+  display: block;
+}
+
 /* Main Content Styles */
 .main-content {
   flex: 1;
@@ -167,10 +174,22 @@ header {
 }
 
 .dashboard-header {
+  width: 100%;
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 3vh;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 10px;
+}
+
+.toggle-sidebar {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: xx-large;
 }
 
 .dashboard-title {
@@ -472,6 +491,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .dashboard-header {
+    justify-content: center;
+    flex-direction: column;
+  }
   .dashboard-cards {
     grid-template-columns: 1fr;
   }

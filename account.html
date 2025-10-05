@@ -15,10 +15,11 @@
     <header>
       <div class="header-content">
         <div class="logo">
-          <img
-            src="https://mrgovernment-max.github.io/e-commerce-portfolio/images/logo.webp"
-            alt="Brand Logo"
-          />
+          <a href="account.html">
+            <img
+              src="https://mrgovernment-max.github.io/e-commerce-portfolio/images/logo.webp"
+              alt="Brand Logo"
+          /></a>
           <h1>SneakX</h1>
         </div>
         <div class="user-info">
@@ -33,57 +34,58 @@
       </div>
     </header>
 
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="user-profile">
+        <div class="profile-avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="user-name">John Doe</div>
+        <div class="user-email">john.doe@example.com</div>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item active">
+          <i class="fas fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </li>
+        <li class="nav-item">
+          <i class="fas fa-shopping-bag"></i>
+          <span>Orders</span>
+        </li>
+        <li class="nav-item">
+          <i class="fas fa-heart"></i>
+          <span>Wishlist</span>
+        </li>
+        <li class="nav-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Addresses</span>
+        </li>
+        <li class="nav-item">
+          <i class="fas fa-user-edit"></i>
+          <span>Account Details</span>
+        </li>
+        <li class="nav-item">
+          <i class="fas fa-lock"></i>
+          <span>Change Password</span>
+        </li>
+        <li class="nav-item">
+          <i class="fas fa-gift"></i>
+          <span>Reward Points</span>
+        </li>
+        <li class="nav-item">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Logout</span>
+        </li>
+      </ul>
+    </aside>
+
     <!-- Main Content -->
     <div class="container">
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="user-profile">
-          <div class="profile-avatar">
-            <i class="fas fa-user"></i>
-          </div>
-          <div class="user-name">John Doe</div>
-          <div class="user-email">john.doe@example.com</div>
-        </div>
-        <ul class="nav-menu">
-          <li class="nav-item active">
-            <i class="fas fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-          </li>
-          <li class="nav-item">
-            <i class="fas fa-shopping-bag"></i>
-            <span>Orders</span>
-          </li>
-          <li class="nav-item">
-            <i class="fas fa-heart"></i>
-            <span>Wishlist</span>
-          </li>
-          <li class="nav-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Addresses</span>
-          </li>
-          <li class="nav-item">
-            <i class="fas fa-user-edit"></i>
-            <span>Account Details</span>
-          </li>
-          <li class="nav-item">
-            <i class="fas fa-lock"></i>
-            <span>Change Password</span>
-          </li>
-          <li class="nav-item">
-            <i class="fas fa-gift"></i>
-            <span>Reward Points</span>
-          </li>
-          <li class="nav-item">
-            <i class="fas fa-sign-out-alt"></i>
-            <span>Logout</span>
-          </li>
-        </ul>
-      </aside>
-
       <!-- Main Content Area -->
       <main class="main-content">
         <!-- Dashboard Header -->
         <div class="dashboard-header">
+          <div class="toggle-sidebar" id="toggle-sidebar">☰</div>
           <h2 class="dashboard-title">My Account Dashboard</h2>
           <div class="dashboard-actions">
             <button class="btn btn-outline">
@@ -273,6 +275,20 @@
             this.classList.add("active");
           });
         });
+      });
+      const toggleSidebar = document.getElementById("toggle-sidebar");
+      const sidebar = document.getElementById("sidebar");
+      let opened = true;
+
+      toggleSidebar.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+        if (opened) {
+          toggleSidebar.innerHTML = "✖";
+          opened = false;
+        } else {
+          toggleSidebar.innerHTML = "☰";
+          opened = true;
+        }
       });
     </script>
   </body>
