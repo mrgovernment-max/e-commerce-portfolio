@@ -37,6 +37,7 @@
     <!-- Sidebar -->
     <aside id="sidebar" class="sidebar">
       <div class="user-profile">
+        <div class="toggle-sidebar" id="toggle-sideba">☰</div>
         <div class="profile-avatar">
           <i class="fas fa-user"></i>
         </div>
@@ -277,19 +278,29 @@
         });
       });
       const toggleSidebar = document.getElementById("toggle-sidebar");
+      const toggleSide = document.getElementById("toggle-sideba");
       const sidebar = document.getElementById("sidebar");
-      let opened = true;
 
-      toggleSidebar.addEventListener("click", () => {
-        sidebar.classList.toggle("active");
+      let opened = false;
+
+      function updateIcons() {
         if (opened) {
           toggleSidebar.innerHTML = "✖";
-          opened = false;
+          toggleSide.innerHTML = "✖";
         } else {
           toggleSidebar.innerHTML = "☰";
-          opened = true;
+          toggleSide.innerHTML = "☰";
         }
-      });
+      }
+
+      function toggle() {
+        sidebar.classList.toggle("active");
+        opened = !opened;
+        updateIcons();
+      }
+
+      toggleSidebar.addEventListener("click", toggle);
+      toggleSide.addEventListener("click", toggle);
     </script>
   </body>
 </html>
