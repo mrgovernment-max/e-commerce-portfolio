@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account | Your E-commerce Store</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="account.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <img
+            src="https://mrgovernment-max.github.io/e-commerce-portfolio/images/logo.webp"
+            alt="Brand Logo"
+          />
+          <h1>SneakX</h1>
+        </div>
+        <div class="user-info">
+          <div class="user-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <div>
+            <div>John Doe</div>
+            <div style="font-size: 12px">Premium Member</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="user-profile">
+          <div class="profile-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="user-name">John Doe</div>
+          <div class="user-email">john.doe@example.com</div>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item active">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </li>
+          <li class="nav-item">
+            <i class="fas fa-shopping-bag"></i>
+            <span>Orders</span>
+          </li>
+          <li class="nav-item">
+            <i class="fas fa-heart"></i>
+            <span>Wishlist</span>
+          </li>
+          <li class="nav-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Addresses</span>
+          </li>
+          <li class="nav-item">
+            <i class="fas fa-user-edit"></i>
+            <span>Account Details</span>
+          </li>
+          <li class="nav-item">
+            <i class="fas fa-lock"></i>
+            <span>Change Password</span>
+          </li>
+          <li class="nav-item">
+            <i class="fas fa-gift"></i>
+            <span>Reward Points</span>
+          </li>
+          <li class="nav-item">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+          <h2 class="dashboard-title">My Account Dashboard</h2>
+          <div class="dashboard-actions">
+            <button class="btn btn-outline">
+              <i class="fas fa-download"></i> Export Data
+            </button>
+            <button class="btn btn-primary">
+              <i class="fas fa-shopping-cart"></i> Continue Shopping
+            </button>
+          </div>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="dashboard-cards">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Total Orders</div>
+              <div class="card-icon orders">
+                <i class="fas fa-shopping-bag"></i>
+              </div>
+            </div>
+            <div class="card-value">24</div>
+            <div class="card-description">5 orders in progress</div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Wishlist Items</div>
+              <div class="card-icon wishlist">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="card-value">12</div>
+            <div class="card-description">3 items on sale</div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Reward Points</div>
+              <div class="card-icon rewards">
+                <i class="fas fa-gift"></i>
+              </div>
+            </div>
+            <div class="card-value">1,250</div>
+            <div class="card-description">Earn 250 more for $10 off</div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Unread Messages</div>
+              <div class="card-icon messages">
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+            <div class="card-value">3</div>
+            <div class="card-description">2 from support</div>
+          </div>
+        </div>
+
+        <!-- Recent Orders Section -->
+        <div class="section">
+          <h3 class="section-title">
+            <i class="fas fa-clock"></i> Recent Orders
+          </h3>
+          <div class="order-list">
+            <div class="order-item">
+              <div class="order-info">
+                <div class="order-id">Order #ORD-7842</div>
+                <div class="order-date">Placed on June 12, 2023</div>
+                <div class="order-total">Total: $149.99</div>
+              </div>
+              <div class="order-status status-delivered">Delivered</div>
+              <div class="order-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-eye"></i> View
+                </button>
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-redo"></i> Reorder
+                </button>
+              </div>
+            </div>
+            <div class="order-item">
+              <div class="order-info">
+                <div class="order-id">Order #ORD-7791</div>
+                <div class="order-date">Placed on June 5, 2023</div>
+                <div class="order-total">Total: $89.50</div>
+              </div>
+              <div class="order-status status-shipped">Shipped</div>
+              <div class="order-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-eye"></i> View
+                </button>
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-truck"></i> Track
+                </button>
+              </div>
+            </div>
+            <div class="order-item">
+              <div class="order-info">
+                <div class="order-id">Order #ORD-7654</div>
+                <div class="order-date">Placed on May 28, 2023</div>
+                <div class="order-total">Total: $234.75</div>
+              </div>
+              <div class="order-status status-processing">Processing</div>
+              <div class="order-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-eye"></i> View
+                </button>
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-times"></i> Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Saved Addresses Section -->
+        <div class="section">
+          <h3 class="section-title">
+            <i class="fas fa-map-marker-alt"></i> Saved Addresses
+          </h3>
+          <div class="address-grid">
+            <div class="address-card default">
+              <div class="address-type">Default</div>
+              <div class="address-name">Home</div>
+              <div class="address-details">
+                John Doe<br />
+                123 Main Street<br />
+                Apt 4B<br />
+                New York, NY 10001<br />
+                United States<br />
+                Phone: (123) 456-7890
+              </div>
+              <div class="address-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-trash"></i> Remove
+                </button>
+              </div>
+            </div>
+            <div class="address-card">
+              <div class="address-name">Work</div>
+              <div class="address-details">
+                John Doe<br />
+                456 Business Ave<br />
+                Floor 10<br />
+                New York, NY 10005<br />
+                United States<br />
+                Phone: (123) 456-7891
+              </div>
+              <div class="address-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-trash"></i> Remove
+                </button>
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-check"></i> Set Default
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Help Center</a>
+        </div>
+        <div class="copyright">&copy; 2023 YourStore. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script>
+      // Simple JavaScript for navigation and interactivity
+      document.addEventListener("DOMContentLoaded", function () {
+        // Navigation active state
+        const navItems = document.querySelectorAll(".nav-item");
+        navItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            navItems.forEach((i) => i.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

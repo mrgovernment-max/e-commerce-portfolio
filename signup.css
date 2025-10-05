@@ -15,8 +15,7 @@ body {
 }
 
 .signup-container {
-  width: 100%;
-  max-width: 480px;
+  width: 50%;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 150, 0.1);
@@ -154,6 +153,7 @@ body {
 
 .msg-display {
   width: 100%;
+  text-align: center;
   background-color: #28a745;
   margin: 5% 0;
   padding: 10px;

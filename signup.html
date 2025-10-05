@@ -104,9 +104,7 @@
         </div>
 
         <button type="submit" class="signup-btn">Create Account</button>
-        <section class="msg-display" id="msg-display">
-          kkkkkkkkkkkkkkkkkkkkkkkkk
-        </section>
+        <section class="msg-display" id="msg-display"></section>
 
         <div class="login-link">
           Already have an account? <a href="login.html">Sign In</a>
@@ -196,11 +194,11 @@
 
           // Update bar color
           if (strength < 50) {
-            passwordStrengthBar.style.backgroundColor = "#dc3545"; // Red
+            passwordStrengthBar.style.backgroundColor = "#dc3545";
           } else if (strength < 75) {
-            passwordStrengthBar.style.backgroundColor = "#ffc107"; // Yellow
+            passwordStrengthBar.style.backgroundColor = "#ffc107";
           } else {
-            passwordStrengthBar.style.backgroundColor = "#28a745"; // Green
+            passwordStrengthBar.style.backgroundColor = "#28a745";
           }
 
           // Check if passwords match
@@ -240,17 +238,20 @@
 
           // Basic validation
           if (!userName || !email || !password || !confirmPassword) {
-            alert("Please fill in all fields");
+            displayMsg("Please fill in all fields", "error");
             return;
           }
 
           if (!terms) {
-            alert("Please agree to the Terms of Service and Privacy Policy");
+            displayMsg(
+              "Please agree to the Terms of Service and Privacy Policy",
+              "error"
+            );
             return;
           }
 
           if (password !== confirmPassword) {
-            alert("Passwords do not match");
+            displayMsg("Passwords do not match", "error");
             return;
           }
 
@@ -262,7 +263,7 @@
           if (/[^A-Za-z0-9]/.test(password)) strength += 25;
 
           if (strength < 75) {
-            alert("Please use a stronger password");
+            displayMsg("Please use a stronger password", "error");
             return;
           }
 
@@ -304,6 +305,7 @@
 
           setTimeout(() => {
             msgContainer.style.opacity = 0;
+            msgContainer.textContent = "";
             msgContainer.classList.remove(msgClass);
           }, 2500);
         }
