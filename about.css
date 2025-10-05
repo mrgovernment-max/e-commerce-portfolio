@@ -472,6 +472,7 @@ footer {
 }
 
 .sub-btn {
+  margin: 5%;
   padding: 0.8em 1em;
   background: var(--secondary-color);
   color: white;
