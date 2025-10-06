@@ -127,10 +127,14 @@
                 <i class="fas fa-gift"></i>
               </div>
             </div>
-            <div class="card-value">1,250</div>
-            <div class="card-description">Earn 250 more for $10 off</div>
+            <div class="card-value" id="points-value">1,250</div>
+            <div class="card-description">
+              Get more points by purchasing <br />
+              <span class="points">1,000 = 10% off</span>
+            </div>
+            <button id="simulate-btn">Overview</button>
           </div>
-          <div class="card">
+          <div class="card" id="u-msg">
             <div class="card-header">
               <div class="card-title">Unread Messages</div>
               <div class="card-icon messages">
@@ -138,7 +142,7 @@
               </div>
             </div>
             <div class="card-value">3</div>
-            <div class="card-description">2 from support</div>
+            <div class="card-description">Click to read messages</div>
           </div>
         </div>
 
@@ -264,12 +268,24 @@
         <div class="copyright">&copy; 2023 YourStore. All rights reserved.</div>
       </div>
     </footer>
-
+    <!--Overlay-->
+    <div class="overlay" id="overlay">
+      <div id="u-msgs"><ul id="msg-list"></ul></div>
+    </div>
     <script>
-      // Simple JavaScript for navigation and interactivity
-      document.addEventListener("DOMContentLoaded", function () {
-        // Navigation active state
-        const navItems = document.querySelectorAll(".nav-item");
+      // === Grab DOM Elements ===
+      const navItems = document.querySelectorAll(".nav-item");
+      const toggleSidebar = document.getElementById("toggle-sidebar");
+      const toggleSide = document.getElementById("toggle-sideba");
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const uMsg = document.getElementById("u-msg");
+      const msgList = document.getElementById("msg-list");
+      const simulateBtn = document.getElementById("simulate-btn");
+      const pointsValue = document.getElementById("points-value");
+
+      // === Sidebar Active State ===
+      document.addEventListener("DOMContentLoaded", () => {
         navItems.forEach((item) => {
           item.addEventListener("click", function () {
             navItems.forEach((i) => i.classList.remove("active"));
@@ -277,30 +293,136 @@
           });
         });
       });
-      const toggleSidebar = document.getElementById("toggle-sidebar");
-      const toggleSide = document.getElementById("toggle-sideba");
-      const sidebar = document.getElementById("sidebar");
 
+      // === Sidebar Toggle ===
       let opened = false;
 
       function updateIcons() {
-        if (opened) {
-          toggleSidebar.innerHTML = "✖";
-          toggleSide.innerHTML = "✖";
-        } else {
-          toggleSidebar.innerHTML = "☰";
-          toggleSide.innerHTML = "☰";
-        }
+        toggleSidebar.innerHTML = opened ? "✖" : "☰";
+        toggleSide.innerHTML = opened ? "✖" : "☰";
       }
 
-      function toggle() {
+      function toggleSidebarMenu() {
         sidebar.classList.toggle("active");
         opened = !opened;
         updateIcons();
       }
 
-      toggleSidebar.addEventListener("click", toggle);
-      toggleSide.addEventListener("click", toggle);
+      toggleSidebar.addEventListener("click", toggleSidebarMenu);
+      toggleSide.addEventListener("click", toggleSidebarMenu);
+
+      // === Overlay Toggle (Close When Clicked Outside) ===
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove("flexactive");
+        }
+      });
+
+      // === Messages Simulation ===
+      const messages = [
+        "Hey, you around?",
+        "Don't forget the meeting at 3!",
+        "Check your email please.",
+        "How was your day?",
+        "You free this weekend?",
+        "Update the report by tonight.",
+        "Got your message 👍",
+        "Let's meet tomorrow morning.",
+        "Happy Friday 😎",
+        "Call me when you can.",
+      ];
+
+      function renderMessages() {
+        msgList.innerHTML = ""; // clear list before rendering
+        messages.forEach((msgText) => {
+          const li = document.createElement("li");
+
+          const msgSpan = document.createElement("span");
+          msgSpan.textContent = msgText;
+
+          const actions = document.createElement("div");
+          actions.classList.add("actions");
+
+          const readEmoji = document.createElement("span");
+          readEmoji.textContent = "👁️";
+          readEmoji.title = "Mark as read";
+          readEmoji.onclick = () => msgSpan.classList.toggle("read");
+
+          const deleteEmoji = document.createElement("span");
+          deleteEmoji.textContent = "🗑️";
+          deleteEmoji.title = "Delete message";
+          deleteEmoji.onclick = () => li.remove();
+
+          actions.append(readEmoji, deleteEmoji);
+          li.append(msgSpan, actions);
+          msgList.appendChild(li);
+        });
+      }
+
+      // === Purchases Simulation ===
+      const purchases = [
+        { orderId: 200, item: "Shirt", price: 200, points: 100 },
+        { orderId: 201, item: "Shoes", price: 300, points: 150 },
+        { orderId: 202, item: "Headphones", price: 120, points: 60 },
+        { orderId: 203, item: "Jacket", price: 400, points: 200 },
+        { orderId: 204, item: "Smartwatch", price: 250, points: 125 },
+        { orderId: 205, item: "Backpack", price: 180, points: 90 },
+        { orderId: 206, item: "Trousers", price: 220, points: 110 },
+        { orderId: 207, item: "Sunglasses", price: 150, points: 75 },
+        { orderId: 208, item: "Gaming Mouse", price: 100, points: 50 },
+        { orderId: 209, item: "Perfume", price: 90, points: 45 },
+      ];
+
+      let totalPoints = 0;
+
+      function renderPurchases() {
+        msgList.innerHTML = ""; // clear list before rendering
+        totalPoints = 0;
+
+        purchases.forEach((purchase) => {
+          const li = document.createElement("li");
+
+          const msgSpan = document.createElement("span");
+          msgSpan.innerHTML = `
+      <strong>Order #${purchase.orderId}</strong><br>
+      Bought: ${purchase.item}<br>
+      Price: £${purchase.price}<br>
+      Earned: <span class="points">+${purchase.points}</span> points
+    `;
+
+          const actions = document.createElement("div");
+          actions.classList.add("actions");
+
+          const readEmoji = document.createElement("span");
+          readEmoji.textContent = "👁️";
+          readEmoji.title = "Mark as read";
+          readEmoji.onclick = () => msgSpan.classList.toggle("read");
+
+          const deleteEmoji = document.createElement("span");
+          deleteEmoji.textContent = "🗑️";
+          deleteEmoji.title = "Delete purchase";
+          deleteEmoji.onclick = () => li.remove();
+
+          actions.append(readEmoji, deleteEmoji);
+          li.append(msgSpan, actions);
+          msgList.appendChild(li);
+
+          totalPoints += purchase.points;
+        });
+
+        pointsValue.textContent = totalPoints.toLocaleString();
+      }
+
+      // === Click Handlers ===
+      uMsg.addEventListener("click", () => {
+        renderMessages();
+        overlay.classList.add("flexactive");
+      });
+
+      simulateBtn.addEventListener("click", () => {
+        renderPurchases();
+        overlay.classList.add("flexactive");
+      });
     </script>
   </body>
 </html>
