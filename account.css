@@ -187,7 +187,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 3vh;
+  gap: 7vh;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 10px;
@@ -196,7 +196,7 @@ header {
 .toggle-sidebar {
   position: absolute;
   left: 10px;
-  top: 10px;
+  top: 25%;
   font-size: xx-large;
 }
 
