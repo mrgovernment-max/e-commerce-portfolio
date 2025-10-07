@@ -270,7 +270,10 @@
     </footer>
     <!--Overlay-->
     <div class="overlay" id="overlay">
-      <div id="u-msgs"><ul id="msg-list"></ul></div>
+      <div id="u-msgs">
+        <h1 class="u-msgs-h" id="u-msgs-h">Messages</h1>
+        <ul id="msg-list"></ul>
+      </div>
     </div>
     <script>
       // Grab DOM Elements
@@ -283,6 +286,7 @@
       const msgList = document.getElementById("msg-list");
       const simulateBtn = document.getElementById("simulate-btn");
       const pointsValue = document.getElementById("points-value");
+      const uMsgHeader = document.getElementById("u-msgs-h");
 
       //  Sidebar Active State
       document.addEventListener("DOMContentLoaded", () => {
@@ -333,7 +337,8 @@
       ];
 
       function renderMessages() {
-        msgList.innerHTML = ""; // clear list before rendering
+        msgList.innerHTML = "";
+        uMsgHeader.innerHTML = ` MESSAGES`;
         messages.forEach((msgText) => {
           const li = document.createElement("li");
 
@@ -376,6 +381,7 @@
       let totalPoints = 0;
 
       function renderPurchases() {
+        uMsgHeader.innerHTML = ` POINTS OVERVIEW`;
         msgList.innerHTML = "";
         totalPoints = 0;
 
