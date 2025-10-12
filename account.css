@@ -5,6 +5,14 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary-blue: #1e3c72;
   --secondary-blue: #2a5298;
@@ -561,10 +569,12 @@ li:hover {
   display: none;
   position: absolute;
   top: -1%;
+  left: 0;
+  right: 0;
   background: #fff;
   border-radius: 14px;
   padding: 25px;
-  width: 90%;
+  width: 100%;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 

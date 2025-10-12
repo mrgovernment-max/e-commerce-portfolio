@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Account | Your E-commerce Store</title>
+    <title>My Account</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,7 +15,7 @@
     <header>
       <div class="header-content">
         <div class="logo">
-          <a href="account.html">
+          <a href="index.html">
             <img
               src="https://mrgovernment-max.github.io/e-commerce-portfolio/images/logo.webp"
               alt="Brand Logo"
@@ -47,11 +47,11 @@
       <ul class="nav-menu">
         <li class="nav-item active">
           <i class="fas fa-tachometer-alt"></i>
-          <span>Dashboard</span>
+          <span><a style="color: black" href="#Dashboard">Dashboard</a></span>
         </li>
         <li class="nav-item">
           <i class="fas fa-shopping-bag"></i>
-          <span>Orders</span>
+          <span><a style="color: black" href="#Orders">Orders</a></span>
         </li>
         <li class="nav-item">
           <i class="fas fa-heart"></i>
@@ -59,7 +59,11 @@
         </li>
         <li class="nav-item">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Addresses</span>
+          <span
+            ><span
+              ><a style="color: black" href="#address">Addresss</a></span
+            ></span
+          >
         </li>
         <li class="nav-item">
           <i class="fas fa-user-edit"></i>
@@ -83,7 +87,7 @@
     <!-- Main Content -->
     <div class="container">
       <!-- Main Content Area -->
-      <main class="main-content">
+      <main id="Dashboard" class="main-content">
         <!-- Dashboard Header -->
         <div class="dashboard-header">
           <div class="toggle-sidebar" id="toggle-sidebar">☰</div>
@@ -93,7 +97,12 @@
               <i class="fas fa-download"></i> Export Data
             </button>
             <button class="btn btn-primary">
-              <i class="fas fa-shopping-cart"></i> Continue Shopping
+              <i class="fas fa-shopping-cart"></i>
+              <a
+                style="color: white; text-decoration: none"
+                href="products.html"
+                >Continue Shopping</a
+              >
             </button>
           </div>
         </div>
@@ -147,7 +156,7 @@
         </div>
 
         <!-- Recent Orders Section -->
-        <div class="section">
+        <div id="Orders" class="section">
           <h3 class="section-title">
             <i class="fas fa-clock"></i> Recent Orders
           </h3>
