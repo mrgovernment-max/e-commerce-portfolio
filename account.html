@@ -545,12 +545,14 @@
       });
 
       rmvHomeadd.addEventListener("click", () => {
+        rmvHomeadd.style.display = "none";
         addhomeDetailsplaceholders.forEach(
           (element) => (element.innerHTML = "")
         );
       });
 
       rmvWorkadd.addEventListener("click", () => {
+        rmvWorkadd.style.display = "none";
         addworkDetailsplaceholders.forEach(
           (element) => (element.innerHTML = "")
         );
