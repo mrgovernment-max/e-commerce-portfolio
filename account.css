@@ -151,12 +151,15 @@ header {
   margin-top: 20px;
 }
 
+.nav-item a {
+  width: 100%;
+  cursor: pointer;
+}
 .nav-item {
   padding: 15px 25px;
   display: flex;
   align-items: center;
   gap: 12px;
-  cursor: pointer;
   transition: all 0.3s;
   border-left: 3px solid transparent;
 }
