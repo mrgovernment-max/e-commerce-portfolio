@@ -512,6 +512,12 @@ li:hover {
   gap: 20px;
 }
 
+#address {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
 .address-card {
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -523,7 +529,6 @@ li:hover {
   border-color: var(--accent-blue);
   background-color: rgba(74, 123, 255, 0.05);
 }
-
 .address-type {
   position: absolute;
   top: 10px;
@@ -549,6 +554,95 @@ li:hover {
 .address-actions {
   display: flex;
   gap: 10px;
+}
+
+/*edit address */
+.address-form {
+  display: none;
+  position: absolute;
+  top: -1%;
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  width: 90%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.address-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e3c72;
+}
+
+#close-address {
+  font-size: xx-large;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: red;
+  margin-bottom: 5%;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 220px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1e3c72;
+  box-shadow: 0 0 5px rgba(30, 60, 114, 0.3);
+}
+
+button {
+  width: 100%;
+  background: #1e3c72;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #2a5298;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    min-width: 100%;
+  }
 }
 
 /* Footer */
