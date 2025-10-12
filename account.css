@@ -462,6 +462,20 @@ li:hover {
   cursor: pointer;
 }
 
+.order-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 8px;
+}
+
+.points {
+  color: green;
+  font-weight: bold;
+}
+
 .order-list {
   display: flex;
   flex-direction: column;

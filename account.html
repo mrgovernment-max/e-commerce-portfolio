@@ -137,7 +137,7 @@
             <div class="card-value" id="points-value">1,250</div>
             <div class="card-description">
               Get more points by purchasing <br />
-              <span class="points">1,000 = 10% off</span>
+              <span class="points">10,000 = 10% off</span>
             </div>
             <button id="simulate-btn">Overview</button>
           </div>
@@ -202,7 +202,7 @@
               </div>
               <div class="order-status status-processing">Processing</div>
               <div class="order-actions">
-                <button class="btn btn-outline btn-sm">
+                <button id="view-order" class="btn btn-outline btn-sm">
                   <i class="fas fa-eye"></i> View
                 </button>
                 <button class="btn btn-outline btn-sm">
@@ -380,6 +380,8 @@
       const addworkDetailsplaceholders =
         document.querySelectorAll(".add-detail");
 
+      const ViewOrder = document.getElementById("view-order");
+
       //  Sidebar Active State
       document.addEventListener("DOMContentLoaded", () => {
         navItems.forEach((item) => {
@@ -456,59 +458,63 @@
         });
       }
 
-      //  Purchases Simulation
-      const purchases = [
-        { orderId: 200, item: "Shirt", price: 200, points: 100 },
-        { orderId: 201, item: "Shoes", price: 300, points: 150 },
-        { orderId: 202, item: "Headphones", price: 120, points: 60 },
-        { orderId: 203, item: "Jacket", price: 400, points: 200 },
-        { orderId: 204, item: "Smartwatch", price: 250, points: 125 },
-        { orderId: 205, item: "Backpack", price: 180, points: 90 },
-        { orderId: 206, item: "Trousers", price: 220, points: 110 },
-        { orderId: 207, item: "Sunglasses", price: 150, points: 75 },
-        { orderId: 208, item: "Gaming Mouse", price: 100, points: 50 },
-        { orderId: 209, item: "Perfume", price: 90, points: 45 },
+      //View Order Details
+      const Orders = [
+        {
+          orderId: 101,
+          item: "Nike REAX 8 TR MESH",
+          price: 89.99,
+          points: 150,
+          img: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/ca8f4f87-9d2a-4889-bc3c-da58b186c8f8/NIKE+REAX+8+TR+MESH.png",
+        },
+        {
+          orderId: 102,
+          item: "Nike P-6000",
+          price: 129.99,
+          points: 200,
+          img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7f03aa5d-6cc5-48af-a852-003c00a5b529/NIKE+P-6000.png",
+        },
+        {
+          orderId: 103,
+          item: "Air Jordan 10 Retro",
+          price: 49.99,
+          points: 100,
+          img: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a7050b74-050c-4e1d-bb91-09cd184e3881/AIR+JORDAN+10+RETRO.png",
+        },
+        {
+          orderId: 104,
+          item: "Air Jordan 12 Retro",
+          price: 69.99,
+          points: 120,
+          img: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/dc2833bd-74bd-4612-a45f-9badad47dc28/AIR+JORDAN+12+RETRO.png",
+        },
+        {
+          orderId: 105,
+          item: "Puma Speedcat OG Sneakers (Color 09)",
+          price: 70.99,
+          points: 250,
+          img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/398846/09/sv01/fnd/GBR/fmt/png/Speedcat-OG-Sneakers-Unisex",
+        },
       ];
 
-      let totalPoints = 0;
-
-      function renderPurchases() {
-        uMsgHeader.innerHTML = ` POINTS OVERVIEW`;
+      function renderOrders() {
+        uMsgHeader.innerHTML = ` Order Details`;
         msgList.innerHTML = "";
-        totalPoints = 0;
 
-        purchases.forEach((purchase) => {
+        Orders.forEach((order) => {
           const li = document.createElement("li");
-
           const msgSpan = document.createElement("span");
           msgSpan.innerHTML = `
-      <strong>Order #${purchase.orderId}</strong>  <br>
-    <strong> Bought </strong>: ${purchase.item}
-  <strong> Price </strong>: £${purchase.price}
-</strong> Earned </strong>: <span class="points">+${purchase.points}</span> points
-    `;
+        <img src="${order.img}" alt="${order.item}" class="order-img" />
+        <strong>Order #${order.orderId}</strong><br>
+        <strong>Bought:</strong> ${order.item} <br>
+        <strong>Price:</strong> £${order.price} <br>
+        <strong>Earned:</strong> <span class="points">+${order.points}</span> points
+      `;
 
-          const actions = document.createElement("div");
-          actions.classList.add("actions");
-
-          const readEmoji = document.createElement("span");
-          readEmoji.textContent = "✅";
-          readEmoji.title = "Mark as read";
-          readEmoji.onclick = () => msgSpan.classList.toggle("read");
-
-          const deleteEmoji = document.createElement("span");
-          deleteEmoji.textContent = "🗑️";
-          deleteEmoji.title = "Delete purchase";
-          deleteEmoji.onclick = () => li.remove();
-
-          actions.append(readEmoji, deleteEmoji);
-          li.append(msgSpan, actions);
+          li.append(msgSpan);
           msgList.appendChild(li);
-
-          totalPoints += purchase.points;
         });
-
-        pointsValue.textContent = totalPoints.toLocaleString();
       }
 
       // Click Handlers
@@ -517,8 +523,13 @@
         overlay.classList.add("flexactive");
       });
 
+      ViewOrder.addEventListener("click", () => {
+        renderOrders();
+        overlay.classList.add("flexactive");
+      });
+
       simulateBtn.addEventListener("click", () => {
-        renderPurchases();
+        renderOrders();
         overlay.classList.add("flexactive");
       });
 
