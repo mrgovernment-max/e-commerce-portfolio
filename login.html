@@ -87,6 +87,8 @@
       loginForm.addEventListener("submit", async function (e) {
         e.preventDefault();
 
+        const loginBtn = document.getElementById("login-btn");
+
         // Get form values
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
@@ -98,6 +100,7 @@
         }
 
         loader.style.display = "inline-block";
+        loginBtn.disabled = true;
 
         try {
           const res = await fetch(
@@ -115,6 +118,7 @@
           const message = data.message;
 
           loader.style.display = "none";
+          loginBtn.disabled = false;
 
           console.log(message);
 
