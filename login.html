@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login | Your Site</title>
     <link rel="stylesheet" href="login.css" />
+    <script
+      src="https://kit.fontawesome.com/a47fc389f5.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="login-container">
@@ -47,14 +51,13 @@
         </div>
 
         <div class="remember-forgot">
-          <div class="remember-me">
-            <input type="checkbox" id="remember" />
-            <label for="remember">Remember me</label>
-          </div>
           <a href="#" class="forgot-password">Forgot Password?</a>
         </div>
 
-        <button type="submit" class="login-btn">Sign In</button>
+        <button id="login-btn" type="submit" class="login-btn">
+          Sign In <i id="loader" class="fa-solid fa-spinner"></i>
+        </button>
+        <div id="login-info" class="login-info"></div>
 
         <div class="signup-link">
           Don't have an account? <a href="signup.html">Sign Up</a>
@@ -63,10 +66,11 @@
     </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", async function () {
         const loginForm = document.getElementById("loginForm");
         const togglePassword = document.getElementById("togglePassword");
         const passwordInput = document.getElementById("password");
+        const Loader = document.getElementById("loader");
 
         // Toggle password visibility
         togglePassword.addEventListener("click", function () {
@@ -77,32 +81,67 @@
           passwordInput.setAttribute("type", type);
           this.textContent = type === "password" ? "👁️" : "🔒";
         });
-
-        // Form submission
-        loginForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // Get form values
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
-          const remember = document.getElementById("remember").checked;
-
-          // Basic validation
-          if (!email || !password) {
-            alert("Please fill in all fields");
-            return;
-          }
-
-          // Here you would typically send the data to your backend
-          console.log("Login attempt:", { email, password, remember });
-
-          // For demo purposes, show a success message
-          alert("Login successful! (This is a frontend demo)");
-
-          // In a real implementation, you would redirect or handle the response
-          // window.location.href = '/dashboard';
-        });
       });
+
+      // Form submission
+      loginForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        // Get form values
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Basic validation
+        if (!email || !password) {
+          alert("Please fill in all fields");
+          return;
+        }
+
+        loader.style.display = "inline-block";
+
+        try {
+          const res = await fetch(
+            "https://backendroutes-lcpt.onrender.com/elogin",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, password }),
+            }
+          );
+
+          const data = await res.json();
+          const message = data.message;
+
+          loader.style.display = "none";
+
+          console.log(message);
+
+          if (message === "Invalid password") {
+            displayMsg(`${message}`, "error");
+          } else if (message === "Login successful") {
+            displayMsg(`${message}`, "success");
+          } else {
+            displayMsg(`${message}`, "error");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      });
+
+      function displayMsg(msg, msgClass) {
+        msgContainer = document.getElementById("login-info");
+        msgContainer.classList.add(msgClass);
+        msgContainer.style.opacity = 1;
+        msgContainer.textContent = msg;
+
+        setTimeout(() => {
+          msgContainer.style.opacity = 0;
+          msgContainer.textContent = "";
+          msgContainer.classList.remove(msgClass);
+        }, 2500);
+      }
     </script>
   </body>
 </html>
