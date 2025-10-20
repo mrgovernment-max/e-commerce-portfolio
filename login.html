@@ -116,7 +116,8 @@
 
           const data = await res.json();
           const message = data.message;
-          console.log(document.cookie);
+          sessionStorage.setItem("accessToken", data.accessToken);
+          console.log(data.accessToken);
 
           loader.style.display = "none";
           loginBtn.disabled = false;
